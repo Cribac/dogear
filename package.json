@@ -1,7 +1,7 @@
 {
   "name": "dogear",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@astrojs/check": "0.7.0",
+    "@astrojs/vue": "4.3.0",
     "astro": "4.9.2",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "vue": "3.4.27"
   },
   "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
   "devDependencies": {
