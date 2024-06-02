@@ -1,7 +1,7 @@
 {
   "name": "dogear",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -21,6 +21,8 @@
   "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
   "devDependencies": {
     "@eslint/js": "9.4.0",
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.13.0",
     "@typescript-eslint/eslint-plugin": "7.11.0",
     "@typescript-eslint/parser": "7.11.0",
     "@vitejs/plugin-vue": "5.0.4",

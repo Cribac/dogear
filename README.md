@@ -1,6 +1,6 @@
 # Dogear
 
-tbd...
+Webapp to manage bookmarks.
 
 ### Main Dependencies:
 
@@ -24,9 +24,9 @@ tbd...
 
 - [Globals](https://github.com/sindresorhus/globals#readme)
 
-<!-- - [Types Node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node)
+- [Types Node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node)
 
-- [Playwright Test](https://playwright.dev) -->
+- [Playwright Test](https://playwright.dev)
 
 - [Vitest](https://github.com/vitest-dev/vitest#readme)
 
