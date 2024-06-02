@@ -7,12 +7,23 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint"
   },
   "dependencies": {
-    "astro": "4.9.2",
     "@astrojs/check": "0.7.0",
+    "astro": "4.9.2",
     "typescript": "5.4.5"
   },
-  "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d"
+  "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
+  "devDependencies": {
+    "@eslint/js": "9.4.0",
+    "@typescript-eslint/eslint-plugin": "7.11.0",
+    "@typescript-eslint/parser": "7.11.0",
+    "eslint": "9.4.0",
+    "eslint-plugin-astro": "1.2.0",
+    "eslint-plugin-vue": "9.26.0",
+    "globals": "15.3.0",
+    "typescript-eslint": "7.11.0"
+  }
 }
