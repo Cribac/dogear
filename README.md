@@ -1,6 +1,8 @@
-# Dogear
+# Dogear 🐶
 
 Webapp to manage bookmarks.
+
+[*WIP!!!*](https://www.dictionary.com/browse/wip) 
 
 ---
 
