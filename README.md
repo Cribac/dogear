@@ -7,10 +7,16 @@ Webapp to manage bookmarks.
 - [Astro](https://astro.build/)
 
   - [@astrojs/check](https://github.com/withastro/language-tools#readme)
-  - [@astrojs/vue](https://docs.astro.build/en/guides/integrations-guide/vue/)
+  - [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
 
 - [Vue.js](https://vuejs.org/)
+
+  - [@astrojs/vue](https://docs.astro.build/en/guides/integrations-guide/vue/)
+
 - [Typescript](https://www.typescriptlang.org/)
+
+- [TailwindCSS](https://tailwindcss.com)
+  - [Astro TailwindCSS Integration](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
 
 ### Development Dependencies:
 
