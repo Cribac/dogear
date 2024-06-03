@@ -2,6 +2,25 @@
 
 Webapp to manage bookmarks.
 
+---
+
+#### Run Development
+
+###### Start database:
+
+```bash
+cd ./supabase
+npx supabase start
+```
+
+###### Start project:
+
+```bash
+pnpm run dev
+```
+
+---
+
 ### Main Dependencies:
 
 - [Astro](https://astro.build/)
@@ -41,3 +60,5 @@ Webapp to manage bookmarks.
 - [Happy DOM](https://github.com/capricorn86/happy-dom)
 
 - [Vue Test Utils](https://github.com/vuejs/test-utils)
+
+- [Supabase CLI](https://supabase.com/docs/reference/cli/start)
