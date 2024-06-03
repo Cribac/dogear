@@ -15,6 +15,8 @@ Webapp to manage bookmarks.
 
 - [Typescript](https://www.typescriptlang.org/)
 
+- [Supabase](https://github.com/supabase/supabase-js)
+
 - [TailwindCSS](https://tailwindcss.com)
   - [Astro TailwindCSS Integration](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
 
