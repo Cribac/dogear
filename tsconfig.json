@@ -5,6 +5,9 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "types": [
+      "vue3-toastify/global"
+    ]
   }
 }

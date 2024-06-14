@@ -2,7 +2,7 @@
 
 Webapp to manage bookmarks.
 
-[*WIP!!!*](https://www.dictionary.com/browse/wip) 
+[_WIP!!!_](https://www.dictionary.com/browse/wip)
 
 ---
 
@@ -11,7 +11,7 @@ Webapp to manage bookmarks.
 ###### Start database:
 
 ```bash
-cd ./supabase
+cd supabase
 npx supabase start
 ```
 
@@ -30,16 +30,19 @@ pnpm run dev
   - [@astrojs/check](https://github.com/withastro/language-tools#readme)
   - [@astrojs/node](https://docs.astro.build/en/guides/integrations-guide/node/)
 
+- [Typescript](https://www.typescriptlang.org/)
+
 - [Vue.js](https://vuejs.org/)
 
   - [@astrojs/vue](https://docs.astro.build/en/guides/integrations-guide/vue/)
 
-- [Typescript](https://www.typescriptlang.org/)
-
 - [Supabase](https://github.com/supabase/supabase-js)
 
 - [TailwindCSS](https://tailwindcss.com)
+
   - [Astro TailwindCSS Integration](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
+
+- [Vue3 Toastify](https://github.com/jerrywu001/vue3-toastify)
 
 ### Development Dependencies:
 

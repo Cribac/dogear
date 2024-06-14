@@ -5,7 +5,12 @@ import node from '@astrojs/node'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [vue(), tailwind()],
+  integrations: [
+    vue({
+      appEntrypoint: './src/pages/app',
+    }), 
+    tailwind()
+  ],
   output: 'server',
   adapter: node({
     mode: 'standalone'
