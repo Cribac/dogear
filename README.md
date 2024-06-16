@@ -42,8 +42,6 @@ pnpm run dev
 
   - [Astro TailwindCSS Integration](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
 
-- [Vue3 Toastify](https://github.com/jerrywu001/vue3-toastify)
-
 ### Development Dependencies:
 
 - [ESLint](https://eslint.org)

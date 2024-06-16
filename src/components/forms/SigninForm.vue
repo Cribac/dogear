@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { toast } from 'vue3-toastify'
+import { ref } from 'vue'
+
+const errorMessage = ref<string | null>(null)
 
 async function onSubmit(e: Event) {
   e.preventDefault()
@@ -10,13 +12,9 @@ async function onSubmit(e: Event) {
   })
   if (response.status !== 200) {
     const data = await response.json()
-    toast(data.message, {
-      type: 'error',
-      hideProgressBar: true,
-      autoClose: false,
-      position: 'top-center',
-    })
+    errorMessage.value = data.message
   } else {
+    errorMessage.value = null
     window.location.href = '/'
   }
 }
@@ -30,6 +28,9 @@ async function onSubmit(e: Event) {
       <label for="password">Password</label>
       <input type="password" name="password" id="password" />
       <button type="submit">Login</button>
+      <div v-if="errorMessage">
+        {{ errorMessage }}
+      </div>
     </form>
   </div>
 </template>
