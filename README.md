@@ -38,9 +38,16 @@ pnpm run dev
 
 - [Supabase](https://github.com/supabase/supabase-js)
 
-- [TailwindCSS](https://tailwindcss.com)
+- [TailwindCSS](https://tailwindcss.com) / [shadcn-vue](https://www.shadcn-vue.com/)
 
   - [Astro TailwindCSS Integration](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
+
+  - [tailwind-merge](https://github.com/dcastil/tailwind-merge) for shadcn-vue
+  - [tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate) for shadcn-vue
+  - [class-variance-authority](https://github.com/joe-bell/cva#readme) for shadcn-vue
+  - [clsx](https://github.com/lukeed/clsx#readme) for shadcn-vue
+  - [lucide-vue-next](https://lucide.dev/) for shadcn-vue
+  - [radix-vue](https://github.com/radix-vue/radix-vue) for shadcn-vue
 
 ### Development Dependencies:
 
