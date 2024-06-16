@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
 import { ref } from 'vue'
 
 const errorMessage = ref<string | null>(null)
@@ -23,10 +25,14 @@ async function onSubmit(e: Event) {
 <template>
   <div>
     <form @submit="onSubmit">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
+      <Label for="email">
+        Email
+      </Label>
+      <Input id="email" type="email" name="email" placeholder="me@example.com" />
+      <Label for="password">
+        Password
+      </Label>
+      <Input id="password" type="password" name="password" />
       <button type="submit">Login</button>
       <div v-if="errorMessage">
         {{ errorMessage }}
