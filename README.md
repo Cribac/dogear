@@ -73,4 +73,7 @@ pnpm run dev
 
 - [Supabase CLI](https://supabase.com/docs/reference/cli/start)
 
+- [Yup](https://github.com/jquense/yup)
+
 - [Vee-Validate](https://github.com/logaretm/vee-validate/)
+  - [Vee-Validate/Yup](https://vee-validate.logaretm.com/v4/guide/composition-api/typed-schema/)

@@ -36,6 +36,7 @@
     "@types/node": "20.14.2",
     "@typescript-eslint/eslint-plugin": "7.13.0",
     "@typescript-eslint/parser": "7.13.0",
+    "@vee-validate/yup": "4.13.1",
     "@vitejs/plugin-vue": "5.0.5",
     "@vue/test-utils": "2.4.6",
     "eslint": "9.4.0",
@@ -46,6 +47,7 @@
     "supabase": "1.176.10",
     "typescript-eslint": "7.13.0",
     "vee-validate": "4.13.1",
-    "vitest": "1.6.0"
+    "vitest": "1.6.0",
+    "yup": "1.4.0"
   }
 }
