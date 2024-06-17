@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useForm } from 'vee-validate'
 import { signinSchema } from '@/lib/forms/validators/signin'
 import { buildFormData } from '@/lib/forms/helper'
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 
@@ -34,18 +35,23 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <div>
-    <form @submit="onSubmit">
-      <Label for="email"> Email </Label>
-      <Input id="email" type="email" name="email" v-model="email" v-bind="emailAttrs" />
-      <div>{{ errors.email }}</div>
-      <Label for="password"> Password </Label>
-      <Input id="password" type="password" name="password" v-model="password" v-bind="passwordAttrs" />
-      <div>{{ errors.password }}</div>
-      <button type="submit">Login</button>
-      <div v-if="errorMessage">
-        {{ errorMessage }}
-      </div>
-    </form>
-  </div>
+  <Card>
+    <CardHeader>
+      <CardTitle>Sign up</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <form @submit="onSubmit">
+        <Label for="email"> Email </Label>
+        <Input id="email" type="email" name="email" v-model="email" v-bind="emailAttrs" />
+        <div>{{ errors.email }}</div>
+        <Label for="password"> Password </Label>
+        <Input id="password" type="password" name="password" v-model="password" v-bind="passwordAttrs" />
+        <div>{{ errors.password }}</div>
+        <button type="submit">Login</button>
+        <div v-if="errorMessage">
+          {{ errorMessage }}
+        </div>
+      </form>
+    </CardContent>
+  </Card>
 </template>
