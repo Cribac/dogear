@@ -1,29 +1,22 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useForm } from 'vee-validate'
-import { object, string } from 'yup'
-import { toTypedSchema } from '@vee-validate/yup'
+import { signinSchema } from '@/lib/forms/validators/signin'
+import { buildFormData } from '@/lib/forms/helper'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 
 const errorMessage = ref<string | null>(null)
 
 const { errors, handleSubmit, defineField } = useForm({
-  validationSchema: object({
-    email: string().required().email(),
-    password: string().min(0).required(),
-  }),
+  validationSchema: signinSchema,
 })
 
 const [email, emailAttrs] = defineField('email')
 const [password, passwordAttrs] = defineField('password')
 
 const onSubmit = handleSubmit(async (values) => {
-  console.log(JSON.stringify(values))
-
-  const formData = new FormData()
-  formData.append('email', values.email)
-  formData.append('password', values.password)
+  const formData = buildFormData(values)
 
   const response = await fetch('/api/auth/signin', {
     method: 'POST',
