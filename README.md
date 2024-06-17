@@ -72,3 +72,5 @@ pnpm run dev
 - [Vue Test Utils](https://github.com/vuejs/test-utils)
 
 - [Supabase CLI](https://supabase.com/docs/reference/cli/start)
+
+- [Vee-Validate](https://github.com/logaretm/vee-validate/)
