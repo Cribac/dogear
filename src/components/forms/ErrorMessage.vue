@@ -9,6 +9,11 @@ const props = defineProps<Props>()
 <template>
   <div>
     <slot />
-    <div class="text-red-500 mt-1">{{ props.message }}</div>
+    <div 
+      v-if="props.message" 
+      class="text-red-500 mt-1"
+    >
+      {{ props.message }}
+    </div>
   </div>
 </template>
