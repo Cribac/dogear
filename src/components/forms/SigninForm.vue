@@ -3,11 +3,13 @@ import { ref } from 'vue'
 import { useForm } from 'vee-validate'
 import { signinSchema } from '@/lib/forms/validators/signin'
 import { buildFormData } from '@/lib/forms/helper'
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
+import ErrorMessage from '@/components/forms/ErrorMessage.vue'
 
-const errorMessage = ref<string | null>(null)
+const serverErrorMessage = ref('')
 
 const { errors, handleSubmit, defineField } = useForm({
   validationSchema: signinSchema,
@@ -25,33 +27,32 @@ const onSubmit = handleSubmit(async (values) => {
   })
   if (response.status !== 200) {
     const data = await response.json()
-    errorMessage.value = data.message
+    serverErrorMessage.value = data.message
   } else {
-    errorMessage.value = null
+    serverErrorMessage.value = ''
     window.location.href = '/'
   }
 })
-
 </script>
 
 <template>
   <Card>
     <CardHeader>
-      <CardTitle>Sign up</CardTitle>
+      <CardTitle>Sign in</CardTitle>
     </CardHeader>
     <CardContent>
       <form @submit="onSubmit">
-        <Label for="email"> Email </Label>
-        <Input id="email" type="email" name="email" v-model="email" v-bind="emailAttrs" />
-        <div>{{ errors.email }}</div>
-        <Label for="password"> Password </Label>
-        <Input id="password" type="password" name="password" v-model="password" v-bind="passwordAttrs" />
-        <div>{{ errors.password }}</div>
-        <button type="submit">Login</button>
-        <div v-if="errorMessage">
-          {{ errorMessage }}
-        </div>
+        <ErrorMessage :message="errors.email">
+          <Label for="email"> Email </Label>
+          <Input id="email" type="email" name="email" v-model="email" v-bind="emailAttrs" />
+        </ErrorMessage>
+        <ErrorMessage :message="errors.password" class="mt-4">
+          <Label for="password" class="pt-6"> Password </Label>
+          <Input id="password" type="password" name="password" v-model="password" v-bind="passwordAttrs" />
+        </ErrorMessage>
+        <Button type="submit">Login</Button>
       </form>
+      <ErrorMessage v-if="serverErrorMessage" :message="serverErrorMessage" />
     </CardContent>
   </Card>
 </template>
