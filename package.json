@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest --dom",
+    "test": "vitest --dom --reporter=basic --disable-console-intercept",
     "lint": "eslint"
   },
   "dependencies": {
