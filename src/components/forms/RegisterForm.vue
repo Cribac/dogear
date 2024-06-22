@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useForm } from 'vee-validate'
-import { signinSchema } from '@/lib/forms/validators/signin'
+import { registerSchema } from '@/lib/forms/validators/register'
 import { buildFormData } from '@/lib/forms/helper'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -12,7 +12,7 @@ import ErrorMessage from '@/components/forms/ErrorMessage.vue'
 const serverErrorMessage = ref('')
 
 const { errors, handleSubmit, defineField } = useForm({
-  validationSchema: signinSchema,
+  validationSchema: registerSchema,
 })
 
 const [email, emailAttrs] = defineField('email')
@@ -21,7 +21,7 @@ const [password, passwordAttrs] = defineField('password')
 const onSubmit = handleSubmit(async (values) => {
   const formData = buildFormData(values)
 
-  const response = await fetch('/api/auth/signin', {
+  const response = await fetch('/api/auth/register', {
     method: 'POST',
     body: formData,
   })
@@ -38,7 +38,7 @@ const onSubmit = handleSubmit(async (values) => {
 <template>
   <Card>
     <CardHeader>
-      <CardTitle>Sign in</CardTitle>
+      <CardTitle>Register Account</CardTitle>
     </CardHeader>
     <CardContent>
       <form @submit="onSubmit">
@@ -67,7 +67,7 @@ const onSubmit = handleSubmit(async (values) => {
             name="password"
           />
         </ErrorMessage>
-        <Button type="submit">Login</Button>
+        <Button type="submit">Register</Button>
       </form>
       <ErrorMessage 
         v-if="serverErrorMessage"
