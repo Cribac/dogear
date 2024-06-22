@@ -3,9 +3,7 @@ import { supabase } from '@/lib/supabase'
 import { hasRegistration } from '@/config'
 
 export const POST: APIRoute = async ({ request, redirect }) => {
-  console.log('i am seen')
   if (hasRegistration) {
-    console.log('i am not seen')
     const formData = await request.formData()
     const email = formData.get('email')?.toString()
     const password = formData.get('password')?.toString()
