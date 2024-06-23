@@ -37,6 +37,8 @@ pnpm run dev
   - [@astrojs/vue](https://docs.astro.build/en/guides/integrations-guide/vue/)
 
 - [Supabase](https://github.com/supabase/supabase-js)
+  - [Postgres](https://github.com/porsager/postgres)
+  - [Drizzle ORM](https://orm.drizzle.team/)
 
 - [TailwindCSS](https://tailwindcss.com) / [shadcn-vue](https://www.shadcn-vue.com/)
 
@@ -72,6 +74,8 @@ pnpm run dev
 - [Vue Test Utils](https://github.com/vuejs/test-utils)
 
 - [Supabase CLI](https://supabase.com/docs/reference/cli/start)
+
+- [Drizzle-Kit](https://github.com/drizzle-team/drizzle-kit-mirror#readme)
 
 - [Yup](https://github.com/jquense/yup)
 
