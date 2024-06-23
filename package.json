@@ -9,7 +9,16 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest --dom --reporter=basic --disable-console-intercept",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:push": "drizzle-kit push",
+    "db:pull": "drizzle-kit introspect",
+    "db:generate": "drizzle-kit generate",
+    "db:drop": "drizzle-kit drop",
+    "db:check": "drizzle-kit check",
+    "db:up": "drizzle-kit up",
+    "db:migrate": "npx tsx scripts/migrations/migration.ts",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "npx tsx scripts/seed.ts"
   },
   "dependencies": {
     "@astrojs/check": "0.7.0",
