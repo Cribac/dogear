@@ -1,9 +1,12 @@
+import * as dotenv from 'dotenv'
+dotenv.config({ path: '.env' })
+
 const {
   PUBLIC_SUPABASE_API_URL,
   PUBLIC_SUPABASE_DB_URL,
   PUBLIC_SUPABASE_KEY,
   PUBLIC_ENABLE_REGISTRATION
-} = import.meta.env
+} = import.meta.env || process.env
 
 const DB_URL = PUBLIC_SUPABASE_DB_URL
 const DB_API_URL = PUBLIC_SUPABASE_API_URL
