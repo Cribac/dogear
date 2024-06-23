@@ -33,11 +33,11 @@ pnpm run dev
 - [Typescript](https://www.typescriptlang.org/)
 
 - [Vue.js](https://vuejs.org/)
-
   - [@astrojs/vue](https://docs.astro.build/en/guides/integrations-guide/vue/)
 
 - [Supabase](https://github.com/supabase/supabase-js)
   - [Postgres](https://github.com/porsager/postgres)
+  - [node-postgres/pg](https://github.com/brianc/node-postgres)
   - [Drizzle ORM](https://orm.drizzle.team/)
 
 - [TailwindCSS](https://tailwindcss.com) / [shadcn-vue](https://www.shadcn-vue.com/)
@@ -50,6 +50,8 @@ pnpm run dev
   - [clsx](https://github.com/lukeed/clsx#readme) for shadcn-vue
   - [lucide-vue-next](https://lucide.dev/) for shadcn-vue
   - [radix-vue](https://github.com/radix-vue/radix-vue) for shadcn-vue
+
+- [dotenv](https://github.com/motdotla/dotenv#readme)
 
 ### Development Dependencies:
 
@@ -65,6 +67,8 @@ pnpm run dev
 
 - [Types Node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node)
 
+- [Types Pg](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/pg)
+
 - [Playwright Test](https://playwright.dev)
 
 - [Vitest](https://github.com/vitest-dev/vitest#readme)
@@ -72,6 +76,8 @@ pnpm run dev
 - [Happy DOM](https://github.com/capricorn86/happy-dom)
 
 - [Vue Test Utils](https://github.com/vuejs/test-utils)
+
+- [Faker-JS](https://github.com/faker-js/faker#readme)
 
 - [Supabase CLI](https://supabase.com/docs/reference/cli/start)
 
