@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly PUBLIC_SUPABASE_API_URL: string
+  readonly PUBLIC_SUPABASE_DB_URL: string
   readonly PUBLIC_SUPABASE_KEY: string
   readonly PUBLIC_ENABLE_REGISTRATION: string
 }
