@@ -12,8 +12,8 @@ importers:
         specifier: 0.7.0
         version: 0.7.0(typescript@5.4.5)
       '@astrojs/node':
-        specifier: 8.3.0
-        version: 8.3.0(astro@4.10.3(@types/node@20.14.2)(typescript@5.4.5))
+        specifier: 8.3.1
+        version: 8.3.1(astro@4.10.3(@types/node@20.14.2)(typescript@5.4.5))
       '@astrojs/tailwind':
         specifier: 5.1.0
         version: 5.1.0(astro@4.10.3(@types/node@20.14.2)(typescript@5.4.5))(tailwindcss@3.4.4)
@@ -152,8 +152,8 @@ packages:
   '@astrojs/markdown-remark@5.1.0':
     resolution: {integrity: sha512-S6Z3K2hOB7MfjeDoHsotnP/q2UsnEDB8NlNAaCjMDsGBZfTUbWxyLW3CaphEWw08f6KLZi2ibK9yC3BaMhh2NQ==}
 
-  '@astrojs/node@8.3.0':
-    resolution: {integrity: sha512-XskynbRTrpY9nqzc4NDrulNWoynRvVO+8UmEKjw6KZABUYUmjZqN88sa/RXtXl0CPI2sPZ5Gzi3WXH8y2PKd5Q==}
+  '@astrojs/node@8.3.1':
+    resolution: {integrity: sha512-JwJzE1zyNcb2Tnk1PJIiIV2vGadR/h0C7h3WeN50H7S/DbNpkGrfwKrOxxpZwhkujnudddToA9U4yv+IPlCf0g==}
     peerDependencies:
       astro: ^4.2.0
 
@@ -3542,7 +3542,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@8.3.0(astro@4.10.3(@types/node@20.14.2)(typescript@5.4.5))':
+  '@astrojs/node@8.3.1(astro@4.10.3(@types/node@20.14.2)(typescript@5.4.5))':
     dependencies:
       astro: 4.10.3(@types/node@20.14.2)(typescript@5.4.5)
       send: 0.18.0
