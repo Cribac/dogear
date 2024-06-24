@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro'
 import { supabase } from '@/lib/supabase'
-import { hasRegistration } from '@/config'
+import { hasRegistration } from '@/app.config'
 
 export const POST: APIRoute = async ({ request, redirect }) => {
   if (hasRegistration) {

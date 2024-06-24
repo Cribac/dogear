@@ -1,5 +1,5 @@
 import { defineConfig } from 'drizzle-kit'
-import { DB_URL } from '@/config'
+import { DB_URL } from '@/app.config'
 
 if (!DB_URL) {
   console.error('🔴 Cannot find database url')

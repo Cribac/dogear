@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/postgres-js'
 import postgres from 'postgres'
 import * as schema from '@/lib/db/schema'
-import { DB_URL } from '@/config'
+import { DB_URL } from '@/app.config'
 
 const client = postgres(DB_URL, { max: 1 })
 

@@ -1,9 +1,9 @@
 import pg from 'pg'
 import * as dotenv from 'dotenv'
 import { drizzle } from 'drizzle-orm/node-postgres'
-import { product } from '../src/lib/db/schema'
 import { faker } from '@faker-js/faker'
-import { DB_URL } from '../src/config'
+import { DB_URL } from '@/app.config'
+import { product } from '@/lib/db/schema'
 
 dotenv.config({ path: './.env' })
 const { Pool } = pg
