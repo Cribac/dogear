@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv'
 import { drizzle } from 'drizzle-orm/node-postgres'
 import { faker } from '@faker-js/faker'
 import { DB_URL } from '@/app.config'
-import { product } from '@/lib/db/schema'
+// import { product } from '@/lib/db/schema'
 
 dotenv.config({ path: './.env' })
 const { Pool } = pg
@@ -32,7 +32,7 @@ const main = async () => {
     }
 
     console.log('Seed start')
-    await db.insert(product).values(productsData).execute()
+    // await db.insert(product).values(productsData).execute()
     console.log('Seed done')
     await pool.end()
 }
