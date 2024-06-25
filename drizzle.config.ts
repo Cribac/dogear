@@ -6,11 +6,11 @@ if (!DB_URL) {
 }
 
 export default defineConfig({
-  schema: './src/lib/db/schema.ts',
+  schema: './src/lib/db/schemas/*',
   out: './migrations',
   dialect: 'postgresql',
   dbCredentials: {
-    url: DB_URL || ''
+    url: DB_URL
   },
   verbose: true,
   strict: true,
