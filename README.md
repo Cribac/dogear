@@ -77,8 +77,6 @@ pnpm run dev
 
 - [Vue Test Utils](https://github.com/vuejs/test-utils)
 
-- [Faker-JS](https://github.com/faker-js/faker#readme)
-
 - [Supabase CLI](https://supabase.com/docs/reference/cli/start)
 
 - [Drizzle-Kit](https://github.com/drizzle-team/drizzle-kit-mirror#readme)

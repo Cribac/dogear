@@ -17,8 +17,7 @@
     "db:check": "drizzle-kit check",
     "db:up": "drizzle-kit up",
     "db:migrate": "npx tsx scripts/migrations/migration.ts",
-    "db:studio": "drizzle-kit studio",
-    "db:seed": "npx tsx scripts/seed.ts"
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@astrojs/check": "0.7.0",
@@ -45,7 +44,6 @@
   "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
   "devDependencies": {
     "@eslint/js": "9.4.0",
-    "@faker-js/faker": "8.4.1",
     "@playwright/test": "1.44.1",
     "@types/node": "20.14.2",
     "@types/pg": "8.11.6",
