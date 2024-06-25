@@ -1,6 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { supabase } from '../lib/supabase'
+import Layout from '@/layouts/Layout.astro'
+import { supabase } from '@/lib/supabase'
+import { Profile } from '@/lib/db/schemas'
+import db from '@/lib/db/db'
+import { eq } from 'drizzle-orm'
 
 const { cookies, redirect } = Astro
 
@@ -27,7 +30,12 @@ if (error) {
   return redirect('/signin')
 }
 
-const email = data.user?.email
+let email: string | undefined = 'N/A'
+if (data.user) {
+  email = data.user?.email
+  const profile = await db.select().from(Profile).where(eq(Profile.id, data.user?.id))
+  console.log('it worked', profile)
+}
 ---
 
 <Layout title="dashboard">
