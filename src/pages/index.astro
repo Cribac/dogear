@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import NavBar from '@/components/ui/NavBar.vue'
 import { supabase } from '@/lib/supabase'
 import { Profile } from '@/lib/db/schemas'
 import db from '@/lib/db/db'
@@ -30,20 +31,19 @@ if (error) {
   return redirect('/signin')
 }
 
-let email: string | undefined = 'N/A'
+let email: string | null = 'N/A'
 if (data.user) {
-  email = data.user?.email
   const profile = await db.select().from(Profile).where(eq(Profile.id, data.user?.id))
-  console.log('it worked', profile)
+  email = profile[0]?.email
 }
 ---
 
 <Layout title="dashboard">
   <main>
+    <header>
+      <NavBar client:load />
+    </header>
     <h1>Welcome {email}</h1>
     <p>We are happy to see you here</p>
-    <form action="/api/auth/signout">
-      <button type="submit">Sign out</button>
-    </form>
   </main>
 </Layout>
