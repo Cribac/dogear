@@ -8,6 +8,13 @@
       "when": 1719325030564,
       "tag": "0000_dear_zodiak",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1719395661261,
+      "tag": "0001_needy_selene",
+      "breakpoints": true
     }
   ]
 }

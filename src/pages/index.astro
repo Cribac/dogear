@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import NavBar from '@/components/ui/NavBar.vue'
 import { supabase } from '@/lib/supabase'
-import { Profile } from '@/lib/db/schemas'
+import { Profile, Bookmark } from '@/lib/db/schemas'
 import db from '@/lib/db/db'
 import { eq } from 'drizzle-orm'
 
@@ -35,6 +35,14 @@ let email: string | null = 'N/A'
 if (data.user) {
   const profile = await db.select().from(Profile).where(eq(Profile.id, data.user?.id))
   email = profile[0]?.email
+
+  const bookmarks = await db
+    .select()
+    .from(Bookmark)
+    .where(eq(Bookmark.profileId, data.user?.id))
+    .orderBy(Bookmark.created_at)
+
+  console.log('bookmarks', bookmarks)
 }
 ---
 
