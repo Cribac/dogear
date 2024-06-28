@@ -1,7 +1,7 @@
 ---
-import { hasRegistration } from '@/app.config'
 import Layout from '@/layouts/Layout.astro'
-import RegisterForm from '@/components/forms/RegisterForm.vue'
+import { hasRegistration } from '@/app.config'
+import { RegisterForm } from '@/components/forms'
 
 if (!hasRegistration) {
   return Astro.redirect('/')

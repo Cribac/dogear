@@ -7,7 +7,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import ErrorMessage from '@/components/forms/ErrorMessage.vue'
+import { ErrorMessage } from '@/components/forms'
 
 const serverErrorMessage = ref('')
 

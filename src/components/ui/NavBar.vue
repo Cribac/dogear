@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { SignoutForm } from '@/components/forms'
+import { ref } from 'vue'
+
+const showMenu = ref(false)
+const toggleNav = () => {
+  showMenu.value = !showMenu.value
+}
+</script>
+
 <template>
   <div class="bg-indigo-600">
     <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
@@ -37,13 +47,3 @@
     </nav>
   </div>
 </template>
-
-<script setup lang="ts">
-import SignoutForm from '@/components/forms/SignoutForm.vue'
-import { ref } from 'vue'
-
-const showMenu = ref(false)
-const toggleNav = () => {
-  showMenu.value = !showMenu.value
-}
-</script>
