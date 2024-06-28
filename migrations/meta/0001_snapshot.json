@@ -1,6 +1,6 @@
 {
-  "id": "6647b22b-8e04-45b9-bb75-63740959c8b1",
-  "prevId": "9e097fbe-aef2-423c-9179-facf026de90e",
+  "id": "7e79731c-96da-4fe7-b021-66d1ab5bfbe3",
+  "prevId": "b94e3c72-6be5-4361-8390-025bf2e64234",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -53,15 +53,15 @@
         "bookmark_profile_id_profile_id_fk": {
           "name": "bookmark_profile_id_profile_id_fk",
           "tableFrom": "bookmark",
-          "tableTo": "profile",
           "columnsFrom": [
             "profile_id"
           ],
+          "tableTo": "profile",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         }
       },
       "compositePrimaryKeys": {},
@@ -115,16 +115,16 @@
         "profile_id_users_id_fk": {
           "name": "profile_id_users_id_fk",
           "tableFrom": "profile",
-          "tableTo": "users",
-          "schemaTo": "auth",
           "columnsFrom": [
             "id"
           ],
+          "tableTo": "users",
+          "schemaTo": "auth",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         }
       },
       "compositePrimaryKeys": {},
