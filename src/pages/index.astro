@@ -47,10 +47,10 @@ if (data.user) {
 ---
 
 <Layout title="dashboard">
+  <header>
+    <NavBar client:load />
+  </header>
   <main>
-    <header>
-      <NavBar client:load />
-    </header>
     <h1>Welcome {email}</h1>
     <p>We are happy to see you here</p>
   </main>
