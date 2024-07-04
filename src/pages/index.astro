@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabase'
 import { Profile, Bookmark } from '@/lib/db/schemas'
 import db from '@/lib/db/db'
 import { eq } from 'drizzle-orm'
+import CreateBookmark from '@/components/forms/CreateBookmark.vue'
 
 const { cookies, redirect } = Astro
 
@@ -53,5 +54,9 @@ if (data.user) {
   <main>
     <h1>Welcome {email}</h1>
     <p>We are happy to see you here</p>
+    <CreateBookmark
+      accessToken={accessToken.value} 
+      client:visible 
+    />
   </main>
 </Layout>
