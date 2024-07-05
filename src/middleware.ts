@@ -1,5 +1,6 @@
 import { defineMiddleware } from 'astro:middleware'
 import { supabase } from '@/lib/supabase'
+import { getJsonResponse } from '@/lib/responses'
 
 export const onRequest = defineMiddleware(async (context , next) => {
   const response = await next()
@@ -26,12 +27,7 @@ export const onRequest = defineMiddleware(async (context , next) => {
     if (token && session?.access_token !== undefined && (token === session?.access_token)) {
       return response
     } else {
-      return new Response(
-        JSON.stringify({
-          message: 'Unauthorized',
-        }),
-        { status: 401 },
-      )
+      return getJsonResponse(401)
     }
   }
 

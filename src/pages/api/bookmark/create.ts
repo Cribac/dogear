@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro'
 import { supabase } from '@/lib/supabase'
 import { db } from '@/lib/db/db'
 import { Bookmark } from '@/lib/db/schemas'
+import { getJsonResponse } from '@/lib/responses'
 
 export const POST: APIRoute = async ({ request }) => {
   // @TODO - refactor this to be more DRY
@@ -10,12 +11,7 @@ export const POST: APIRoute = async ({ request }) => {
     const url = formData.get('url')?.toString()
     const name = formData.get('name')?.toString()
     if (!url || !name) {
-      return new Response(
-        JSON.stringify({
-          message: 'Url and name are required',
-        }),
-        { status: 400 },
-      )
+      return getJsonResponse(400, 'Url and name are required')
     }
 
     const { data: { user } } = await supabase.auth.getUser()
@@ -30,19 +26,13 @@ export const POST: APIRoute = async ({ request }) => {
         })
     }
 
-    return new Response(
-      JSON.stringify({
-        message: 'All fine and dandy',
-      }),
-      { status: 200 },
-    )
+    return getJsonResponse(200)
     
   } catch (error) {
-    return new Response(
-      JSON.stringify({
-        message: 'FATAL ERROR: ' + error,
-      }),
-      { status: 500 },
-    )
+    let response = getJsonResponse(500)
+    if (error instanceof Error) {
+      response = getJsonResponse(500, error.message)
+    }
+    return response
   }
 }
