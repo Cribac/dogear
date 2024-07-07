@@ -8,13 +8,14 @@ import { ErrorMessage } from '@/components/forms'
 import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
 import { buildFormData } from '@/lib/forms/helper'
 
-// @TODO: check if there's a better way to do this
+// @TODO: check to pass profileId somehow
 const props = defineProps({
-  accessToken: {
+  profileId: {
     type: String,
-    required: true,
-  }
+  },
 })
+
+const { PUBLIC_APP_API_TOKEN } = import.meta.env
 
 const serverErrorMessage = ref('')
 
@@ -32,14 +33,17 @@ const onSubmit = handleSubmit(async (values) => {
     method: 'POST',
     body: formData,
     headers: {
-      Authorization: `Bearer ${props.accessToken}`,
+      Authorization: `Bearer ${PUBLIC_APP_API_TOKEN}`
     },
   })
   if (response.status !== 200) {
-    const data = await response.json()
-    serverErrorMessage.value = data.message
+    const errorData = await response.json()
+    serverErrorMessage.value = errorData.message
   } else {
     serverErrorMessage.value = ''
+    const data = await response.json()
+    const event = new CustomEvent('BookmarkCreated', { detail: data })
+    window.dispatchEvent(event)
   }
 })
 </script>
@@ -73,9 +77,9 @@ const onSubmit = handleSubmit(async (values) => {
       />
     </ErrorMessage>
     <Button type="submit">Create bookmark</Button>
+    <ErrorMessage 
+      v-if="serverErrorMessage"
+      :message="serverErrorMessage"
+    />
   </form>
-  <ErrorMessage 
-    v-if="serverErrorMessage"
-    :message="serverErrorMessage"
-  />
 </template>

@@ -16,18 +16,23 @@ export const POST: APIRoute = async ({ request }) => {
 
     const { data: { user } } = await supabase.auth.getUser()
 
-    if (user?.id) {
-      await db
+    if (user) {
+      const res = await db
         .insert(Bookmark)
         .values({
           url,
           name,
           profileId: user.id,
-        })
+        }).returning()
+        
+      return new Response(
+        JSON.stringify(res), {
+          status: 200,
+        }
+      )
+    } else {
+      return getJsonResponse(400, 'User not found')
     }
-
-    return getJsonResponse(200)
-    
   } catch (error) {
     let response = getJsonResponse(500)
     if (error instanceof Error) {
