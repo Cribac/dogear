@@ -9,6 +9,8 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { ErrorMessage } from '@/components/forms'
 
+const { PUBLIC_APP_API_TOKEN } = import.meta.env
+
 const serverErrorMessage = ref('')
 
 const { errors, handleSubmit, defineField } = useForm({
@@ -23,6 +25,9 @@ const onSubmit = handleSubmit(async (values) => {
 
   const response = await fetch('/api/auth/signin', {
     method: 'POST',
+    headers: {
+      Authorization: `Bearer ${PUBLIC_APP_API_TOKEN}`,
+    },
     body: formData,
   })
   if (response.status !== 200) {

@@ -14,5 +14,6 @@ export default defineConfig({
   output: 'server',
   adapter: node({
     mode: 'standalone'
-  })
+  }),
+  site: 'http://localhost:4321'
 })

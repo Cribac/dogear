@@ -10,4 +10,4 @@ export const db = drizzle(client, {
   logger: true
 })
 
-export default db;
+export default db
