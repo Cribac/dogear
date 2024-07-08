@@ -1,11 +1,13 @@
 ---
+import astroConfig from 'astro.config.mjs'
 import Layout from '@/layouts/Layout.astro'
 import NavBar from '@/components/ui/NavBar.vue'
 import { supabase } from '@/lib/supabase'
-import { Profile, Bookmark } from '@/lib/db/schemas'
+import { Profile } from '@/lib/db/schemas'
 import db from '@/lib/db/db'
 import { eq } from 'drizzle-orm'
 import CreateBookmark from '@/components/forms/CreateBookmark.vue'
+import BookmarkList from '@/components/BookmarkList.vue'
 
 const { cookies, redirect } = Astro
 
@@ -33,18 +35,13 @@ if (error) {
 }
 
 let email: string | null = 'N/A'
+
 if (data.user) {
   const profile = await db.select().from(Profile).where(eq(Profile.id, data.user?.id))
   email = profile[0]?.email
-
-  const bookmarks = await db
-    .select()
-    .from(Bookmark)
-    .where(eq(Bookmark.profileId, data.user?.id))
-    .orderBy(Bookmark.created_at)
-
-  console.log('bookmarks', bookmarks)
 }
+
+const { site } = astroConfig
 ---
 
 <Layout title="dashboard">
@@ -55,8 +52,16 @@ if (data.user) {
     <h1>Welcome {email}</h1>
     <p>We are happy to see you here</p>
     <CreateBookmark
-      accessToken={accessToken.value} 
-      client:visible 
+      profileId={data.user?.id}
+      client:visible
     />
+    { 
+      data.user && 
+      <BookmarkList
+        userId={data.user.id}
+        site={site}
+        client:visible 
+      />
+    }
   </main>
 </Layout>

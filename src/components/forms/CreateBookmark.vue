@@ -8,7 +8,6 @@ import { ErrorMessage } from '@/components/forms'
 import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
 import { buildFormData } from '@/lib/forms/helper'
 
-// @TODO: check to pass profileId somehow
 const props = defineProps({
   profileId: {
     type: String,
@@ -27,7 +26,7 @@ const [url, urlAttrs] = defineField('url')
 const [name, nameAttrs] = defineField('name')
 
 const onSubmit = handleSubmit(async (values) => {
-  const formData = buildFormData(values)
+  const formData = buildFormData(values, props.profileId)
 
   const response = await fetch('/api/bookmark/create', {
     method: 'POST',
