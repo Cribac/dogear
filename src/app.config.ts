@@ -18,6 +18,7 @@ const DB_API_URL = PUBLIC_SUPABASE_API_URL
 const DB_KEY = PUBLIC_SUPABASE_KEY
 
 const hasRegistration = PUBLIC_ENABLE_REGISTRATION === 'true'
+const site = 'http://localhost:4321'
 
 export {
   APP_API_SECRET,
@@ -27,5 +28,6 @@ export {
   DB_URL,
   DB_API_URL,
   DB_KEY,
-  hasRegistration 
+  hasRegistration,
+  site
 }
