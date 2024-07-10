@@ -1,6 +1,6 @@
 import { defineMiddleware } from 'astro:middleware'
 import { decrypt } from '@/lib/crypto'
-import { getJsonResponse } from '@/lib/responses'
+import { getJsonResponse } from '@/lib/connectivety'
 import { APP_API_PHRASE } from '@/app.config'
 
 export const onRequest = defineMiddleware(async (context , next) => {

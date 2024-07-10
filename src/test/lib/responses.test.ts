@@ -1,5 +1,5 @@
 import { assert, expect, test } from 'vitest'
-import { getJsonResponse } from '@/lib/responses'
+import { getJsonResponse } from '@/lib/connectivety'
 
 test('getJsonResponse()', () => {
   assert(getJsonResponse(200) instanceof Response)

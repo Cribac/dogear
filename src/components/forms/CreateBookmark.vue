@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input'
 import { ErrorMessage } from '@/components/forms'
 import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
 import { buildFormData } from '@/lib/forms/helper'
+import { fetchResponse } from '@/lib/connectivety'
 
 const props = defineProps({
   profileId: {
@@ -31,15 +32,11 @@ const [url, urlAttrs] = defineField('url')
 const [name, nameAttrs] = defineField('name')
 
 const onSubmit = handleSubmit(async (values) => {
+  const url = '/api/bookmark/create'
   const formData = buildFormData(values, props.profileId)
 
-  const response = await fetch('/api/bookmark/create', {
-    method: 'POST',
-    body: formData,
-    headers: {
-      Authorization: `Bearer ${PUBLIC_APP_API_TOKEN}`
-    },
-  })
+  const response = await fetchResponse(url, 'POST', PUBLIC_APP_API_TOKEN, formData)
+
   if (response.status !== 200) {
     const errorData = await response.json()
     serverErrorMessage.value = errorData.message

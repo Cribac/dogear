@@ -16,4 +16,4 @@ function getJsonResponse(status: number, message?: string): Response {
   )
 }
 
-export { getJsonResponse }
+export default getJsonResponse

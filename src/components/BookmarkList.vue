@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { fetchResponse } from '@/lib/connectivety'
 import BookmarkItem from '@/components/BookmarkItem.vue'
 
 const props = defineProps({
@@ -17,11 +18,8 @@ const { PUBLIC_APP_API_TOKEN } = import.meta.env
 const bookmarkList = ref()
 
 async function fetchBookmarks (userId: string, token: string) {
-  const response = await fetch(`${props.site}/api/bookmark/all/${userId}.json`, {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  })
+  const url = `${props.site}/api/bookmark/all/${userId}.json`
+  const response = await fetchResponse(url, 'GET', token)
 
   const result = await response.json()
 
@@ -29,12 +27,8 @@ async function fetchBookmarks (userId: string, token: string) {
 }
 
 async function deleteBookmark (id: string) {
-  const response = await fetch(`${props.site}/api/bookmark/delete/${id}.json`, {
-    method: 'DELETE',
-    headers: {
-      Authorization: `Bearer ${PUBLIC_APP_API_TOKEN}`
-    }
-  })
+  const url = `${props.site}/api/bookmark/delete/${id}.json`
+  const response = await fetchResponse(url, 'DELETE', PUBLIC_APP_API_TOKEN)
 
   const result = await response.json()
 
