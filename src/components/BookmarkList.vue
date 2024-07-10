@@ -56,7 +56,6 @@ onMounted(async () => {
 
 <template>
   <div id="bookmarks">
-    Here be dragons
     <BookmarkItem
       v-for="bookmark in bookmarkList"
       :key="bookmark.id"

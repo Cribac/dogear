@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useForm } from 'vee-validate'
+import {
+  Card,
+  CardContent,
+  CardFooter
+} from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
@@ -49,36 +54,42 @@ const onSubmit = handleSubmit(async (values) => {
 
 <template>
   <form @submit="onSubmit">
-    <ErrorMessage
-      :message="errors.url"
-    >
-      <Label for="url">URL</Label>
-      <Input
-        v-model="url"
-        v-bind="urlAttrs"
-        id="url"
-        name="url"
-        type="url"
-      />
-    </ErrorMessage>
+    <Card>
+      <CardContent>
+        <ErrorMessage
+          :message="errors.url"
+        >
+          <Label for="url">URL</Label>
+          <Input
+            v-model="url"
+            v-bind="urlAttrs"
+            id="url"
+            name="url"
+            type="url"
+          />
+        </ErrorMessage>
 
-    <ErrorMessage
-      :message="errors.name"
-      class="mt-4"
-    >
-      <Label for="name">Name</Label>
-      <Input
-        v-model="name"
-        v-bind="nameAttrs"
-        id="name"
-        name="name"
-        type="text"
-      />
-    </ErrorMessage>
-    <Button type="submit">Create bookmark</Button>
-    <ErrorMessage 
-      v-if="serverErrorMessage"
-      :message="serverErrorMessage"
-    />
+        <ErrorMessage
+          :message="errors.name"
+          class="mt-4"
+        >
+          <Label for="name">Name</Label>
+          <Input
+            v-model="name"
+            v-bind="nameAttrs"
+            id="name"
+            name="name"
+            type="text"
+          />
+        </ErrorMessage>
+      </CardContent>
+      <CardFooter>
+        <Button type="submit">Create bookmark</Button>
+        <ErrorMessage 
+          v-if="serverErrorMessage"
+          :message="serverErrorMessage"
+        />
+      </CardFooter>
+    </Card>
   </form>
 </template>
