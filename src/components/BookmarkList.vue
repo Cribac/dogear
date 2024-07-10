@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import BookmarkItem from '@/components/BookmarkItem.vue'
 
 const props = defineProps({
   userId: {
@@ -41,12 +42,11 @@ onMounted(async () => {
 <template>
   <div id="bookmarks">
     Here be dragons
-    <div 
+    <BookmarkItem
       v-for="bookmark in bookmarkList"
       :key="bookmark.id"
-      class="mb-4"  
-    >
-      {{ bookmark.name }}
-    </div>
+      :bookmark="bookmark"
+      class="mb-4"
+    />  
   </div>
 </template>
