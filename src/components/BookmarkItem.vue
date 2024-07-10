@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { Button } from '@/components/ui/button';
 
 const props = defineProps({
   bookmark: {
@@ -25,7 +26,11 @@ const { bookmark } = props
       </CardDescription>
     </CardHeader>
     <CardFooter>
-      FOOTER
+      <Button
+        @click="$emit('deleteBookmark', bookmark?.id)"
+      >
+        Delete
+    </Button>
     </CardFooter>
   </Card>
 </template>

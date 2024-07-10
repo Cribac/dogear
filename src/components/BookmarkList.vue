@@ -28,6 +28,21 @@ async function fetchBookmarks (userId: string, token: string) {
   return result
 }
 
+async function deleteBookmark (id: string) {
+  const response = await fetch(`${props.site}/api/bookmark/delete/${id}.json`, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${PUBLIC_APP_API_TOKEN}`
+    }
+  })
+
+  const result = await response.json()
+
+  bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
+  
+  return result
+}
+
 onMounted(async () => {
   bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
 
@@ -46,6 +61,7 @@ onMounted(async () => {
       v-for="bookmark in bookmarkList"
       :key="bookmark.id"
       :bookmark="bookmark"
+      @deleteBookmark="deleteBookmark"
       class="mb-4"
     />  
   </div>
