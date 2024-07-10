@@ -9,7 +9,9 @@ export default defineConfig({
     vue({
       appEntrypoint: './src/pages/app',
     }), 
-    tailwind()
+    tailwind({
+      applyBaseStyles: false
+    })
   ],
   output: 'server',
   adapter: node({
