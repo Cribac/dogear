@@ -12,7 +12,7 @@ import { Input } from '@/components/ui/input'
 import { ErrorMessage } from '@/components/forms'
 import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
 import { buildFormData } from '@/lib/forms/helper'
-import { fetchResponse } from '@/lib/connectivety'
+import { fetchResponse } from '@/lib/connectivity'
 
 const props = defineProps({
   profileId: {

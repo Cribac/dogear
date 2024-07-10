@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro'
 import { db } from '@/lib/db/db'
 import { Bookmark } from '@/lib/db/schemas'
-import { getJsonResponse } from '@/lib/connectivety'
+import { getJsonResponse } from '@/lib/connectivity'
 
 export const POST: APIRoute = async ({ request }) => {
   try {

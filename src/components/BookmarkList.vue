@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { fetchResponse } from '@/lib/connectivety'
+import { fetchResponse } from '@/lib/connectivity'
 import BookmarkItem from '@/components/BookmarkItem.vue'
 
 const props = defineProps({
