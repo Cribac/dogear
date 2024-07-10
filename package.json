@@ -29,7 +29,7 @@
     "astro": "4.11.3",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
-    "drizzle-orm": "0.31.2",
+    "drizzle-orm": "0.31.4",
     "dotenv": "16.4.5",
     "lucide-vue-next": "0.403.0",
     "pg": "8.12.0",
