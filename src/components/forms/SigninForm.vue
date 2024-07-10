@@ -3,7 +3,12 @@ import { ref } from 'vue'
 import { useForm } from 'vee-validate'
 import { signinSchema } from '@/lib/forms/validators/signin'
 import { buildFormData } from '@/lib/forms/helper'
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { 
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent 
+} from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
@@ -72,7 +77,12 @@ const onSubmit = handleSubmit(async (values) => {
             name="password"
           />
         </ErrorMessage>
-        <Button type="submit">Login</Button>
+        <Button 
+          class="mt-4"
+          type="submit"
+        >
+          Sign in
+        </Button>
       </form>
       <ErrorMessage 
         v-if="serverErrorMessage"
