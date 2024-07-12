@@ -50,6 +50,7 @@ pnpm run dev
   - [clsx](https://github.com/lukeed/clsx#readme) for shadcn-vue
   - [lucide-vue-next](https://lucide.dev/) for shadcn-vue
   - [radix-vue](https://github.com/radix-vue/radix-vue) for shadcn-vue
+  - [tanstack-vue-table](https://tanstack.com/table/latest) for shadcn-vue
 
 - [dotenv](https://github.com/motdotla/dotenv#readme)
 
