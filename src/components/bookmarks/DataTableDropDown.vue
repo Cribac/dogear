@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { MoreHorizontal } from 'lucide-vue-next'
-import { Trash2 } from 'lucide-vue-next'
+import { Trash2, Pencil } from 'lucide-vue-next'
 
 defineProps<{
   bookmark: {
@@ -20,10 +20,6 @@ defineProps<{
 defineEmits<{
   (e: 'expand'): void
 }>()
-
-function copy(id: string) {
-  navigator.clipboard.writeText(id)
-}
 
 function emitDelete (id: string) {
   const event = new CustomEvent('DeleteBookmark', { detail: id })
@@ -41,11 +37,9 @@ function emitDelete (id: string) {
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">
       <DropdownMenuLabel>Actions</DropdownMenuLabel>
-      <DropdownMenuItem @click="copy(bookmark.id)">
-        Copy bookmark ID
-      </DropdownMenuItem>
       <DropdownMenuItem @click="$emit('expand')">
-        Expand
+        <Pencil class="w-4 h-4 mr-2" />
+        Edit
       </DropdownMenuItem>
       <DropdownMenuSeparator />
       <DropdownMenuItem

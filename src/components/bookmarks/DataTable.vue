@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="TData, TValue">
+<script setup lang="ts" generic="TData extends Bookmark, TValue">
 import { ref } from 'vue'
 import type { 
   ColumnDef,
@@ -26,6 +26,7 @@ import {
 import { valueUpdater } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import EditBookmark from '@/components/forms/EditBookmark.vue'
 
 const props = defineProps<{
   columns: ColumnDef<TData, TValue>[]
@@ -81,14 +82,17 @@ const expanded = ref<ExpandedState>({})
       <TableBody>
         <template v-if="table.getRowModel().rows?.length">
           <template v-for="row in table.getRowModel().rows" :key="row.id">
-            <TableRow :data-state="row.getIsSelected() ? 'selected' : undefined">
+            <TableRow v-if="!row.getIsExpanded()" :data-state="row.getIsSelected() ? 'selected' : undefined">
               <TableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
                 <FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
               </TableCell>
             </TableRow>
             <TableRow v-if="row.getIsExpanded()">
               <TableCell :colspan="row.getAllCells().length">
-                {{ JSON.stringify(row.original) }}
+                <EditBookmark 
+                  :bookmark="row.original"
+                  @cancel="row.toggleExpanded()" 
+                />
               </TableCell>
             </TableRow>
           </template>
