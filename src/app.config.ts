@@ -1,3 +1,4 @@
+import config from '../astro.config.mjs'
 import * as dotenv from 'dotenv'
 dotenv.config({ path: '.env' })
 
@@ -18,7 +19,7 @@ const DB_API_URL = PUBLIC_SUPABASE_API_URL
 const DB_KEY = PUBLIC_SUPABASE_KEY
 
 const hasRegistration = PUBLIC_ENABLE_REGISTRATION === 'true'
-const site = 'http://localhost:4321'
+const site = config.site
 
 export {
   APP_API_SECRET,
