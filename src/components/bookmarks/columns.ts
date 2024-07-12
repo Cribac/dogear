@@ -1,9 +1,10 @@
 import { h } from 'vue'
+import { ArrowUpDown } from 'lucide-vue-next'
 import type { ColumnDef } from '@tanstack/vue-table'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import DropdownAction from '@/components/bookmarks/DataTableDropDown.vue'
-import { ArrowUpDown } from 'lucide-vue-next'
+import UrlItem from '@/components/bookmarks/UrlItem.vue'
 
 export const columns: ColumnDef<Bookmark>[] = [
   {
@@ -36,7 +37,7 @@ export const columns: ColumnDef<Bookmark>[] = [
     header: () => h('div', { class: 'text-left' }, 'Url'),
     cell: ({ row }) => {
       const url: string = row.getValue('url')
-      return h('div', { class: 'text-left font-medium' }, url)
+      return h(UrlItem, { url })
     },
   },
   {
