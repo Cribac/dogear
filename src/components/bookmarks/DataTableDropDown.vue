@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { MoreHorizontal } from 'lucide-vue-next'
+import { Trash2 } from 'lucide-vue-next'
 
 defineProps<{
   bookmark: {
@@ -22,6 +23,11 @@ defineEmits<{
 
 function copy(id: string) {
   navigator.clipboard.writeText(id)
+}
+
+function emitDelete (id: string) {
+  const event = new CustomEvent('DeleteBookmark', { detail: id })
+  window.dispatchEvent(event)
 }
 </script>
 
@@ -42,8 +48,13 @@ function copy(id: string) {
         Expand
       </DropdownMenuItem>
       <DropdownMenuSeparator />
-      <DropdownMenuItem>View customer</DropdownMenuItem>
-      <DropdownMenuItem>View bookmark details</DropdownMenuItem>
+      <DropdownMenuItem
+        @click="emitDelete(bookmark.id)"
+        class="text-red-600 cursor-pointer"
+      >
+        <Trash2 class="w-4 h-4 mr-2" />
+        Delete
+      </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 </template>
