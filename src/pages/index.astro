@@ -61,7 +61,7 @@ const { site } = astroConfig
       <BookmarkList
         userId={data.user.id}
         site={site}
-        client:visible 
+        client:only="vue" 
       />
     }
   </main>

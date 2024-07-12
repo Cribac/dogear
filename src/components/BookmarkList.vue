@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { fetchResponse } from '@/lib/connectivity'
-import BookmarkItem from '@/components/BookmarkItem.vue'
+import { columns } from '@/components/bookmarks/columns'
+import DataTable from '@/components/bookmarks/DataTable.vue'
 
 const props = defineProps({
   userId: {
@@ -15,7 +16,7 @@ const props = defineProps({
 
 const { PUBLIC_APP_API_TOKEN } = import.meta.env
 
-const bookmarkList = ref()
+const bookmarkList = ref<Bookmark[]>([])
 
 async function fetchBookmarks (userId: string, token: string) {
   const url = `${props.site}/api/bookmark/all/${userId}.json`
@@ -50,12 +51,9 @@ onMounted(async () => {
 
 <template>
   <div id="bookmarks">
-    <BookmarkItem
-      v-for="bookmark in bookmarkList"
-      :key="bookmark.id"
-      :bookmark="bookmark"
-      @deleteBookmark="deleteBookmark"
-      class="mb-4"
-    />  
+    <DataTable 
+      :columns="columns" 
+      :data="bookmarkList" 
+    />
   </div>
 </template>
