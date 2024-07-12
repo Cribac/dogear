@@ -11,14 +11,18 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { ErrorMessage } from '@/components/forms'
 import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
+import { buildFormData } from '@/lib/forms/helper'
+import { fetchResponse } from '@/lib/connectivity'
 
-defineProps<{
+const props = defineProps<{
   bookmark: Bookmark
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   (e: 'cancel'): void
 }>()
+
+const { PUBLIC_BASE_URL, PUBLIC_APP_API_TOKEN } = import.meta.env
 
 const serverErrorMessage = ref('')
 
@@ -28,9 +32,24 @@ const { errors, handleSubmit, defineField } = useForm({
 
 const [url, urlAttrs] = defineField('url')
 const [name, nameAttrs] = defineField('name')
+const { bookmark } = props
 
 const onSubmit = handleSubmit(async (values) => {
-  console.log('EditBookmark', values)
+  // @TODO: there has to be a better way than this...
+  const url = `${PUBLIC_BASE_URL}/api/bookmark/edit/${bookmark.id}.json`
+  const formData = buildFormData(values)
+  const response = await fetchResponse(url, 'PUT', PUBLIC_APP_API_TOKEN, formData)
+  
+  if (response.status !== 200) {
+    const errorData = await response.json()
+    serverErrorMessage.value = errorData.message
+  } else {
+    serverErrorMessage.value = ''
+    const data = await response.json()
+    const event = new CustomEvent('BookmarkEdited', { detail: data })
+    window.dispatchEvent(event)
+    emit('cancel')
+  }
 })
 </script>
 

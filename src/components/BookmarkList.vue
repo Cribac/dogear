@@ -42,6 +42,7 @@ onMounted(async () => {
   bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
 
   // @TODO harden this
+  // @TODO: there has to be a better way than this...
   // @ts-expect-error don't want to type events for now
   window.addEventListener('BookmarkCreated', async (e: CustomEvent) => {
     console.log('BookmarkCreated', e.detail)
@@ -49,10 +50,19 @@ onMounted(async () => {
   })
 
   // @TODO harden this
+  // @TODO: there has to be a better way than this...
   // @ts-expect-error don't want to type events for now
   window.addEventListener('DeleteBookmark', async (e: CustomEvent) => {
     console.log('DeleteBookmark', e.detail)
     await deleteBookmark(e.detail)
+    bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
+  })
+
+    // @TODO harden this
+    // @TODO: there has to be a better way than this...
+  // @ts-expect-error don't want to type events for now
+  window.addEventListener('BookmarkEdited', async (e: CustomEvent) => {
+    console.log('BookmarkEdited', e.detail)
     bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
   })
 })
