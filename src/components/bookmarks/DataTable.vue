@@ -62,18 +62,27 @@ const expanded = ref<ExpandedState>({})
 
 <template>
   <div class="flex items-center py-4">
-    <Input class="max-w-sm" placeholder="Filter by name..."
+    <Input
       :model-value="table.getColumn('name')?.getFilterValue() as string"
+      class="max-w-sm"
+      placeholder="Filter by name..."
       @update:model-value="table.getColumn('name')?.setFilterValue($event)" 
     />
   </div>
   <div class="border rounded-md">
     <Table>
       <TableHeader>
-        <TableRow v-for="headerGroup in table.getHeaderGroups()" :key="headerGroup.id">
-          <TableHead v-for="header in headerGroup.headers" :key="header.id">
+        <TableRow
+          v-for="headerGroup in table.getHeaderGroups()" 
+          :key="headerGroup.id"
+        >
+          <TableHead 
+            v-for="header in headerGroup.headers" 
+            :key="header.id"
+          >
             <FlexRender
-              v-if="!header.isPlaceholder" :render="header.column.columnDef.header"
+              v-if="!header.isPlaceholder" 
+              :render="header.column.columnDef.header"
               :props="header.getContext()"
             />
           </TableHead>
@@ -81,10 +90,22 @@ const expanded = ref<ExpandedState>({})
       </TableHeader>
       <TableBody>
         <template v-if="table.getRowModel().rows?.length">
-          <template v-for="row in table.getRowModel().rows" :key="row.id">
-            <TableRow v-if="!row.getIsExpanded()" :data-state="row.getIsSelected() ? 'selected' : undefined">
-              <TableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
-                <FlexRender :render="cell.column.columnDef.cell" :props="cell.getContext()" />
+          <template 
+            v-for="row in table.getRowModel().rows" 
+            :key="row.id"
+          >
+            <TableRow 
+              v-if="!row.getIsExpanded()" 
+              :data-state="row.getIsSelected() ? 'selected' : undefined"
+            >
+              <TableCell 
+                v-for="cell in row.getVisibleCells()" 
+                :key="cell.id"
+              >
+                <FlexRender 
+                  :render="cell.column.columnDef.cell"
+                  :props="cell.getContext()"
+                />
               </TableCell>
             </TableRow>
             <TableRow v-if="row.getIsExpanded()">
@@ -99,7 +120,10 @@ const expanded = ref<ExpandedState>({})
         </template>
         <template v-else>
           <TableRow>
-            <TableCell :colspan="columns.length" class="h-24 text-center">
+            <TableCell
+              :colspan="columns.length" 
+              class="h-24 text-center"
+            >
               No results.
             </TableCell>
           </TableRow>

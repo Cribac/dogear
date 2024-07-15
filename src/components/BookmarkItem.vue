@@ -10,9 +10,12 @@ import { Button } from '@/components/ui/button';
 
 const props = defineProps({
   bookmark: {
-    type: Object
+    type: Object,
+    default: () => {}
   }
 })
+
+const emit = defineEmits(['deleteBookmark'])
 
 const { bookmark } = props
 </script>
@@ -22,15 +25,20 @@ const { bookmark } = props
     <CardHeader>
       <CardTitle>{{ bookmark?.name }}</CardTitle>
       <CardDescription>
-        <a :href="bookmark?.url" target="_blank">{{ bookmark?.url }}</a>
+        <a 
+          :href="bookmark?.url" 
+          target="_blank"
+        >
+          {{ bookmark?.url }}
+        </a>
       </CardDescription>
     </CardHeader>
     <CardFooter>
       <Button
-        @click="$emit('deleteBookmark', bookmark?.id)"
+        @click="emit('deleteBookmark', bookmark?.id)"
       >
         Delete
-    </Button>
+      </Button>
     </CardFooter>
   </Card>
 </template>

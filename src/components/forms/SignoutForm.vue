@@ -1,6 +1,8 @@
 <template>
   <form action="/api/auth/signout">
-    <Button type="submit">Sign out</Button>
+    <Button type="submit">
+      Sign out
+    </Button>
   </form>
 </template>
 

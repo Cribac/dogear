@@ -30,7 +30,10 @@ function emitDelete (id: string) {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost" class="w-8 h-8 p-0">
+      <Button
+        variant="ghost"
+        class="w-8 h-8 p-0"
+      >
         <span class="sr-only">Open menu</span>
         <MoreHorizontal class="w-4 h-4" />
       </Button>
@@ -43,8 +46,8 @@ function emitDelete (id: string) {
       </DropdownMenuItem>
       <DropdownMenuSeparator />
       <DropdownMenuItem
-        @click="emitDelete(bookmark.id)"
         class="text-red-600 cursor-pointer"
+        @click="emitDelete(bookmark.id)"
       >
         <Trash2 class="w-4 h-4 mr-2" />
         Delete

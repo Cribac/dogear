@@ -10,12 +10,14 @@ const props = defineProps({
     required: true
   },
   site: {
-    type: String
+    type: String,
+    required: true
   }
 })
 
 const { PUBLIC_APP_API_TOKEN } = import.meta.env
 
+// eslint-disable-next-line no-undef
 const bookmarkList = ref<Bookmark[]>([])
 
 async function fetchBookmarks (userId: string, token: string) {

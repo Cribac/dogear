@@ -57,9 +57,9 @@ const onSubmit = handleSubmit(async (values) => {
         >
           <Label for="email">Email</Label>
           <Input 
+            v-bind="emailAttrs" 
+            id="email"
             v-model="email" 
-            v-bind="emailAttrs"
-            id="email" 
             type="email"
             name="email" 
           />
@@ -68,11 +68,14 @@ const onSubmit = handleSubmit(async (values) => {
           :message="errors.password" 
           class="mt-4"
         >
-          <Label for="password" class="pt-6">Password</Label>
+          <Label
+            for="password"
+            class="pt-6"
+          >Password</Label>
           <Input 
+            v-bind="passwordAttrs"
+            id="password" 
             v-model="password"
-            v-bind="passwordAttrs" 
-            id="password"
             type="password"
             name="password"
           />

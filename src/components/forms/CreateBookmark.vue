@@ -17,6 +17,7 @@ import { fetchResponse } from '@/lib/connectivity'
 const props = defineProps({
   profileId: {
     type: String,
+    default: () => '',
   },
 })
 
@@ -58,9 +59,9 @@ const onSubmit = handleSubmit(async (values) => {
         >
           <Label for="url">URL</Label>
           <Input
-            v-model="url"
             v-bind="urlAttrs"
             id="url"
+            v-model="url"
             name="url"
             type="url"
           />
@@ -72,16 +73,18 @@ const onSubmit = handleSubmit(async (values) => {
         >
           <Label for="name">Name</Label>
           <Input
-            v-model="name"
             v-bind="nameAttrs"
             id="name"
+            v-model="name"
             name="name"
             type="text"
           />
         </ErrorMessage>
       </CardContent>
       <CardFooter>
-        <Button type="submit">Create bookmark</Button>
+        <Button type="submit">
+          Create bookmark
+        </Button>
         <ErrorMessage 
           v-if="serverErrorMessage"
           :message="serverErrorMessage"
