@@ -13,9 +13,9 @@ interface ImportMeta {
 }
 
 interface Bookmark {
-  url: string | null
+  url: string | undefined
   id: string
-  name: string | null
+  name: string | undefined
   created_at: Date | null
   updated_at: Date | null
   profileId: string
