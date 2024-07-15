@@ -31,6 +31,8 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  ...pluginVue.configs["flat/base"],
   ...pluginVue.configs["flat/essential"],
+  ...pluginVue.configs["flat/recommended"],
   ...eslintPluginAstro.configs.recommended
 ]
