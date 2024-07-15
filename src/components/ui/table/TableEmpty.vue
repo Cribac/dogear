@@ -5,6 +5,7 @@ import TableCell from './TableCell.vue'
 import { cn } from '@/lib/utils'
 
 const props = withDefaults(defineProps<{
+  // eslint-disable-next-line vue/require-default-prop
   class?: HTMLAttributes['class']
   colspan?: number
 }>(), {
@@ -12,6 +13,7 @@ const props = withDefaults(defineProps<{
 })
 
 const delegatedProps = computed(() => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { class: _, ...delegated } = props
 
   return delegated

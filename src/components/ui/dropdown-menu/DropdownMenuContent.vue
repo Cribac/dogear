@@ -10,6 +10,7 @@ import {
 import { cn } from '@/lib/utils'
 
 const props = withDefaults(
+  // eslint-disable-next-line vue/require-default-prop
   defineProps<DropdownMenuContentProps & { class?: HTMLAttributes['class'] }>(),
   {
     sideOffset: 4,
@@ -18,6 +19,7 @@ const props = withDefaults(
 const emits = defineEmits<DropdownMenuContentEmits>()
 
 const delegatedProps = computed(() => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { class: _, ...delegated } = props
 
   return delegated
