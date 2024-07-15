@@ -16,7 +16,18 @@ export default [
       'dist/*',
       'node_modules/*',
       '.vscode '
-    ]
+    rules:       {
+      'vue/multi-word-component-names': ['error', {
+        'ignores': [
+          'Button',
+          'Card',
+          'Checkbox',
+          'Input',
+          'Label',
+          'Table'
+        ]
+      }]
+    },
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
