@@ -7,7 +7,7 @@ import DropdownAction from '@/components/bookmarks/DataTableDropDown.vue'
 import UrlItem from '@/components/bookmarks/UrlItem.vue'
 
 export const columns: ColumnDef<Bookmark>[] = [
-  {
+  { // select all
     id: 'select',
     header: ({ table }) => h(Checkbox, {
         'checked': table.getIsAllPageRowsSelected(),
@@ -40,7 +40,7 @@ export const columns: ColumnDef<Bookmark>[] = [
       return h(UrlItem, { url })
     },
   },
-  {
+  { // dropdown component as actions cell
     id: 'actions',
     enableHiding: false,
     cell: ({ row }) => {
