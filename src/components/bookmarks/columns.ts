@@ -30,7 +30,7 @@ export const columns: ColumnDef<Bookmark>[] = [
           onClick: () => column.toggleSorting(column.getIsSorted() === 'asc'),
       }, () => ['Name', h(ArrowUpDown, { class: 'ml-2 h-4 w-4' })])
     },
-    cell: ({ row }) => h('div', { class: 'lowercase' }, row.getValue('name')),
+    cell: ({ row }) => h('div', row.getValue('name')),
   },
   {
     accessorKey: 'url',
