@@ -10,12 +10,16 @@ export default [
       globals: {
         ...globals.browser, 
         ...globals.node
-      } 
+      }, 
+      parserOptions: {
+        parser: '@typescript-eslint/parser'
+      },
     },
     ignores: [
       'dist/*',
       'node_modules/*',
       '.vscode '
+    ],
     rules:       {
       'vue/multi-word-component-names': ['error', {
         'ignores': [
