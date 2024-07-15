@@ -23,17 +23,22 @@ const emit = defineEmits<{
   (e: 'cancel'): void
 }>()
 
+const { bookmark } = props
+
 const { PUBLIC_BASE_URL, PUBLIC_APP_API_TOKEN } = import.meta.env
 
 const serverErrorMessage = ref('')
 
 const { errors, handleSubmit, defineField } = useForm({
+  initialValues: {
+    name: bookmark.name,
+    url: bookmark.url,
+  },
   validationSchema: bookmarkSchema,
 })
 
 const [url, urlAttrs] = defineField('url')
 const [name, nameAttrs] = defineField('name')
-const { bookmark } = props
 
 const onSubmit = handleSubmit(async (values) => {
   // @TODO: there has to be a better way than this...

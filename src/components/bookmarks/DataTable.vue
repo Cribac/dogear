@@ -76,7 +76,7 @@ const expanded = ref<ExpandedState>({})
           v-for="headerGroup in table.getHeaderGroups()" 
           :key="headerGroup.id"
         >
-          <TableHead 
+          <TableHead
             v-for="header in headerGroup.headers" 
             :key="header.id"
           >
@@ -94,15 +94,15 @@ const expanded = ref<ExpandedState>({})
             v-for="row in table.getRowModel().rows" 
             :key="row.id"
           >
-            <TableRow 
-              v-if="!row.getIsExpanded()" 
+            <TableRow
+              v-if="!row.getIsExpanded()"
               :data-state="row.getIsSelected() ? 'selected' : undefined"
             >
-              <TableCell 
+              <TableCell
                 v-for="cell in row.getVisibleCells()" 
                 :key="cell.id"
               >
-                <FlexRender 
+                <FlexRender
                   :render="cell.column.columnDef.cell"
                   :props="cell.getContext()"
                 />
@@ -110,7 +110,7 @@ const expanded = ref<ExpandedState>({})
             </TableRow>
             <TableRow v-if="row.getIsExpanded()">
               <TableCell :colspan="row.getAllCells().length">
-                <EditBookmark 
+                <EditBookmark
                   :bookmark="row.original"
                   @cancel="row.toggleExpanded()" 
                 />
