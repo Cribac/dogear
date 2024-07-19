@@ -1,6 +1,6 @@
 {
-  "id": "7e79731c-96da-4fe7-b021-66d1ab5bfbe3",
-  "prevId": "b94e3c72-6be5-4361-8390-025bf2e64234",
+  "id": "4d9aaa3b-ea1d-409e-be79-5c5a6660bc24",
+  "prevId": "74a0514c-a85c-4a7a-ba3f-8bfa587a1ace",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -20,6 +20,12 @@
           "type": "uuid",
           "primaryKey": false,
           "notNull": true
+        },
+        "category_id": {
+          "name": "category_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
         },
         "name": {
           "name": "name",
@@ -53,6 +59,76 @@
         "bookmark_profile_id_profile_id_fk": {
           "name": "bookmark_profile_id_profile_id_fk",
           "tableFrom": "bookmark",
+          "columnsFrom": [
+            "profile_id"
+          ],
+          "tableTo": "profile",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        },
+        "bookmark_category_id_category_id_fk": {
+          "name": "bookmark_category_id_category_id_fk",
+          "tableFrom": "bookmark",
+          "columnsFrom": [
+            "category_id"
+          ],
+          "tableTo": "category",
+          "columnsTo": [
+            "id"
+          ],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.category": {
+      "name": "category",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "profile_id": {
+          "name": "profile_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "category_profile_id_profile_id_fk": {
+          "name": "category_profile_id_profile_id_fk",
+          "tableFrom": "category",
           "columnsFrom": [
             "profile_id"
           ],
@@ -149,6 +225,7 @@
   },
   "enums": {},
   "schemas": {},
+  "sequences": {},
   "_meta": {
     "columns": {},
     "schemas": {},

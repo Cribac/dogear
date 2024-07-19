@@ -1,4 +1,5 @@
-import config from '../astro.config.mjs'
+// TODO drizzle-kit errors out while trying to import this
+// import config from '../astro.config.mjs'
 import * as dotenv from 'dotenv'
 dotenv.config({ path: '.env' })
 
@@ -19,7 +20,7 @@ const DB_API_URL = PUBLIC_SUPABASE_API_URL
 const DB_KEY = PUBLIC_SUPABASE_KEY
 
 const hasRegistration = PUBLIC_ENABLE_REGISTRATION === 'true'
-const site = config.site
+const site = 'http://localhost:4321'// config.site
 
 export {
   APP_API_SECRET,
