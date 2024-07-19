@@ -11,6 +11,7 @@ export const POST: APIRoute = async ({ request }) => {
     const name = formData.get('name')?.toString()
     
     const profileId = formData.get('profileId')?.toString()
+    const categoryId = formData.get('categoryId')?.toString()
 
     if (!url || !name) {
       return getJsonResponse(400, 'Url and name are required')
@@ -23,6 +24,7 @@ export const POST: APIRoute = async ({ request }) => {
           url,
           name,
           profileId,
+          categoryId,
         }).returning()
         
       return new Response(

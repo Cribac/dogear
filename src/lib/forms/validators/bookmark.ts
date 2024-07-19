@@ -5,5 +5,6 @@ export const bookmarkSchema = toTypedSchema(
   object({
     url: string().required().url().default(''),
     name: string().min(0).default(''),
+    categoryId: string().min(0).default(''),
   }),
 )

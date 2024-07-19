@@ -6,6 +6,7 @@ interface ImportMetaEnv {
   readonly PUBLIC_SUPABASE_KEY: string
   readonly PUBLIC_APP_API_TOKEN: string
   readonly PUBLIC_ENABLE_REGISTRATION: string
+  readonly PUBLIC_BASE_URL: string
 }
 
 interface ImportMeta {
@@ -19,8 +20,17 @@ interface Bookmark {
   created_at: Date | null
   updated_at: Date | null
   profileId: string
+  categoryId?: string
 }
 
 interface Bookmarks {
   bookmarks: Bookmark[]
+}
+
+interface Category {
+  id: string
+  profileId: string
+  name: string
+  created_at: Date | null
+  updated_at: Date | null
 }
