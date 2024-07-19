@@ -9,6 +9,9 @@ export default defineConfig({
   schema: './src/lib/db/schemas/*',
   out: './migrations',
   dialect: 'postgresql',
+  migrations: {
+    prefix: 'supabase'
+  },
   dbCredentials: {
     url: DB_URL
   },
