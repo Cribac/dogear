@@ -28,7 +28,8 @@ export default [
           'Checkbox',
           'Input',
           'Label',
-          'Table'
+          'Table',
+          'Select'
         ]
       }]
     },
