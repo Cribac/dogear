@@ -54,8 +54,8 @@ importers:
         specifier: 3.4.4
         version: 3.4.4
       radix-vue:
-        specifier: 1.8.3
-        version: 1.8.3(vue@3.4.30(typescript@5.5.2))
+        specifier: 1.9.1
+        version: 1.9.1(vue@3.4.30(typescript@5.5.2))
       tailwind-merge:
         specifier: 2.3.0
         version: 2.3.0
@@ -894,14 +894,14 @@ packages:
   '@floating-ui/core@1.6.2':
     resolution: {integrity: sha512-+2XpQV9LLZeanU4ZevzRnGFg2neDeKHgFLjP6YLW+tly0IvrhqT4u8enLGjLH3qeh85g19xY5rsAusfwTdn5lg==}
 
-  '@floating-ui/dom@1.6.5':
-    resolution: {integrity: sha512-Nsdud2X65Dz+1RHjAIP0t8z5e2ff/IRbei6BqFrl1urT8sDVzM1HMQ+R0XcU5ceRfyO3I6ayeqIfh+6Wb8LGTw==}
+  '@floating-ui/dom@1.6.7':
+    resolution: {integrity: sha512-wmVfPG5o2xnKDU4jx/m4w5qva9FWHcnZ8BvzEe90D/RpwsJaTAVYPEPdQ8sbr/N8zZTAHlZUTQdqg8ZUbzHmng==}
 
-  '@floating-ui/utils@0.2.2':
-    resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
+  '@floating-ui/utils@0.2.4':
+    resolution: {integrity: sha512-dWO2pw8hhi+WrXq1YJy2yCuWoL20PddgGaqTgVe4cOS9Q6qklXCiA1tJEqX6BEwRNSCP84/afac9hd4MS+zEUA==}
 
-  '@floating-ui/vue@1.0.6':
-    resolution: {integrity: sha512-EdrOljjkpkkqZnrpqUcPoz9NvHxuTjUtSInh6GMv3+Mcy+giY2cE2pHh9rpacRcZ2eMSCxel9jWkWXTjLmY55w==}
+  '@floating-ui/vue@1.1.1':
+    resolution: {integrity: sha512-cyawjk9etPZPl/RVtMRnWrwtAhWbPVSrRVYARgOzhLIqxr0k2up1APrrFjqP9QwRQ0AwjKSvbWg4YC6jESutow==}
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -1208,8 +1208,8 @@ packages:
     resolution: {integrity: sha512-KpRjhgehIhbfH78ARm/GJDXGnpdw4bCg3qas6yjWSi7czJhI/J6pWln7NHtmBkGE9ZbohiiNtLqwGzKmBfixig==}
     engines: {node: '>=12'}
 
-  '@tanstack/virtual-core@3.5.1':
-    resolution: {integrity: sha512-046+AUSiDru/V9pajE1du8WayvBKeCvJ2NmKPy/mR8/SbKKrqmSbj7LJBfXE+nSq4f5TBXvnCzu0kcYebI9WdQ==}
+  '@tanstack/virtual-core@3.8.3':
+    resolution: {integrity: sha512-vd2A2TnM5lbnWZnHi9B+L2gPtkSeOtJOAw358JqokIH1+v2J7vUAzFVPwB/wrye12RFOurffXu33plm4uQ+JBQ==}
 
   '@tanstack/vue-table@8.19.2':
     resolution: {integrity: sha512-tzY/SfbltF3yvES6bQU8BQzcfl5qqSKB4xCGzbUM3qeRLlHNt6bpiHwFHfr0fhASMPQzwJadP+KW2zyaggRpmg==}
@@ -1217,8 +1217,8 @@ packages:
     peerDependencies:
       vue: '>=3.2'
 
-  '@tanstack/vue-virtual@3.5.1':
-    resolution: {integrity: sha512-6mc4HtDPieDVKD6GqzHiJkdzuqRNdQZuoIbkwE6af939WV+w62YmSF69jN+BOqClqh/ObiW+X1VOQx1Pftrx1A==}
+  '@tanstack/vue-virtual@3.8.3':
+    resolution: {integrity: sha512-xrFLkOiqLoGwohgr1+Q880hkNdQWqwi19EXzx38iAjVEm1Db3KIAV0aVP57/dnNXU3NO1Vx8wnIHII5J4n1LyA==}
     peerDependencies:
       vue: ^2.7.0 || ^3.0.0
 
@@ -3196,8 +3196,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  radix-vue@1.8.3:
-    resolution: {integrity: sha512-WPgvEz0i5XKjwahhffD2QPLiOTthTfecoVjwq4l3i3EWBX2tUp4Vw3n3OLGf3S18FN/WfEgD3GIxYfsrnDutqw==}
+  radix-vue@1.9.1:
+    resolution: {integrity: sha512-fObA+9l2ixNWBXRMj5mBZfmVv2znqIUph+0uo7QA/s7pDYSST2vGvxCbrg/xQGxWRwaQ8ejgo1wg2MzhHcbjLw==}
     peerDependencies:
       vue: '>= 3.2.0'
 
@@ -4736,19 +4736,19 @@ snapshots:
 
   '@floating-ui/core@1.6.2':
     dependencies:
-      '@floating-ui/utils': 0.2.2
+      '@floating-ui/utils': 0.2.4
 
-  '@floating-ui/dom@1.6.5':
+  '@floating-ui/dom@1.6.7':
     dependencies:
       '@floating-ui/core': 1.6.2
-      '@floating-ui/utils': 0.2.2
+      '@floating-ui/utils': 0.2.4
 
-  '@floating-ui/utils@0.2.2': {}
+  '@floating-ui/utils@0.2.4': {}
 
-  '@floating-ui/vue@1.0.6(vue@3.4.30(typescript@5.5.2))':
+  '@floating-ui/vue@1.1.1(vue@3.4.30(typescript@5.5.2))':
     dependencies:
-      '@floating-ui/dom': 1.6.5
-      '@floating-ui/utils': 0.2.2
+      '@floating-ui/dom': 1.6.7
+      '@floating-ui/utils': 0.2.4
       vue-demi: 0.14.8(vue@3.4.30(typescript@5.5.2))
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -5004,16 +5004,16 @@ snapshots:
 
   '@tanstack/table-core@8.19.2': {}
 
-  '@tanstack/virtual-core@3.5.1': {}
+  '@tanstack/virtual-core@3.8.3': {}
 
   '@tanstack/vue-table@8.19.2(vue@3.4.30(typescript@5.5.2))':
     dependencies:
       '@tanstack/table-core': 8.19.2
       vue: 3.4.30(typescript@5.5.2)
 
-  '@tanstack/vue-virtual@3.5.1(vue@3.4.30(typescript@5.5.2))':
+  '@tanstack/vue-virtual@3.8.3(vue@3.4.30(typescript@5.5.2))':
     dependencies:
-      '@tanstack/virtual-core': 3.5.1
+      '@tanstack/virtual-core': 3.8.3
       vue: 3.4.30(typescript@5.5.2)
 
   '@types/babel__core@7.20.5':
@@ -7331,13 +7331,13 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  radix-vue@1.8.3(vue@3.4.30(typescript@5.5.2)):
+  radix-vue@1.9.1(vue@3.4.30(typescript@5.5.2)):
     dependencies:
-      '@floating-ui/dom': 1.6.5
-      '@floating-ui/vue': 1.0.6(vue@3.4.30(typescript@5.5.2))
+      '@floating-ui/dom': 1.6.7
+      '@floating-ui/vue': 1.1.1(vue@3.4.30(typescript@5.5.2))
       '@internationalized/date': 3.5.4
       '@internationalized/number': 3.5.3
-      '@tanstack/vue-virtual': 3.5.1(vue@3.4.30(typescript@5.5.2))
+      '@tanstack/vue-virtual': 3.8.3(vue@3.4.30(typescript@5.5.2))
       '@vueuse/core': 10.11.0(vue@3.4.30(typescript@5.5.2))
       '@vueuse/shared': 10.11.0(vue@3.4.30(typescript@5.5.2))
       aria-hidden: 1.2.4
