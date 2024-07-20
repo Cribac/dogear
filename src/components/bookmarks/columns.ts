@@ -40,6 +40,14 @@ export const columns: ColumnDef<Bookmark>[] = [
       return h(UrlItem, { url })
     },
   },
+  {
+    accessorKey: 'category_name',
+    header: () => h('div', { class: 'text-left' }, 'Category'),
+    cell: ({ row }) => {
+      console.log('row', row)
+      return h('div', row.getValue('category_name')) 
+    },
+  },
   { // dropdown component as actions cell
     id: 'actions',
     enableHiding: false,
