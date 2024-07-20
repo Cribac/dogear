@@ -112,10 +112,12 @@ const expanded = ref<ExpandedState>({})
             <!-- Expanded row -->
             <TableRow v-if="row.getIsExpanded()">
               <TableCell :colspan="row.getAllCells().length">
-                <EditBookmark
-                  :bookmark="row.original"
-                  @cancel="row.toggleExpanded()" 
-                />
+                <Suspense>
+                  <EditBookmark
+                    :bookmark="row.original"
+                    @cancel="row.toggleExpanded()" 
+                  />
+                </Suspense>
               </TableCell>
             </TableRow>
           </template>
