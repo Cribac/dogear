@@ -44,7 +44,6 @@ export const columns: ColumnDef<Bookmark>[] = [
     accessorKey: 'category_name',
     header: () => h('div', { class: 'text-left' }, 'Category'),
     cell: ({ row }) => {
-      console.log('row', row)
       return h('div', row.getValue('category_name')) 
     },
   },
