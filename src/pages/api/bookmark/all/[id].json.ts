@@ -13,6 +13,7 @@ export const GET: APIRoute = async (context) => {
       id: Bookmark.id,
       name: Bookmark.name,
       url: Bookmark.url,
+      profileId: Bookmark.profileId,
       created_at: Bookmark.created_at,
       updated_at: Bookmark.updated_at,
       category_id: Bookmark.categoryId,
