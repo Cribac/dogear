@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useForm } from 'vee-validate'
+import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
+import { buildFormData } from '@/lib/forms/helper'
+import { fetchResponse } from '@/lib/connectivity'
 import {
   Card,
   CardContent,
@@ -10,9 +13,7 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { ErrorMessage } from '@/components/forms'
-import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
-import { buildFormData } from '@/lib/forms/helper'
-import { fetchResponse } from '@/lib/connectivity'
+import CategorySelection from '@/components/categories/CategorySelection.vue'
 
 const props = defineProps<{
   // eslint-disable-next-line no-undef
@@ -33,12 +34,26 @@ const { errors, handleSubmit, defineField } = useForm({
   initialValues: {
     name: bookmark.name,
     url: bookmark.url,
+    categoryId: bookmark.category_id,
   },
   validationSchema: bookmarkSchema,
 })
 
 const [url, urlAttrs] = defineField('url')
 const [name, nameAttrs] = defineField('name')
+const [categoryId] = defineField('categoryId')
+
+
+async function fetchCategories (userId: string, token: string) {
+  const url = `${PUBLIC_BASE_URL}/api/category/all/${userId}.json`
+  const response = await fetchResponse(url, 'GET', token)
+  
+  const result = await response.json()
+  
+  return result
+}
+
+const categories = await fetchCategories(bookmark.profileId, PUBLIC_APP_API_TOKEN)
 
 const onSubmit = handleSubmit(async (values) => {
   // @TODO: there has to be a better way than this...
@@ -77,7 +92,7 @@ const onSubmit = handleSubmit(async (values) => {
         </ErrorMessage>
         <ErrorMessage
           :message="errors.url"
-          class="mt-4"
+          class="mt-4 mb-6"
         >
           <Label for="url">URL</Label>
           <Input
@@ -88,6 +103,11 @@ const onSubmit = handleSubmit(async (values) => {
             type="url"
           />
         </ErrorMessage>
+        <CategorySelection
+          v-model="categoryId"
+          name="categoryId"
+          :categories="categories"
+        />
       </CardContent>
       <CardFooter>
         <Button type="submit">

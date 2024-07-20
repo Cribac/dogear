@@ -10,11 +10,13 @@ export const PUT: APIRoute = async (context) => {
     const formData = await context.request.formData()
     const url = formData.get('url')?.toString()
     const name = formData.get('name')?.toString()
+    const categoryId = formData.get('categoryId')?.toString()
   
     const editedBookmarkId: { editedId: string }[] = await db.update(Bookmark)
       .set({
         url,
-        name
+        name,
+        categoryId
       })
       .where(eq(Bookmark.id, (id ? id : 'none')))
       .returning({ editedId: Bookmark.id})
