@@ -6,6 +6,7 @@ import { APP_API_PHRASE } from '@/app.config'
 export const onRequest = defineMiddleware(async (context , next) => {
   const response = await next()
   const { pathname } = context.url
+  // @TODO there's probably a better way to do this
   const allowedRoutes = [
     '/', 
     '/signin',
@@ -13,6 +14,7 @@ export const onRequest = defineMiddleware(async (context , next) => {
     '/api/auth/signin',
     '/api/auth/signout',
     '/api/auth/register',
+    '/categories',
   ]
 
   if (!allowedRoutes.includes(pathname)) {

@@ -13,7 +13,9 @@ const toggleNav = () => {
     <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
       <div class="flex items-center justify-between">
         <div class="text-xl font-bold text-gray-100 md:text-2xl hover:text-indigo-400">
-          DOGEAR
+          <a href="/">
+            DOGEAR
+          </a>
         </div>
         <!-- Mobile menu button -->
         <div 
@@ -42,7 +44,7 @@ const toggleNav = () => {
         class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
       >
         <li class="text-gray-100 hover:text-indigo-400">
-          Item 1
+          <a href="/categories">Categories</a>
         </li>
         <li class="text-gray-100 hover:text-indigo-400">
           Item 2
