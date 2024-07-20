@@ -62,13 +62,25 @@ const expanded = ref<ExpandedState>({})
 <template>
   <!-- Filter controls -->
   <div class="flex items-center py-4">
-    <Input
-      :model-value="table.getColumn('name')?.getFilterValue() as string"
-      class="max-w-sm"
-      placeholder="Filter by name..."
-      @update:model-value="table.getColumn('name')?.setFilterValue($event)" 
-    />
+    <div class="flex items-center py-4">
+      <Input
+        :model-value="table.getColumn('name')?.getFilterValue() as string"
+        class="max-w-sm"
+        placeholder="Filter by name..."
+        @update:model-value="table.getColumn('name')?.setFilterValue($event)" 
+      />
+    </div>
+
+    <div class="flex items-center py-4 ml-4">
+      <Input
+        :model-value="table.getColumn('category_name')?.getFilterValue() as string"
+        class="max-w-sm"
+        placeholder="Filter by category..."
+        @update:model-value="table.getColumn('category_name')?.setFilterValue($event)" 
+      />
+    </div>
   </div>
+  
   <div class="border rounded-md">
     <Table>
       <TableHeader>
