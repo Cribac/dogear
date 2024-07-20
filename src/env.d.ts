@@ -20,7 +20,8 @@ interface Bookmark {
   created_at: Date | null
   updated_at: Date | null
   profileId: string
-  categoryId?: string
+  category_id?: string
+  category_name?: string
 }
 
 interface Bookmarks {
