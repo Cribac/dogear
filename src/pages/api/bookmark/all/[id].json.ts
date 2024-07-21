@@ -1,8 +1,7 @@
 import type { APIRoute } from 'astro'
 import { eq, desc } from 'drizzle-orm'
 import { db } from '@/lib/db/db'
-import { Bookmark } from '@/lib/db/schemas'
-import { Category } from '@/lib/db/schemas'
+import { Bookmark, Category } from '@/lib/db/schemas'
 
 export const GET: APIRoute = async (context) => {
   // @TODO harden this!
@@ -21,7 +20,10 @@ export const GET: APIRoute = async (context) => {
     })
     .from(Bookmark)
     .where(eq(Bookmark.profileId, (id ? id : 'none'))) // jeeebus creebus hacky whacky
-    .innerJoin(Category, eq(Bookmark.categoryId, Category.id))
+    .innerJoin( // join to get category_name, category_id
+      Category,
+      eq(Bookmark.categoryId, Category.id)
+    )
     .orderBy(desc(Bookmark.created_at))
 
   return new Response(

@@ -32,6 +32,7 @@ interface Category {
   id: string
   profileId: string
   name: string
+  bookmark_count: number
   created_at: Date | null
   updated_at: Date | null
 }

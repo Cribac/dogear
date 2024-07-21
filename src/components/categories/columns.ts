@@ -31,6 +31,16 @@ export const columns: ColumnDef<Category>[] = [
     },
     cell: ({ row }) => h('div', row.getValue('name')),
   },
+  { // display # of bookmarks
+    accessorKey: 'bookmark_count',
+    header: ({ column }) => {
+      return h(Button, {
+          variant: 'ghost',
+          onClick: () => column.toggleSorting(column.getIsSorted() === 'asc'),
+      }, () => ['# of Bookmarks', h(ArrowUpDown, { class: 'ml-2 h-4 w-4' })])
+    },
+    cell: ({ row }) => h('div', row.getValue('bookmark_count')),
+  },
   { // dropdown component as actions cell
     id: 'actions',
     enableHiding: false,
