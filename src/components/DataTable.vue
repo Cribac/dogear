@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="TData extends Bookmark, TValue">
+<script setup lang="ts" generic="TData, TValue">
 import { ref } from 'vue'
 import type { 
   ColumnDef,
@@ -24,9 +24,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { valueUpdater } from '@/lib/utils'
-import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import EditBookmark from '@/components/forms/EditBookmark.vue'
 
 const props = defineProps<{
   columns: ColumnDef<TData, TValue>[]
@@ -61,26 +59,11 @@ const expanded = ref<ExpandedState>({})
 
 <template>
   <!-- Filter controls -->
-  <div class="flex items-center py-4">
-    <div class="flex items-center py-4">
-      <Input
-        :model-value="table.getColumn('name')?.getFilterValue() as string"
-        class="max-w-sm"
-        placeholder="Filter by name..."
-        @update:model-value="table.getColumn('name')?.setFilterValue($event)" 
-      />
-    </div>
-
-    <div class="flex items-center py-4 ml-4">
-      <Input
-        :model-value="table.getColumn('category_name')?.getFilterValue() as string"
-        class="max-w-sm"
-        placeholder="Filter by category..."
-        @update:model-value="table.getColumn('category_name')?.setFilterValue($event)" 
-      />
-    </div>
-  </div>
-  
+  <slot 
+    name="filters"
+    :table="table"
+  />
+  <!-- Table -->
   <div class="border rounded-md">
     <Table>
       <TableHeader>
@@ -125,9 +108,9 @@ const expanded = ref<ExpandedState>({})
             <TableRow v-if="row.getIsExpanded()">
               <TableCell :colspan="row.getAllCells().length">
                 <Suspense>
-                  <EditBookmark
-                    :bookmark="row.original"
-                    @cancel="row.toggleExpanded()" 
+                  <slot
+                    name="edit"
+                    :row="row"
                   />
                 </Suspense>
               </TableCell>

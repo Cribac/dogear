@@ -2,7 +2,9 @@
 import { onMounted, ref } from 'vue'
 import { fetchResponse } from '@/lib/connectivity'
 import { columns } from '@/components/bookmarks/columns'
-import DataTable from '@/components/bookmarks/DataTable.vue'
+import { Input } from '@/components/ui/input'
+import DataTable from '@/components/DataTable.vue'
+import EditBookmark from '@/components/forms/EditBookmark.vue'
 
 const props = defineProps({
   userId: {
@@ -75,6 +77,35 @@ onMounted(async () => {
     <DataTable 
       :columns="columns" 
       :data="bookmarkList" 
-    />
+    >
+      <template #filters="filtersProps">
+        <div class="flex items-center py-4">
+          <div class="flex items-center py-4">
+            <Input
+              :model-value="filtersProps.table.getColumn('name')?.getFilterValue() as string"
+              class="max-w-sm"
+              placeholder="Filter by name..."
+              @update:model-value="filtersProps.table.getColumn('name')?.setFilterValue($event)" 
+            />
+          </div>
+
+          <div class="flex items-center py-4 ml-4">
+            <Input
+              :model-value="filtersProps.table.getColumn('category_name')?.getFilterValue() as string"
+              class="max-w-sm"
+              placeholder="Filter by category..."
+              @update:model-value="filtersProps.table.getColumn('category_name')?.setFilterValue($event)" 
+            />
+          </div>
+        </div>
+      </template>
+
+      <template #edit="editProps">
+        <EditBookmark
+          :bookmark="editProps.row.original"
+          @cancel="editProps.row.toggleExpanded()" 
+        />
+      </template>
+    </DataTable>
   </div>
 </template>
