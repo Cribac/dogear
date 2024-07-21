@@ -3,9 +3,10 @@ import '@/styles/globals.css'
 import Layout from '@/layouts/Layout.astro'
 import NavBar from '@/components/ui/NavBar.vue'
 import { supabase } from '@/lib/supabase'
+import CreateCategory from '@/components/forms/CreateCategory.vue'
+import CategoryList from '@/components/categories/CategoryList.vue'
 
 const { cookies, redirect } = Astro
-
 const accessToken = cookies.get('sb-access-token')
 const refreshToken = cookies.get('sb-refresh-token')
 
@@ -13,7 +14,7 @@ if (!accessToken || !refreshToken) {
   return redirect('/signin')
 }
 
-const { error } = await supabase.auth.setSession({
+const { data, error } = await supabase.auth.setSession({
   refresh_token: refreshToken.value,
   access_token: accessToken.value,
 })
@@ -35,6 +36,16 @@ if (error) {
     <NavBar client:load />
   </header>
   <main>
-    <h1>Categories</h1>
+    <CreateCategory
+      profileId={data.user?.id}
+      client:visible 
+    />
+    { 
+      data.user && 
+      <CategoryList
+        userId={data.user.id}
+        client:only="vue"
+      />
+    }
   </main>
 </Layout>

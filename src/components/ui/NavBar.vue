@@ -47,12 +47,6 @@ const toggleNav = () => {
           <a href="/categories">Categories</a>
         </li>
         <li class="text-gray-100 hover:text-indigo-400">
-          Item 2
-        </li>
-        <li class="text-gray-100 hover:text-indigo-400">
-          Item 3
-        </li>
-        <li class="text-gray-100 hover:text-indigo-400">
           <SignoutForm />
         </li>
       </ul>
