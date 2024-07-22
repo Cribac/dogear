@@ -11,9 +11,10 @@ import { Button } from '@/components/ui/button'
 import { MoreHorizontal } from 'lucide-vue-next'
 import { Trash2, Pencil } from 'lucide-vue-next'
 
-defineProps<{
-  category: {
-    id: string
+const props = defineProps<{
+  item: {
+    id: string,
+    eventName: string
   }
 }>()
 
@@ -21,8 +22,10 @@ defineEmits<{
   (e: 'expand'): void
 }>()
 
+const { id, eventName } = props.item
+
 function emitDelete (id: string) {
-  const event = new CustomEvent('DeleteCategory', { detail: id })
+  const event = new CustomEvent(eventName, { detail: id })
   window.dispatchEvent(event)
 }
 </script>
@@ -47,7 +50,7 @@ function emitDelete (id: string) {
       <DropdownMenuSeparator />
       <DropdownMenuItem
         class="text-red-600 cursor-pointer"
-        @click="emitDelete(category.id)"
+        @click="emitDelete(id)"
       >
         <Trash2 class="w-4 h-4 mr-2" />
         Delete

@@ -3,8 +3,8 @@ import { ArrowUpDown } from 'lucide-vue-next'
 import type { ColumnDef } from '@tanstack/vue-table'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
-import DropdownAction from '@/components/bookmarks/DataTableDropDown.vue'
 import UrlItem from '@/components/bookmarks/UrlItem.vue'
+import DropdownAction from '@/components/DataTableDropDown.vue'
 
 export const columns: ColumnDef<Bookmark>[] = [
   { // select all
@@ -54,7 +54,7 @@ export const columns: ColumnDef<Bookmark>[] = [
       const bookmark = row.original
 
       return h('div', { class: 'relative' }, h(DropdownAction, {
-        bookmark,
+        item: { id: bookmark.id, eventName: 'DeleteBookmark' },
         onExpand: row.toggleExpanded,
       }))
     },
