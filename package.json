@@ -20,12 +20,12 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@astrojs/check": "0.8.1",
+    "@astrojs/check": "0.8.2",
     "@astrojs/node": "8.3.1",
     "@astrojs/tailwind": "5.1.0",
     "@astrojs/vue": "4.5.0",
     "@supabase/supabase-js": "2.44.3",
-    "@tanstack/vue-table": "8.19.2",
+    "@tanstack/vue-table": "8.19.3",
     "@vueuse/core": "10.11.0",
     "astro": "4.12.1",
     "class-variance-authority": "0.7.0",
@@ -45,12 +45,12 @@
   "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
   "devDependencies": {
     "@eslint/js": "9.6.0",
-    "@playwright/test": "1.45.0",
+    "@playwright/test": "1.45.2",
     "@types/node": "20.14.10",
     "@types/pg": "8.11.6",
     "@typescript-eslint/eslint-plugin": "7.16.0",
     "@typescript-eslint/parser": "7.16.0",
-    "@vee-validate/yup": "4.13.1",
+    "@vee-validate/yup": "4.13.2",
     "@vitejs/plugin-vue": "5.0.5",
     "@vue/test-utils": "2.4.6",
     "drizzle-kit": "0.23.0",
@@ -62,7 +62,7 @@
     "supabase": "1.183.5",
     "typescript-eslint": "7.16.0",
     "vee-validate": "4.13.1",
-    "vitest": "2.0.3",
+    "vitest": "2.0.4",
     "yup": "1.4.0"
   }
 }
