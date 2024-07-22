@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 import { fetchResponse } from '@/lib/connectivity'
 import { columns } from '@/components/bookmarks/columns'
 import { Input } from '@/components/ui/input'
-import DataTable from '@/components/DataTable.vue'
+import { DataTable } from '@/components/ui/data-table'
 import EditBookmark from '@/components/forms/EditBookmark.vue'
 
 const props = defineProps({

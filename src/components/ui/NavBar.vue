@@ -13,7 +13,10 @@ const toggleNav = () => {
     <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
       <div class="flex items-center justify-between">
         <div class="text-xl font-bold text-gray-100 md:text-2xl hover:text-indigo-400">
-          <a href="/">
+          <a 
+            href="/" 
+            data-testid="logo"
+          >
             DOGEAR
           </a>
         </div>

@@ -5,8 +5,20 @@ Webapp to manage bookmarks.
 [_WIP!!!_](https://www.dictionary.com/browse/wip)
 
 ---
+<details>
+<summary>Setup development environment</summary>
 
-#### Run Development
+#### Prerequisites:
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en) >= v20.0.0
+- [Docker](https://www.docker.com/)
+- [PnPm](https://pnpm.io/)
+
+#### Local Database:
+
+[How to use Supabase on a local development machine](https://supabase.com/docs/guides/cli/local-development)
+
+#### Run Development:
 
 ###### Start database:
 
@@ -20,9 +32,9 @@ npx supabase start
 ```bash
 pnpm run dev
 ```
+</details>
 
 ---
-
 ### Main Dependencies:
 
 - [Astro](https://astro.build/)
