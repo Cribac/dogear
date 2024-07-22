@@ -20,7 +20,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@astrojs/check": "0.8.1",
+    "@astrojs/check": "0.8.2",
     "@astrojs/node": "8.3.1",
     "@astrojs/tailwind": "5.1.0",
     "@astrojs/vue": "4.5.0",
