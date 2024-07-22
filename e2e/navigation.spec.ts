@@ -18,3 +18,9 @@ test('a click on the logo navigates to the homepage', async ({ page }) => {
   await page.getByTestId('logo').click()
   await expect(page).toHaveURL('/')
 })
+
+test('navigation has a signout button', async ({ page }) => {
+  await page.goto('/')
+  
+  await expect(page.getByRole('button', { name: 'Sign out' })).toBeVisible()
+})
