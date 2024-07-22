@@ -3,7 +3,7 @@ import { ArrowUpDown } from 'lucide-vue-next'
 import type { ColumnDef } from '@tanstack/vue-table'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
-import DropdownAction from '@/components/bookmarks/DataTableDropDown.vue'
+import { DataTableDropDown } from '@/components/ui/data-table'
 import UrlItem from '@/components/bookmarks/UrlItem.vue'
 
 export const columns: ColumnDef<Bookmark>[] = [
@@ -53,8 +53,8 @@ export const columns: ColumnDef<Bookmark>[] = [
     cell: ({ row }) => {
       const bookmark = row.original
 
-      return h('div', { class: 'relative' }, h(DropdownAction, {
-        bookmark,
+      return h('div', { class: 'relative' }, h(DataTableDropDown, {
+        item: { id: bookmark.id, eventName: 'DeleteBookmark' },
         onExpand: row.toggleExpanded,
       }))
     },

@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 import { fetchResponse } from '@/lib/connectivity'
 import { columns } from '@/components/categories/columns'
 import { Input } from '@/components/ui/input'
-import DataTable from '@/components/DataTable.vue'
+import { DataTable } from '@/components/ui/data-table'
 import EditCategory from '@/components/forms/EditCategory.vue'
 
 const props = defineProps({

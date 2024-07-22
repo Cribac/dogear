@@ -24,7 +24,11 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { valueUpdater } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
+import {
+  ControlsContainer,
+  SelectionIndicator,
+  PaginationButtons
+} from '@/components/ui/data-table/pagination-controls'
 
 const props = defineProps<{
   columns: ColumnDef<TData, TValue>[]
@@ -129,31 +133,19 @@ const expanded = ref<ExpandedState>({})
         </template>
       </TableBody>
     </Table>
-    <!-- Pagination controls; "x of foo rows selected" -->
-    <div class="flex-1 text-sm text-muted-foreground">
-      {{ table.getFilteredSelectedRowModel().rows.length }} of
-      {{ table.getFilteredRowModel().rows.length }} row(s) selected.
-    </div>
-    <!-- Pagination controls; next and previous buttons -->
-    <div class="flex items-center justify-end py-4 space-x-2">
-      <Button
-        id="prev-page"
-        variant="outline"
-        size="sm"
-        :disabled="!table.getCanPreviousPage()"
-        @click="table.previousPage()"
-      >
-        Previous
-      </Button>
-      <Button
-        id="next-page"
-        variant="outline"
-        size="sm"
-        :disabled="!table.getCanNextPage()"
-        @click="table.nextPage()"
-      >
-        Next
-      </Button>
-    </div>
+    <!-- Pagination controls -->
+    <ControlsContainer class="px-4">
+      <SelectionIndicator
+        :selected-rows="table.getFilteredSelectedRowModel().rows.length"
+        :total-rows="table.getFilteredRowModel().rows.length"
+        class="flex-1 text-sm text-muted-foreground"
+      />
+      <PaginationButtons
+        :prev-button-disabled="!table.getCanPreviousPage()"
+        :next-button-disabled="!table.getCanNextPage()"
+        @on-prev-click="table.previousPage()"
+        @on-next-click="table.nextPage()"
+      />
+    </ControlsContainer> 
   </div>
 </template>
