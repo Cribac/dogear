@@ -14,9 +14,9 @@ test('register page shows register form', async ({ page }) => {
 
 test('it displays a message when email is invalid', async ({ page }) => {
   await page.goto('/register')
+  await page.waitForTimeout(1000) // @TODO: needed rn to work in chromium; investigate why
   
   await page.getByLabel('Email').click()
-  await page.waitForTimeout(1000) // @TODO: needed rn to work in chromium; investigate why
   await page.getByLabel('Email').fill('invalid')
   await page.getByRole('button', { name: 'Register' }).click()
 
@@ -25,8 +25,8 @@ test('it displays a message when email is invalid', async ({ page }) => {
 
 test('it displays a message when no email is provided', async ({ page }) => {
   await page.goto('/register')
-
   await page.waitForTimeout(1000)
+
   await page.getByRole('button', { name: 'Register' }).click()
   
   await expect(page.getByText('email is a required field')).toBeVisible()
@@ -34,9 +34,9 @@ test('it displays a message when no email is provided', async ({ page }) => {
 
 test('it displays a message when no password is provided', async ({ page }) => {
   await page.goto('/register')
+  await page.waitForTimeout(1000) // @TODO: needed rn to work in chromium; investigate why
   
   await page.getByLabel('Email').click()
-  await page.waitForTimeout(1000) // @TODO: needed rn to work in chromium; investigate why
   await page.getByLabel('Email').fill('foo@example.com')
   await page.getByRole('button', { name: 'Register' }).click()
   

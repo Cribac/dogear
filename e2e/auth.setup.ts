@@ -12,9 +12,7 @@ setup('authenticate', async ({ page }) => {
   await page.goto('/signin')
   await page.waitForTimeout(1000)
   await page.getByLabel('Email').fill('admin@example.com')
-  await page.waitForTimeout(1000)
   await page.getByLabel('Password').fill('admin123')
-  await page.waitForTimeout(1000)
   await page.getByRole('button', { name: 'Sign in' }).click()
   // Wait until the page receives the cookies.
   //
