@@ -3,7 +3,7 @@ import { ArrowUpDown } from 'lucide-vue-next'
 import type { ColumnDef } from '@tanstack/vue-table'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
-import DropdownAction from '@/components/DataTableDropDown.vue'
+import { DataTableDropDown } from '@/components/ui/data-table'
 
 export const columns: ColumnDef<Category>[] = [
   { // select all
@@ -47,7 +47,7 @@ export const columns: ColumnDef<Category>[] = [
     cell: ({ row }) => {
       const category = row.original
 
-      return h('div', { class: 'relative' }, h(DropdownAction, {
+      return h('div', { class: 'relative' }, h(DataTableDropDown, {
         item: { id: category.id, eventName: 'DeleteCategory' },
         onExpand: row.toggleExpanded,
       }))
