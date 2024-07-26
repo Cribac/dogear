@@ -25,3 +25,14 @@ export function valueUpdater<T extends Updater<any>>(updaterOrValue: T, ref: Ref
     ? updaterOrValue(ref.value)
     : updaterOrValue
 }
+
+/**
+ * Splits an email address at the @ chatracter and returns a combination of the first letters of the split.
+ * 
+ * @param {string} email 
+ * @returns {string}
+ */
+export function splitEmailAddress(email: string): string {
+  const splitted = email.split('@')
+  return `${splitted[0][0]}${splitted[1][0]}`
+}

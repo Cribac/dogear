@@ -1,8 +1,14 @@
 <script setup lang="ts">
-import { SignoutForm } from '@/components/forms'
 import { ref } from 'vue'
+import { SignoutForm } from '@/components/forms'
+import UserAvatar from './UserAvatar.vue';
+
+defineProps<{
+  profileEmail?: string | null
+}>()
 
 const showMenu = ref(false)
+
 const toggleNav = () => {
   showMenu.value = !showMenu.value
 }
@@ -12,13 +18,20 @@ const toggleNav = () => {
   <div class="bg-indigo-600">
     <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
       <div class="flex items-center justify-between">
-        <div class="text-xl font-bold text-gray-100 md:text-2xl hover:text-indigo-400">
-          <a 
-            href="/" 
-            data-testid="logo"
-          >
-            DOGEAR
-          </a>
+        <div class="flex items-center justify-end">
+          <div class="text-xl font-bold text-gray-100 md:text-2xl hover:text-indigo-400">
+            <a 
+              href="/" 
+              data-testid="logo"
+            >
+              DOGEAR
+            </a>
+          </div>
+          <UserAvatar
+            v-if="profileEmail"
+            :profile-email="profileEmail"
+            class="ml-4"
+          />
         </div>
         <!-- Mobile menu button -->
         <div 

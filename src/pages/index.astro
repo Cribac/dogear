@@ -35,33 +35,32 @@ if (error) {
   return redirect('/signin')
 }
 
-let email: string | null = 'N/A'
+let profiles: { id: string; email: string | null }[] = []
 
 if (data.user) {
-  const profile = await db.select().from(Profile).where(eq(Profile.id, data.user?.id))
-  email = profile[0]?.email
+  profiles = await db.select({id: Profile.id, email: Profile.email}).from(Profile).where(eq(Profile.id, data.user?.id))
 }
+
+const profile = profiles[0]
 
 const { site } = astroConfig
 ---
 <Layout title="Bookmarks">
   <header>
-    <NavBar client:load />
+    <NavBar 
+      profileEmail={profile.email}
+      client:load 
+    />
   </header>
   <main>
-    <h1>Welcome {email}</h1>
-    <p>We are happy to see you here</p>
     <CreateBookmark
-      profileId={data.user?.id}
+      profileId={profile.id}
       client:visible
     />
-    { 
-      data.user && 
-      <BookmarkList
-        userId={data.user.id}
-        site={site as string}
-        client:only="vue" 
-      />
-    }
+    <BookmarkList
+      userId={profile.id}
+      site={site as string}
+      client:only="vue" 
+    />
   </main>
 </Layout>
