@@ -33,7 +33,10 @@ if (error) {
 
 <Layout title="Categories">
   <header>
-    <NavBar client:load />
+    <NavBar 
+      profileEmail={data.user?.email} 
+      client:load
+    />
   </header>
   <main>
     <CreateCategory

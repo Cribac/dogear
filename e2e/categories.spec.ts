@@ -6,6 +6,12 @@ test('categories page has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Categories/)
 })
 
+test ('categories page has avatar', async ({ page }) => {
+  await page.goto('/categories')
+
+  await expect(page.getByText('AE')).toBeVisible()
+})
+
 test('categories page has create category form', async ({ page }) => {
   await page.goto('/categories')
   

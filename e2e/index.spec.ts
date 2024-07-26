@@ -6,6 +6,12 @@ test('homepage has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Bookmarks/)
 })
 
+test ('homepage has avatar', async ({ page }) => {
+  await page.goto('/')
+
+  await expect(page.getByText('AE')).toBeVisible()
+})
+
 test('homepage has create bookmark form', async ({ page }) => {
   await page.goto('/')
   
