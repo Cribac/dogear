@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { SignoutForm } from '@/components/forms'
-import UserAvatar from './UserAvatar.vue';
+import UserAvatar from '@/components/ui/UserAvatar.vue'
+import ModeToggle from '@/components/ui/ModeToggle.vue'
 
 defineProps<{
   profileEmail?: string | null
@@ -20,8 +21,8 @@ const toggleNav = () => {
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-end">
           <div class="text-xl font-bold text-gray-100 md:text-2xl hover:text-indigo-400">
-            <a 
-              href="/" 
+            <a
+              href="/"
               data-testid="logo"
             >
               DOGEAR
@@ -35,10 +36,10 @@ const toggleNav = () => {
         </div>
         <!-- Mobile menu button -->
         <div 
-          class="flex md:hidden" 
+          class="flex md:hidden"
           @click="toggleNav"
         >
-          <button 
+          <button
             type="button"
             class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400"
           >
@@ -54,11 +55,15 @@ const toggleNav = () => {
           </button>
         </div>
       </div>
+
       <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
       <ul 
         :class="showMenu ? 'flex' : 'hidden'"
         class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
       >
+        <li>
+          <ModeToggle />
+        </li>
         <li class="text-gray-100 hover:text-indigo-400">
           <a href="/categories">Categories</a>
         </li>

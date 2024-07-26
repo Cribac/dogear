@@ -24,3 +24,9 @@ test('navigation has a signout button', async ({ page }) => {
   
   await expect(page.getByRole('button', { name: 'Sign out' })).toBeVisible()
 })
+
+test('navigation has mode toggle button', async ({ page }) => {
+  await page.goto('/')
+  await page.getByLabel('Toggle Dark Mode').click()
+  await expect(page.getByLabel('Toggle Light Mode')).toBeVisible()
+})

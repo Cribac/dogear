@@ -7,9 +7,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu'
+import {
+  MoreHorizontal,
+  Trash2,
+  Pencil
+} from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
-import { MoreHorizontal } from 'lucide-vue-next'
-import { Trash2, Pencil } from 'lucide-vue-next'
 
 const props = defineProps<{
   item: {
