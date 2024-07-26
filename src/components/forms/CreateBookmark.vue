@@ -94,6 +94,7 @@ const onSubmit = handleSubmit(async (values) => {
           />
         </ErrorMessage>
         <CategorySelection
+          v-if="categories.length > 0"
           v-model="categoryId"
           name="categoryId"
           :categories="categories"
