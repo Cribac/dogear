@@ -26,7 +26,7 @@ const { PUBLIC_APP_API_TOKEN, PUBLIC_BASE_URL } = import.meta.env
 
 const serverErrorMessage = ref('')
 
-const { errors, handleSubmit, defineField } = useForm({
+const { errors, handleSubmit, defineField, resetForm } = useForm({
   validationSchema: bookmarkSchema,
 })
 
@@ -35,8 +35,8 @@ const [name, nameAttrs] = defineField('name')
 const [categoryId] = defineField('categoryId')
 
 async function fetchCategories (userId: string, token: string) {
-  const url = `${PUBLIC_BASE_URL}/api/category/all/${userId}.json`
-  const response = await fetchResponse(url, 'GET', token)
+  const targetUrl = `${PUBLIC_BASE_URL}/api/category/all/${userId}.json`
+  const response = await fetchResponse(targetUrl, 'GET', token)
 
   const result = await response.json()
 
@@ -46,21 +46,26 @@ async function fetchCategories (userId: string, token: string) {
 const categories = await fetchCategories(props.profileId, PUBLIC_APP_API_TOKEN)
 
 const onSubmit = handleSubmit(async (values) => {
-  const url = '/api/bookmark/create'
+  const targetUrl = '/api/bookmark/create'
   const formData = buildFormData(values, props.profileId)
 
-  const response = await fetchResponse(url, 'POST', PUBLIC_APP_API_TOKEN, formData)
+  const response = await fetchResponse(targetUrl, 'POST', PUBLIC_APP_API_TOKEN, formData)
 
   if (response.status !== 200) {
     const errorData = await response.json()
     serverErrorMessage.value = errorData.message
   } else {
-    serverErrorMessage.value = ''
+    await cleanUp()
     const data = await response.json()
     const event = new CustomEvent('BookmarkCreated', { detail: data })
     window.dispatchEvent(event)
   }
 })
+
+async function cleanUp (): Promise<void> {
+  serverErrorMessage.value = ''
+  resetForm()
+}
 </script>
 
 <template>

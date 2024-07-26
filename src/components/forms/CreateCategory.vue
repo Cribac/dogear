@@ -25,7 +25,7 @@ const { PUBLIC_APP_API_TOKEN } = import.meta.env
 
 const serverErrorMessage = ref('')
 
-const { errors, handleSubmit, defineField } = useForm({
+const { errors, handleSubmit, defineField, resetForm } = useForm({
   validationSchema: categorySchema,
 })
 
@@ -41,12 +41,17 @@ const onSubmit = handleSubmit(async (values) => {
     const errorData = await response.json()
     serverErrorMessage.value = errorData.message
   } else {
-    serverErrorMessage.value = ''
+    await cleanUp()
     const data = await response.json()
     const event = new CustomEvent('CategoryCreated', { detail: data })
     window.dispatchEvent(event)
   }
 })
+
+async function cleanUp (): Promise<void> {
+  serverErrorMessage.value = ''
+  resetForm()
+}
 </script>
 <template>
   <form @submit="onSubmit">
