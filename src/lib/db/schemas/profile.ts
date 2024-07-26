@@ -1,9 +1,8 @@
-import { 
+import {
   pgSchema, 
   pgTable,
   uuid,
   varchar,
-  text, 
   timestamp 
 } from 'drizzle-orm/pg-core'
 
@@ -18,9 +17,7 @@ export const Profile = pgTable('profile', {
   id: uuid('id')
     .primaryKey()
     .references(() => Users.id, { onDelete: 'cascade' }),
-  firstName: text('first_name'),
-  lastName: text('last_name'),
-  email: varchar('email', { length: 256 }),
-  created_at: timestamp('created_at').defaultNow(), 
+  email: varchar('email', { length: 256 }).notNull().unique(),
+  created_at: timestamp('created_at').defaultNow(),
   updated_at: timestamp('updated_at').defaultNow(), 
 })

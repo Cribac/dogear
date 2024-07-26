@@ -1,6 +1,6 @@
 {
-  "id": "74a0514c-a85c-4a7a-ba3f-8bfa587a1ace",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "20d04b21-dca0-4810-a6c1-a99fb6253f95",
+  "prevId": "c5cef3fe-7078-494b-bf7e-8f23fbfc3724",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -59,28 +59,28 @@
         "bookmark_profile_id_profile_id_fk": {
           "name": "bookmark_profile_id_profile_id_fk",
           "tableFrom": "bookmark",
-          "tableTo": "profile",
           "columnsFrom": [
             "profile_id"
           ],
+          "tableTo": "profile",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         },
         "bookmark_category_id_category_id_fk": {
           "name": "bookmark_category_id_category_id_fk",
           "tableFrom": "bookmark",
-          "tableTo": "category",
           "columnsFrom": [
             "category_id"
           ],
+          "tableTo": "category",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         }
       },
       "compositePrimaryKeys": {},
@@ -129,15 +129,15 @@
         "category_profile_id_profile_id_fk": {
           "name": "category_profile_id_profile_id_fk",
           "tableFrom": "category",
-          "tableTo": "profile",
           "columnsFrom": [
             "profile_id"
           ],
+          "tableTo": "profile",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         }
       },
       "compositePrimaryKeys": {},
@@ -153,23 +153,11 @@
           "primaryKey": true,
           "notNull": true
         },
-        "first_name": {
-          "name": "first_name",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "last_name": {
-          "name": "last_name",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
         "email": {
           "name": "email",
           "type": "varchar(256)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",
@@ -191,20 +179,28 @@
         "profile_id_users_id_fk": {
           "name": "profile_id_users_id_fk",
           "tableFrom": "profile",
-          "tableTo": "users",
-          "schemaTo": "auth",
           "columnsFrom": [
             "id"
           ],
+          "tableTo": "users",
+          "schemaTo": "auth",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "cascade"
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "profile_email_unique": {
+          "name": "profile_email_unique",
+          "columns": [
+            "email"
+          ],
+          "nullsNotDistinct": false
+        }
+      }
     },
     "auth.users": {
       "name": "users",

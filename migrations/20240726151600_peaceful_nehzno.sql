@@ -18,11 +18,10 @@ CREATE TABLE IF NOT EXISTS "category" (
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "profile" (
 	"id" uuid PRIMARY KEY NOT NULL,
-	"first_name" text,
-	"last_name" text,
-	"email" varchar(256),
+	"email" varchar(256) NOT NULL,
 	"created_at" timestamp DEFAULT now(),
-	"updated_at" timestamp DEFAULT now()
+	"updated_at" timestamp DEFAULT now(),
+	CONSTRAINT "profile_email_unique" UNIQUE("email")
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "auth"."users" (
