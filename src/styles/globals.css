@@ -4,44 +4,44 @@
  
 @layer base {
   :root {
-    --color-ctp-text: 76 79 105;
-    --color-ctp-base: 239 241 245;
-    --color-ctp-rosewater: 220 138 120;
-    --color-ctp-flamingo: 221 120 120;
-    --color-ctp-pink: 234 118 203;
-    --color-ctp-mauve: 136 57 230;
-    --color-ctp-red: 210 15 57;
-    --color-ctp-maroon: 230 69 83;
-    --color-ctp-peach: 254 100 11;
-    --color-ctp-yellow: 223 142 29;
-    --color-ctp-green: 64 160 43;
-    --color-ctp-teal: 23 146 153;
-    --color-ctp-sky: 4 165 229;
-    --color-ctp-sapphire: 32 159 181;
-    --color-ctp-blue: 30 102 245;
-    --color-ctp-lavender: 144 135 253;
-    --color-ctp-subtext1: 92 95 119;
-    --color-ctp-subtext0: 108 111 133;
-    --color-ctp-overlay2: 124 127 147;
-    --color-ctp-overlay1: 140 143 161;
-    --color-ctp-overlay0: 156 160 176;
-    --color-ctp-surface2: 172 176 100;
-    --color-ctp-surface1: 188 192 204;
-    --color-ctp-surface0: 204 208 218;
-    --color-ctp-mantle: 230 233 239;
-    --color-ctp-crust: 220 224 232;
+    --color-ctp-rosewater: 11 59% 67%;
+    --color-ctp-flamingo: 0 60% 67%;
+    --color-ctp-pink: 316 73% 69%;
+    --color-ctp-mauve: 266 85% 58%;
+    --color-ctp-red: 347 87% 44%;
+    --color-ctp-maroon: 355 76% 59%;
+    --color-ctp-peach: 22 99% 52%;
+    --color-ctp-yellow: 35 77% 49%;
+    --color-ctp-green: 109 58% 40%;
+    --color-ctp-teal: 183 74% 35%;
+    --color-ctp-sky: 197 97% 46%;
+    --color-ctp-sapphire: 189 70% 42%;
+    --color-ctp-blue: 220 91% 54%;
+    --color-ctp-lavender: 231 97% 72%;
+    --color-ctp-text: 234 16% 35%;
+    --color-ctp-subtext1: 233 13% 41%;
+    --color-ctp-subtext0: 233 10% 47%;
+    --color-ctp-overlay2: 232 10% 53%;
+    --color-ctp-overlay1: 231 10% 59%;
+    --color-ctp-overlay0: 228 11% 65%;
+    --color-ctp-surface2: 227 12% 71%;
+    --color-ctp-surface1: 225 14% 77%;
+    --color-ctp-surface0: 223 16% 83%;
+    --color-ctp-base: 220 23% 95%;
+    --color-ctp-mantle: 220 22% 92%;
+    --color-ctp-crust: 220 21% 89%;
 
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: var(--color-ctp-base);
+    --foreground: var(--color-ctp-text);
  
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: var(--color-ctp-overlay2);
+    --muted-foreground: var(--color-ctp-surface2);
  
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: var(--color-ctp-mantle);
+    --popover-foreground: var(--color-ctp-subtext0);
  
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: var(--color-ctp-surface0);
+    --card-foreground: var(--color-ctp-text);
  
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
@@ -64,44 +64,44 @@
   }
  
   .dark {
-    --color-ctp-text: 198 208 245;
-    --color-ctp-base: 48 52 70;
-    --color-ctp-rosewater: 242 213 208;
-    --color-ctp-flamingo: 238 190 1;
-    --color-ctp-pink: 244 184 228;
-    --color-ctp-mauve: 202 158 230;
-    --color-ctp-red: 231 130 132;
-    --color-ctp-maroon: 234 153 156;
-    --color-ctp-peach: 239 159 11;
-    --color-ctp-yellow: 229 200 14;
-    --color-ctp-green: 166 209 13;
-    --color-ctp-teal: 129 200 190;
-    --color-ctp-sky: 153 209 219;
-    --color-ctp-sapphire: 133 193 220;
-    --color-ctp-blue: 140 170 238;
-    --color-ctp-lavender: 186 187 241;
-    --color-ctp-subtext1: 181 191 226;
-    --color-ctp-subtext0: 165 173 206;
-    --color-ctp-overlay2: 148 156 187;
-    --color-ctp-overlay1: 131 139 167;
-    --color-ctp-overlay0: 115 121 148;
-    --color-ctp-surface2: 98 104 128;
-    --color-ctp-surface1: 81 87 109;
-    --color-ctp-surface0: 65 69 89;
-    --color-ctp-mantle: 41 44 60;
-    --color-ctp-crust: 35 38 52;
+    --color-ctp-rosewater: 10 56% 91%;
+    --color-ctp-flamingo: 0 59% 88%;
+    --color-ctp-pink: 316 72% 86%;
+    --color-ctp-mauve: 267 84% 81%;
+    --color-ctp-red: 343 81% 75%;
+    --color-ctp-maroon: 350 65% 77%;
+    --color-ctp-peach: 23 92% 75%;
+    --color-ctp-yellow: 41 86% 83%;
+    --color-ctp-green: 115 54% 76%;
+    --color-ctp-teal: 170 57% 73%;
+    --color-ctp-sky: 189 71% 73%;
+    --color-ctp-sapphire: 199 76% 69%;
+    --color-ctp-blue: 217 92% 76%;
+    --color-ctp-lavender: 232 97% 85%;
+    --color-ctp-text: 226 64% 88%;
+    --color-ctp-subtext1: 227 35% 80%;
+    --color-ctp-subtext0: 228 24% 72%;
+    --color-ctp-overlay2: 228 17% 64%;
+    --color-ctp-overlay1: 230 13% 55%;
+    --color-ctp-overlay0: 231 11% 47%;
+    --color-ctp-surface2: 233 12% 39%;
+    --color-ctp-surface1: 234 13% 31%;
+    --color-ctp-surface0: 237 16% 23%;
+    --color-ctp-base: 240 21% 15%;
+    --color-ctp-mantle: 240 21% 12%;
+    --color-ctp-crust: 240 23% 9%;
 
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: var(--color-ctp-base);
+    --foreground: var(--color-ctp-text);
  
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: var(--color-ctp-overlay2);
+    --muted-foreground: var(--color-ctp-surface2);
  
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: var(--color-ctp-mantle);
+    --popover-foreground: var(--color-ctp-subtext0);
  
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: var(--color-ctp-surface0);
+    --card-foreground: var(--color-ctp-text);
  
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
