@@ -4,6 +4,33 @@
  
 @layer base {
   :root {
+    --color-ctp-text: 76 79 105;
+    --color-ctp-base: 239 241 245;
+    --color-ctp-rosewater: 220 138 120;
+    --color-ctp-flamingo: 221 120 120;
+    --color-ctp-pink: 234 118 203;
+    --color-ctp-mauve: 136 57 230;
+    --color-ctp-red: 210 15 57;
+    --color-ctp-maroon: 230 69 83;
+    --color-ctp-peach: 254 100 11;
+    --color-ctp-yellow: 223 142 29;
+    --color-ctp-green: 64 160 43;
+    --color-ctp-teal: 23 146 153;
+    --color-ctp-sky: 4 165 229;
+    --color-ctp-sapphire: 32 159 181;
+    --color-ctp-blue: 30 102 245;
+    --color-ctp-lavender: 144 135 253;
+    --color-ctp-subtext1: 92 95 119;
+    --color-ctp-subtext0: 108 111 133;
+    --color-ctp-overlay2: 124 127 147;
+    --color-ctp-overlay1: 140 143 161;
+    --color-ctp-overlay0: 156 160 176;
+    --color-ctp-surface2: 172 176 100;
+    --color-ctp-surface1: 188 192 204;
+    --color-ctp-surface0: 204 208 218;
+    --color-ctp-mantle: 230 233 239;
+    --color-ctp-crust: 220 224 232;
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
  
@@ -37,6 +64,33 @@
   }
  
   .dark {
+    --color-ctp-text: 198 208 245;
+    --color-ctp-base: 48 52 70;
+    --color-ctp-rosewater: 242 213 208;
+    --color-ctp-flamingo: 238 190 1;
+    --color-ctp-pink: 244 184 228;
+    --color-ctp-mauve: 202 158 230;
+    --color-ctp-red: 231 130 132;
+    --color-ctp-maroon: 234 153 156;
+    --color-ctp-peach: 239 159 11;
+    --color-ctp-yellow: 229 200 14;
+    --color-ctp-green: 166 209 13;
+    --color-ctp-teal: 129 200 190;
+    --color-ctp-sky: 153 209 219;
+    --color-ctp-sapphire: 133 193 220;
+    --color-ctp-blue: 140 170 238;
+    --color-ctp-lavender: 186 187 241;
+    --color-ctp-subtext1: 181 191 226;
+    --color-ctp-subtext0: 165 173 206;
+    --color-ctp-overlay2: 148 156 187;
+    --color-ctp-overlay1: 131 139 167;
+    --color-ctp-overlay0: 115 121 148;
+    --color-ctp-surface2: 98 104 128;
+    --color-ctp-surface1: 81 87 109;
+    --color-ctp-surface0: 65 69 89;
+    --color-ctp-mantle: 41 44 60;
+    --color-ctp-crust: 35 38 52;
+
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
  
@@ -66,6 +120,25 @@
  
     --ring: 212.7 26.8% 83.9%;
   }
+}
+
+body {
+  height: 100vh;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+}
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
 }
  
 @layer base {

@@ -16,11 +16,11 @@ const toggleNav = () => {
 </script>
 
 <template>
-  <div class="bg-indigo-600">
+  <div class="bg-ctp-crust">
     <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-end">
-          <div class="text-xl font-bold text-gray-100 md:text-2xl hover:text-indigo-400">
+          <div class="text-xl font-bold text-ctp-text md:text-2xl hover:text-ctp-sky">
             <a
               href="/"
               data-testid="logo"
@@ -41,7 +41,7 @@ const toggleNav = () => {
         >
           <button
             type="button"
-            class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+            class="text-ctp-text hover:text-ctp-sky focus:outline-none focus:text-ctp-sky"
           >
             <svg
               viewBox="0 0 24 24"
@@ -64,10 +64,10 @@ const toggleNav = () => {
         <li>
           <ModeToggle />
         </li>
-        <li class="text-gray-100 hover:text-indigo-400">
+        <li class="text-ctp-text hover:text-ctp-sky">
           <a href="/categories">Categories</a>
         </li>
-        <li class="text-gray-100 hover:text-indigo-400">
+        <li>
           <SignoutForm />
         </li>
       </ul>
