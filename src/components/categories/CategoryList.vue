@@ -5,6 +5,7 @@ import { columns } from '@/components/categories/columns'
 import { Input } from '@/components/ui/input'
 import { DataTable } from '@/components/ui/data-table'
 import EditCategory from '@/components/forms/EditCategory.vue'
+import DeleteButton from '@/components/ui/DeleteButton.vue'
 
 const props = defineProps({
   userId: {
@@ -35,6 +36,19 @@ async function deleteCategory (id: string) {
 
   categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
   
+  return result
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function handleBulkDelete (rows: any[]) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const ids = rows.map((row: { original: { id: any } }) => row.original.id)
+  const url = `${PUBLIC_BASE_URL}/api/category/delete/deleteAll.json`
+
+  const response = await fetchResponse(url, 'DELETE', PUBLIC_APP_API_TOKEN, JSON.stringify(ids))
+
+  const result = await response.json()
+  categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
   return result
 }
 
@@ -84,6 +98,15 @@ onMounted(async () => {
               @update:model-value="filtersProps.table.getColumn('name')?.setFilterValue($event)" 
             />
           </div>
+        </div>
+        <div
+          v-if="filtersProps.table.getSelectedRowModel().rows.length > 0"
+          class="flex justify-end items-center py-4 mr-4"
+        >
+          <DeleteButton
+            button-text="Delete Selected"
+            @delete="handleBulkDelete(filtersProps.table.getSelectedRowModel().rows)"
+          />
         </div>
       </template>
 

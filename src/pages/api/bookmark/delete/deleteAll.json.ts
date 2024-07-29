@@ -5,7 +5,7 @@ import { Bookmark } from '@/lib/db/schemas'
 
 export const DELETE: APIRoute = async (context) => {
   // @TODO harden this!
-  // @TODO check batch or bulk deleteion options
+  // @TODO check batch or bulk deletetion options
   const ids = await context.request.json()
 
   const deletedBookmarkIds = ids.map(async (id: string) => {

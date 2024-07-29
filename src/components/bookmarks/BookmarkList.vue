@@ -114,7 +114,7 @@ onMounted(async () => {
 
           <div
             v-if="filtersProps.table.getSelectedRowModel().rows.length > 0"
-            class="flex justify-end items-center py-4 mr-4" 
+            class="flex justify-end items-center py-4 mr-4"
           >
             <DeleteButton
               button-text="Delete Selected"
