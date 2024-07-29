@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
+import { Save, CircleX } from 'lucide-vue-next'
 import { ErrorMessage } from '@/components/forms'
 
 const props = defineProps<{
@@ -71,14 +72,25 @@ const onSubmit = handleSubmit(async (values) => {
             v-model="name"
             name="name"
             type="text"
+            class="mt-2"
           />
         </ErrorMessage>
       </CardContent>
-      <CardFooter>
-        <Button type="submit">
+      <CardFooter class="justify-between">
+        <Button
+          type="submit"
+          size="xs"
+          class="bg-ctp-teal hover:bg-ctp-green"
+        >
+          <Save class="mr-2 h-4 w-4" />
           Save Changes
         </Button>
-        <Button @click="$emit('cancel')">
+        <Button
+          size="xs"
+          class="bg-ctp-overlay1 hover:bg-ctp-surface2"
+          @click="$emit('cancel')"
+        >
+          <CircleX class="mr-2 h-4 w-4" />
           Cancel
         </Button>
         <ErrorMessage 

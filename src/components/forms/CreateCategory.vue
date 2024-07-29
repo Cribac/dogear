@@ -68,6 +68,7 @@ async function cleanUp (): Promise<void> {
             v-model="name"
             name="name"
             type="text"
+            class="mt-2"
           />
         </ErrorMessage>
       </CardContent>
@@ -75,7 +76,7 @@ async function cleanUp (): Promise<void> {
         <Button type="submit">
           Create category
         </Button>
-        <ErrorMessage 
+        <ErrorMessage
           v-if="serverErrorMessage"
           :message="serverErrorMessage"
         />

@@ -74,6 +74,7 @@ async function cleanUp (): Promise<void> {
       <CardContent>
         <ErrorMessage
           :message="errors.url"
+          class="mt-4"
         >
           <Label for="url">URL</Label>
           <Input
@@ -82,6 +83,7 @@ async function cleanUp (): Promise<void> {
             v-model="url"
             name="url"
             type="url"
+            class="mt-2"
           />
         </ErrorMessage>
 
@@ -96,6 +98,7 @@ async function cleanUp (): Promise<void> {
             v-model="name"
             name="name"
             type="text"
+            class="mt-2"
           />
         </ErrorMessage>
         <CategorySelection
@@ -109,7 +112,7 @@ async function cleanUp (): Promise<void> {
         <Button type="submit">
           Create bookmark
         </Button>
-        <ErrorMessage 
+        <ErrorMessage
           v-if="serverErrorMessage"
           :message="serverErrorMessage"
         />

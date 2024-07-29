@@ -52,42 +52,44 @@ const onSubmit = handleSubmit(async (values) => {
     </CardHeader>
     <CardContent>
       <form @submit="onSubmit">
-        <ErrorMessage 
+        <ErrorMessage
           :message="errors.email"
         >
           <Label for="email">Email</Label>
-          <Input 
+          <Input
             v-bind="emailAttrs" 
             id="email"
-            v-model="email" 
+            v-model="email"
             type="email"
-            name="email" 
+            name="email"
+            class="mt-2"
           />
         </ErrorMessage>
-        <ErrorMessage 
-          :message="errors.password" 
+        <ErrorMessage
+          :message="errors.password"
           class="mt-4"
         >
           <Label
             for="password"
             class="pt-6"
           >Password</Label>
-          <Input 
+          <Input
             v-bind="passwordAttrs"
-            id="password" 
+            id="password"
             v-model="password"
             type="password"
             name="password"
+            class="mt-2"
           />
         </ErrorMessage>
-        <Button 
+        <Button
           class="mt-4"
           type="submit"
         >
           Sign in
         </Button>
       </form>
-      <ErrorMessage 
+      <ErrorMessage
         v-if="serverErrorMessage"
         :message="serverErrorMessage"
       />
