@@ -12,7 +12,7 @@ import { Category } from './category'
 export const Bookmark = pgTable('bookmark', {
   id: uuid('id').primaryKey().defaultRandom(),
   profileId: uuid('profile_id').notNull().references(() => Profile.id, { onDelete: 'cascade' }),
-  categoryId: uuid('category_id').references(() => Category.id, { onDelete: 'cascade' }),
+  categoryId: uuid('category_id').references(() => Category.id),
   name: varchar('name', { length: 256 }),
   url: text('url'),
   created_at: timestamp('created_at').defaultNow(), 
