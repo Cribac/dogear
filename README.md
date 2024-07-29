@@ -60,7 +60,7 @@ pnpm run dev
   - [tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate) for shadcn-vue
   - [class-variance-authority](https://github.com/joe-bell/cva#readme) for shadcn-vue
   - [clsx](https://github.com/lukeed/clsx#readme) for shadcn-vue
-  - [lucide-vue-next](https://lucide.dev/) for shadcn-vue
+  - [lucide-vue-next](https://lucide.dev/) icons for shadcn-vue
   - [radix-vue](https://github.com/radix-vue/radix-vue) for shadcn-vue
   - [tanstack-vue-table](https://tanstack.com/table/latest) for shadcn-vue
 
