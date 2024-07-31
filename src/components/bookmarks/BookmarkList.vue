@@ -4,8 +4,8 @@ import { fetchResponse } from '@/lib/connectivity'
 import { columns } from '@/components/bookmarks/columns'
 import { Input } from '@/components/ui/input'
 import { DataTable } from '@/components/ui/data-table'
+import { DeleteButton } from '@/components/ui/button'
 import EditBookmark from '@/components/forms/EditBookmark.vue'
-import DeleteButton from '@/components/ui/DeleteButton.vue'
 
 const props = defineProps({
   userId: {
