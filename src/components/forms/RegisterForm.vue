@@ -9,7 +9,7 @@ import {
   CardTitle,
   CardContent
 } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { PrimaryButton } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { ErrorMessage } from '@/components/forms'
@@ -77,12 +77,12 @@ const onSubmit = handleSubmit(async (values) => {
             class="mt-2"
           />
         </ErrorMessage>
-        <Button
+        <PrimaryButton
           class="mt-4"
           type="submit"
         >
           Register
-        </Button>
+        </PrimaryButton>
       </form>
       <ErrorMessage 
         v-if="serverErrorMessage"

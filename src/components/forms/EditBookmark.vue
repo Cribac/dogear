@@ -9,7 +9,7 @@ import {
   CardContent,
   CardFooter
 } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Button, PrimaryButton } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { ErrorMessage } from '@/components/forms'
@@ -114,14 +114,14 @@ const onSubmit = handleSubmit(async (values) => {
         />
       </CardContent>
       <CardFooter class="justify-between">
-        <Button
+        <PrimaryButton
+          class="mt-4"
           type="submit"
           size="xs"
-          class="bg-ctp-teal hover:bg-ctp-green"
         >
           <Save class="mr-2 h-4 w-4" />
           Save Changes
-        </Button>
+        </PrimaryButton>
         <Button
           size="xs"
           class="bg-ctp-overlay1 hover:bg-ctp-surface2"
