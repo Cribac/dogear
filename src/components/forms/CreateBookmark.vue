@@ -9,10 +9,11 @@ import {
   CardContent,
   CardFooter
 } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { PrimaryButton } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { ErrorMessage } from '@/components/forms'
+import { Save } from 'lucide-vue-next'
 import CategorySelection from '@/components/categories/CategorySelection.vue'
 
 const props = defineProps({
@@ -109,9 +110,10 @@ async function cleanUp (): Promise<void> {
         />
       </CardContent>
       <CardFooter>
-        <Button type="submit">
+        <PrimaryButton type="submit">
+          <Save class="mr-2 h-4 w-4" />
           Create bookmark
-        </Button>
+        </PrimaryButton>
         <ErrorMessage
           v-if="serverErrorMessage"
           :message="serverErrorMessage"
