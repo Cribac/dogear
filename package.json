@@ -54,7 +54,7 @@
     "@vitejs/plugin-vue": "5.0.5",
     "@vue/test-utils": "2.4.6",
     "drizzle-kit": "0.23.0",
-    "eslint": "9.5.0",
+    "eslint": "9.8.0",
     "eslint-plugin-astro": "1.2.2",
     "eslint-plugin-vue": "9.26.0",
     "globals": "15.8.0",
