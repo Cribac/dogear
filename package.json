@@ -59,7 +59,7 @@
     "eslint-plugin-vue": "9.26.0",
     "globals": "15.8.0",
     "happy-dom": "14.12.3",
-    "supabase": "1.183.5",
+    "supabase": "1.187.10",
     "typescript-eslint": "7.18.0",
     "vee-validate": "4.13.1",
     "vitest": "2.0.4",
