@@ -48,7 +48,7 @@
     "@playwright/test": "1.45.2",
     "@types/node": "20.14.10",
     "@types/pg": "8.11.6",
-    "@typescript-eslint/eslint-plugin": "7.16.0",
+    "@typescript-eslint/eslint-plugin": "8.0.1",
     "@typescript-eslint/parser": "8.0.1",
     "@vee-validate/yup": "4.13.2",
     "@vitejs/plugin-vue": "5.0.5",
