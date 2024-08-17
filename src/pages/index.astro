@@ -1,14 +1,15 @@
 ---
 import '@/styles/globals.css'
 import astroConfig from 'astro.config.mjs'
-import Layout from '@/layouts/Layout.astro'
-import NavBar from '@/components/ui/NavBar.vue'
 import { supabase } from '@/lib/supabase'
 import { Profile } from '@/lib/db/schemas'
 import db from '@/lib/db/db'
 import { eq } from 'drizzle-orm'
+import Layout from '@/layouts/Layout.astro'
+import NavBar from '@/components/ui/NavBar.vue'
 import CreateBookmark from '@/components/forms/CreateBookmark.vue'
 import BookmarkList from '@/components/bookmarks/BookmarkList.vue'
+import ThemeIcon from '@/components/ui/ThemeIcon.astro'
 
 const { cookies, redirect } = Astro
 
@@ -47,10 +48,12 @@ const { site } = astroConfig
 ---
 <Layout title="Bookmarks">
   <header>
-    <NavBar 
+    <NavBar
       profileEmail={profile.email}
-      client:load 
-    />
+      client:visible
+    >
+      <ThemeIcon slot="theme-toggle" />
+    </NavBar>
   </header>
   <main>
     <CreateBookmark
@@ -60,7 +63,7 @@ const { site } = astroConfig
     <BookmarkList
       userId={profile.id}
       site={site as string}
-      client:only="vue" 
+      client:only="vue"
     />
   </main>
 </Layout>

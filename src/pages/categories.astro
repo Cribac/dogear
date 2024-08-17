@@ -1,10 +1,11 @@
 ---
 import '@/styles/globals.css'
+import { supabase } from '@/lib/supabase'
 import Layout from '@/layouts/Layout.astro'
 import NavBar from '@/components/ui/NavBar.vue'
-import { supabase } from '@/lib/supabase'
 import CreateCategory from '@/components/forms/CreateCategory.vue'
 import CategoryList from '@/components/categories/CategoryList.vue'
+import ThemeIcon from '@/components/ui/ThemeIcon.astro'
 
 const { cookies, redirect } = Astro
 const accessToken = cookies.get('sb-access-token')
@@ -30,21 +31,22 @@ if (error) {
   return redirect('/signin')
 }
 ---
-
 <Layout title="Categories">
   <header>
-    <NavBar 
-      profileEmail={data.user?.email} 
-      client:load
-    />
+    <NavBar
+      profileEmail={data.user?.email}
+      client:visible
+    >
+      <ThemeIcon slot="theme-toggle" />
+    </NavBar>
   </header>
   <main>
     <CreateCategory
       profileId={data.user?.id}
-      client:visible 
+      client:visible
     />
-    { 
-      data.user && 
+    {
+      data.user &&
       <CategoryList
         userId={data.user.id}
         client:only="vue"

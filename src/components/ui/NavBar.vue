@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { SignoutForm } from '@/components/forms'
 import UserAvatar from '@/components/ui/UserAvatar.vue'
-import ModeToggle from '@/components/ui/ModeToggle.vue'
 
 defineProps<{
   profileEmail?: string | null
@@ -61,13 +60,13 @@ const toggleNav = () => {
         :class="showMenu ? 'flex' : 'hidden'"
         class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
       >
-        <li>
-          <ModeToggle />
-        </li>
         <li class="text-ctp-text hover:text-ctp-sky">
           <a href="/categories">Categories</a>
         </li>
         <li>
+          <slot name="theme-toggle" />
+        </li>
+        <li class="ml-0">
           <SignoutForm />
         </li>
       </ul>
