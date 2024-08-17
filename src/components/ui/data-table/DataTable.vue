@@ -74,6 +74,7 @@ const expanded = ref<ExpandedState>({})
         <TableRow
           v-for="headerGroup in table.getHeaderGroups()" 
           :key="headerGroup.id"
+          class="hover:bg-transparent"
         >
           <TableHead
             v-for="header in headerGroup.headers" 

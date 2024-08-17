@@ -8,10 +8,12 @@ defineProps<{
 
 <template>
   <div class="flex items-center text-left">
-    <ExternalLink />
+    <ExternalLink 
+      class="text-ctp-sky"
+    />
     <a
       :href="url"
-      class="ml-2 text-sm text-muted-foreground"
+      class="ml-2 text-sm"
       target="_blank"
     >
       {{ url }}
