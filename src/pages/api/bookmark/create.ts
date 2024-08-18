@@ -17,6 +17,10 @@ export const POST: APIRoute = async ({ request }) => {
       return getJsonResponse(400, 'Url and name are required')
     }
 
+    if (!categoryId) {
+      return getJsonResponse(400, 'Category is required')
+    }
+
     if (profileId) {
       const res = await db
         .insert(Bookmark)
