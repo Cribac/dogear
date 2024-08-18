@@ -3,6 +3,8 @@ import { twMerge } from 'tailwind-merge'
 import type { Updater } from '@tanstack/vue-table'
 import type { Ref } from 'vue'
 
+export const ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
@@ -35,4 +37,36 @@ export function valueUpdater<T extends Updater<any>>(updaterOrValue: T, ref: Ref
 export function splitEmailAddress(email: string): string {
   const splitted = email.split('@')
   return `${splitted[0][0]}${splitted[1][0]}`
+}
+
+/**
+ * Splits an array into chunks of a given size
+ * 
+ * @param {T[]} array 
+ * @param {number} size 
+ *
+ * @returns {T[][]}
+ */
+export function chunk <T>(array: T[], size: number): T[][] {
+  const result = []
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size))
+  }
+  return result
+}
+
+/**
+ * Returns a color based on the first letter of the email
+ * @Todo: Check for numbers in email address
+ * 
+ * @param {string} email
+ * @returns {AvatarColor}
+ */
+export function getColorByEmail(email: string): AvatarColor {
+  const avatarColors = ['pink', 'peach', 'yellow', 'teal', 'sapphire', 'sky', 'lavender']
+  const splittedEmail = email.split('@')
+  const firstChar = splittedEmail[0][0]
+  const splittedAlphabet = chunk(ALPHABET.split(''), 4)
+  const idx = splittedAlphabet.findIndex((arr) => arr.includes(firstChar))
+  return avatarColors[idx] as AvatarColor
 }

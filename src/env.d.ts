@@ -38,3 +38,5 @@ interface Category {
   created_at: Date | null
   updated_at: Date | null
 }
+
+type AvatarColor = 'pink' | 'peach' |'yellow' | 'teal' | 'sapphire' | 'sky' | 'lavender'
