@@ -67,7 +67,9 @@ const onSubmit = handleSubmit(async (values) => {
           <Label
             for="password"
             class="pt-6"
-          >Password</Label>
+          >
+            Password
+          </Label>
           <Input
             v-bind="passwordAttrs"
             id="password"
@@ -87,6 +89,7 @@ const onSubmit = handleSubmit(async (values) => {
       <ErrorMessage 
         v-if="serverErrorMessage"
         :message="serverErrorMessage"
+        class="mt-4 text-center"
       />
     </CardContent>
   </Card>

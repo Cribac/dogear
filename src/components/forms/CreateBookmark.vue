@@ -109,8 +109,13 @@ async function cleanUp (): Promise<void> {
           :categories="categories"
         />
       </CardContent>
-      <CardFooter>
-        <PrimaryButton type="submit">
+      <CardFooter
+        class="flex-col items-start sm:flex-row sm:items-center"
+      >
+        <PrimaryButton
+          type="submit"
+          class="mr-4"
+        >
           <Save class="mr-2 h-4 w-4" />
           Create bookmark
         </PrimaryButton>
