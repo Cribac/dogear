@@ -11,7 +11,7 @@ const props = defineProps<Props>()
     <slot />
     <div 
       v-if="props.message" 
-      class="text-ctp-red mt-1"
+      class="text-ctp-red mt-1 p-1"
     >
       {{ props.message }}
     </div>
