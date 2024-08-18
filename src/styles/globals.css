@@ -140,6 +140,62 @@ code {
     Courier New,
     monospace;
 }
+
+.bg-ctp-pink {
+  background: hsl(316 73% 69%)
+}
+
+.bg-ctp-peach {
+  background: hsl(23 92% 75%)
+}
+
+.bg-ctp-yellow {
+  background: hsl(35 77% 49%)
+}
+
+.bg-ctp-teal {
+  background: hsl(183 74% 35%)
+}
+
+.bg-ctp-sapphire {
+  background: hsl(189 70% 42%)
+}
+
+.bg-ctp-sky {
+  background: hsl(197 97% 46%)
+}
+
+.bg-ctp-lavender {
+  background: hsl(231 97% 72%)
+}
+
+.dark .bg-ctp-pink {
+  background: hsl(316 72% 86%)
+}
+
+.dark .bg-ctp-peach {
+  background: hsl(22 99% 52%)
+}
+
+.dark .bg-ctp-yellow {
+  background: hsl(41 86% 83%)
+}
+
+.dark .bg-ctp-teal {
+  background: hsl(170 57% 73%)
+}
+
+.dark .bg-ctp-sapphire {
+  background: hsl(199 76% 69%)
+}
+
+.dark .bg-ctp-sky {
+  background: hsl(189 71% 73%)
+}
+
+.dark .bg-ctp-lavender {
+  background: hsl(232 97% 85%)
+}
  
 @layer base {
   * {
