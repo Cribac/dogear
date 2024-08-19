@@ -4,6 +4,7 @@ test('homepage has title', async ({ page }) => {
   await page.goto('/')
   
   await expect(page).toHaveTitle(/Bookmarks/)
+  await expect(page.getByRole('heading', { name: 'Bookmarks' })).toBeVisible()
 })
 
 test ('homepage has avatar', async ({ page }) => {

@@ -10,6 +10,7 @@ import NavBar from '@/components/ui/NavBar.vue'
 import CreateBookmark from '@/components/forms/CreateBookmark.vue'
 import BookmarkList from '@/components/bookmarks/BookmarkList.vue'
 import ThemeIcon from '@/components/ui/ThemeIcon.astro'
+import PageHeading from '@/components/PageHeading.astro'
 
 const { cookies, redirect } = Astro
 
@@ -45,8 +46,10 @@ if (data.user) {
 const profile = profiles[0]
 
 const { site } = astroConfig
+
+const pageTitle = 'Bookmarks'
 ---
-<Layout title="Bookmarks">
+<Layout title={pageTitle}>
   <header>
     <NavBar
       profileEmail={profile.email}
@@ -56,6 +59,9 @@ const { site } = astroConfig
     </NavBar>
   </header>
   <main>
+    <PageHeading>
+      {pageTitle}
+    </PageHeading>
     <CreateBookmark
       profileId={profile.id}
       client:visible

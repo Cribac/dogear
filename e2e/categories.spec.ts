@@ -4,6 +4,7 @@ test('categories page has title', async ({ page }) => {
   await page.goto('/categories')
   
   await expect(page).toHaveTitle(/Categories/)
+  await expect(page.getByRole('heading', { name: 'Categories' })).toBeVisible()
 })
 
 test ('categories page has avatar', async ({ page }) => {
