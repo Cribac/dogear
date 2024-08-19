@@ -6,6 +6,7 @@ import NavBar from '@/components/ui/NavBar.vue'
 import CreateCategory from '@/components/forms/CreateCategory.vue'
 import CategoryList from '@/components/categories/CategoryList.vue'
 import ThemeIcon from '@/components/ui/ThemeIcon.astro'
+import NavLink from '@/components/ui/NavLink.astro'
 import PageHeading from '@/components/PageHeading.astro'
 
 const { cookies, redirect } = Astro
@@ -40,6 +41,11 @@ if (error) {
       profileEmail={data.user?.email}
       client:visible
     >
+      <NavLink
+        slot="nav-link"
+        pathname="/"
+        label="Bookmarks"
+      />
       <ThemeIcon slot="theme-toggle" />
     </NavBar>
   </header>
