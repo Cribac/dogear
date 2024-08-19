@@ -124,8 +124,8 @@ importers:
         specifier: 7.18.0
         version: 7.18.0(eslint@9.8.0)(typescript@5.5.4)
       vee-validate:
-        specifier: 4.13.1
-        version: 4.13.1(vue@3.4.30(typescript@5.5.4))
+        specifier: 4.13.2
+        version: 4.13.2(vue@3.4.30(typescript@5.5.4))
       vitest:
         specifier: 2.0.4
         version: 2.0.4(@types/node@20.14.10)(happy-dom@14.12.3)
@@ -3738,11 +3738,6 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-
-  vee-validate@4.13.1:
-    resolution: {integrity: sha512-JAlUWTBHg0z66n+v66mrtE9IC1xmVCggzpyc7UXCNkizVok8Zgt1VAVjobSxA/0N19Zn6v6hRfjoYciYH/Z11Q==}
-    peerDependencies:
-      vue: ^3.4.26
 
   vee-validate@4.13.2:
     resolution: {integrity: sha512-HlpR/6MJ92TW9f135umMZKUqdd/tFQTxLNSf2ImbU4Y/MlLVAUpF1l64VdjTOhbClAqPjCb5p/SqHDxLpUHXrw==}
@@ -8126,12 +8121,6 @@ snapshots:
       punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
-
-  vee-validate@4.13.1(vue@3.4.30(typescript@5.5.4)):
-    dependencies:
-      '@vue/devtools-api': 6.6.3
-      type-fest: 4.20.1
-      vue: 3.4.30(typescript@5.5.4)
 
   vee-validate@4.13.2(vue@3.4.30(typescript@5.5.4)):
     dependencies:
