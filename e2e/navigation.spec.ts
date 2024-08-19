@@ -9,6 +9,15 @@ test('a logged in user can navigate to categories', async ({ page }) => {
   await expect(page).toHaveURL('/categories')
 })
 
+test('a logged in user can navigate from categories to bookmarks', async ({ page }) => {
+  await page.goto('/categories')
+  
+  await expect(page.getByRole('link', { name: 'Bookmarks' })).toBeVisible()
+  await page.getByRole('link', { name: 'Bookmarks' }).click()
+  
+  await expect(page).toHaveURL('/')
+})
+
 test('a click on the logo navigates to the homepage', async ({ page }) => {
   await page.goto('/')
   
