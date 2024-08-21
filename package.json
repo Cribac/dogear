@@ -57,7 +57,7 @@
     "eslint": "9.8.0",
     "eslint-plugin-astro": "1.2.3",
     "eslint-plugin-vue": "9.27.0",
-    "globals": "15.8.0",
+    "globals": "15.9.0",
     "happy-dom": "14.12.3",
     "supabase": "1.190.0",
     "typescript-eslint": "7.18.0",
