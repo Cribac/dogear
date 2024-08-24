@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="TData, TValue">
-import { ref } from 'vue'
+import { ref, toRef } from 'vue'
 import type { 
   ColumnDef,
   ColumnFiltersState,
@@ -36,7 +36,7 @@ const props = defineProps<{
 }>()
 
 const table = useVueTable({
-  get data() { return props.data },
+  data: toRef(props, 'data'), // enables reactivity; @see https://github.com/radix-vue/shadcn-vue/issues/700#issuecomment-2304498666
   get columns() { return props.columns },
   getCoreRowModel: getCoreRowModel(), // default core table
   getPaginationRowModel: getPaginationRowModel(), // enable pagination
