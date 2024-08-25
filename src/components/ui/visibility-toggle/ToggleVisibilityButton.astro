@@ -1,0 +1,44 @@
+<script>
+class ToggleVisibilityButton extends HTMLElement {
+  constructor() {
+    super()
+    let isVisible = false
+
+    const toggleButton = this.querySelector('button.visibility-toggle')
+    const buttonText = toggleButton?.querySelector('span')
+
+    if (!toggleButton || !buttonText) return
+
+    buttonText.textContent = isVisible ? '-' : '+'
+
+    toggleButton?.addEventListener('click', () => {
+      isVisible = !isVisible
+      buttonText.textContent = isVisible ? '-' : '+'
+      const event = new CustomEvent('VisibilityToggled', { detail: isVisible })
+      window.dispatchEvent(event)
+    })
+  }
+}
+
+// Tell the browser to use our ToggleVisibilityButton class for <toggle-visibility-button> elements.
+customElements.define('toggle-visibility-button', ToggleVisibilityButton)
+</script>
+
+<toggle-visibility-button>
+  <button
+    class="visibility-toggle"
+    aria-label="Toggle Visibility"
+  >
+    <span class="text-ctp-mantle text-2xl font-bold"></span>
+  </button>
+</toggle-visibility-button>
+
+<style>
+  toggle-visibility-button {
+    @apply mx-6;
+  }
+
+  .visibility-toggle {
+    @apply flex items-center justify-center w-8 h-8 p-2 rounded-full bg-ctp-teal hover:bg-ctp-green;
+  }
+</style>

@@ -7,6 +7,8 @@ import CreateCategory from '@/components/forms/CreateCategory.vue'
 import CategoryList from '@/components/categories/CategoryList.vue'
 import ThemeIcon from '@/components/ui/ThemeIcon.astro'
 import NavLink from '@/components/ui/NavLink.astro'
+import ToggleVisibilityButton from '@/components/ui/visibility-toggle/ToggleVisibilityButton.astro'
+import ToggleVisibility from '@/components/ui/visibility-toggle/ToggleVisibility.astro'
 import PageHeading from '@/components/PageHeading.astro'
 
 const { cookies, redirect } = Astro
@@ -50,13 +52,19 @@ if (error) {
     </NavBar>
   </header>
   <main>
-    <PageHeading>
-      {pageTitle}
-    </PageHeading>
-    <CreateCategory
-      profileId={data.user?.id}
-      client:visible
-    />
+    <div class="flex justify-between items-center">
+      <PageHeading>
+        {pageTitle}
+      </PageHeading>
+      <ToggleVisibilityButton />
+    </div>
+    <ToggleVisibility>
+      <CreateCategory
+        class="px-6"
+        profileId={data.user?.id}
+        client:visible
+      />
+    </ToggleVisibility>
     {
       data.user &&
       <CategoryList

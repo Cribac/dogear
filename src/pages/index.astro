@@ -11,6 +11,8 @@ import CreateBookmark from '@/components/forms/CreateBookmark.vue'
 import BookmarkList from '@/components/bookmarks/BookmarkList.vue'
 import ThemeIcon from '@/components/ui/ThemeIcon.astro'
 import NavLink from '@/components/ui/NavLink.astro'
+import ToggleVisibilityButton from '@/components/ui/visibility-toggle/ToggleVisibilityButton.astro'
+import ToggleVisibility from '@/components/ui/visibility-toggle/ToggleVisibility.astro'
 import PageHeading from '@/components/PageHeading.astro'
 
 const { cookies, redirect } = Astro
@@ -65,13 +67,19 @@ const pageTitle = 'Bookmarks'
     </NavBar>
   </header>
   <main>
-    <PageHeading>
-      {pageTitle}
-    </PageHeading>
-    <CreateBookmark
-      profileId={profile.id}
-      client:visible
-    />
+    <div class="flex justify-between items-center">
+      <PageHeading>
+        {pageTitle}
+      </PageHeading>
+      <ToggleVisibilityButton />
+    </div>
+    <ToggleVisibility>
+      <CreateBookmark
+        class="px-6"
+        profileId={profile.id}
+        client:visible
+      />
+    </ToggleVisibility>
     <BookmarkList
       userId={profile.id}
       site={site as string}

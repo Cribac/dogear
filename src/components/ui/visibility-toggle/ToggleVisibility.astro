@@ -1,0 +1,23 @@
+<script>
+class ToggleVisibility extends HTMLElement {
+  constructor() {
+    super()
+
+    const elem = this.querySelector('div.toggle-visibility')
+
+    window.addEventListener('VisibilityToggled', async (event) => {
+      const isVisible = event.detail
+      elem?.classList.toggle('hidden', !isVisible)
+    })
+  }
+}
+
+// Tell the browser to use our ToggleVisibility class for <toggle-visibility> elements.
+customElements.define('toggle-visibility', ToggleVisibility)
+</script>
+
+<toggle-visibility>
+  <div class="toggle-visibility hidden">
+    <slot />
+  </div>
+</toggle-visibility>

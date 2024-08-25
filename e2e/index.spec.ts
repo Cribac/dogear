@@ -15,6 +15,9 @@ test ('homepage has avatar', async ({ page }) => {
 
 test('homepage has create bookmark form', async ({ page }) => {
   await page.goto('/')
+
+  await expect(page.getByLabel('Toggle Visibility')).toBeVisible()
+  await page.getByLabel('Toggle Visibility').click()
   
   await expect(page.getByLabel('URL')).toBeVisible()
   await expect(page.getByLabel('Name')).toBeVisible()

@@ -15,6 +15,9 @@ test ('categories page has avatar', async ({ page }) => {
 
 test('categories page has create category form', async ({ page }) => {
   await page.goto('/categories')
+
+  await expect(page.getByLabel('Toggle Visibility')).toBeVisible()
+  await page.getByLabel('Toggle Visibility').click()
   
   await expect(page.getByLabel('Name')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Create category' })).toBeVisible()
