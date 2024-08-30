@@ -62,7 +62,7 @@
     "supabase": "1.190.0",
     "typescript-eslint": "7.18.0",
     "vee-validate": "4.13.2",
-    "vitest": "2.0.4",
+    "vitest": "2.0.5",
     "yup": "1.4.0"
   }
 }
