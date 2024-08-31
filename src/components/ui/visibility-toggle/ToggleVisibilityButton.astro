@@ -4,16 +4,28 @@ class ToggleVisibilityButton extends HTMLElement {
     super()
     let isVisible = false
 
-    const toggleButton = this.querySelector('button.visibility-toggle')
-    const buttonText = toggleButton?.querySelector('span')
+    const toggleButton = this.querySelector('button.visibility-toggle') as HTMLButtonElement
+    
+    if (!toggleButton) return
+    
+    const plusIcon = toggleButton?.querySelector('svg.lucide-plus') as SVGSVGElement
+    const minusIcon = toggleButton?.querySelector('svg.lucide-minus') as SVGSVGElement
+    
+    function setIcon (isVisible: boolean, plusIcon: SVGSVGElement, minusIcon: SVGSVGElement | null) {
+      if (isVisible) {
+        plusIcon?.classList.add('hidden')
+        minusIcon?.classList.remove('hidden')
+      } else {
+        plusIcon?.classList.remove('hidden')
+        minusIcon?.classList.add('hidden')
+      }
+    }
 
-    if (!toggleButton || !buttonText) return
-
-    buttonText.textContent = isVisible ? '-' : '+'
+    setIcon(isVisible, plusIcon, minusIcon)
 
     toggleButton?.addEventListener('click', () => {
       isVisible = !isVisible
-      buttonText.textContent = isVisible ? '-' : '+'
+      setIcon(isVisible, plusIcon, minusIcon)
       const event = new CustomEvent('VisibilityToggled', { detail: isVisible })
       window.dispatchEvent(event)
     })
@@ -29,7 +41,37 @@ customElements.define('toggle-visibility-button', ToggleVisibilityButton)
     class="visibility-toggle"
     aria-label="Toggle Visibility"
   >
-    <span class="text-ctp-mantle text-2xl font-bold"></span>
+    <span class="text-ctp-mantle text-2xl font-bold">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-plus"
+      >
+        <path d="M5 12h14"/>
+        <path d="M12 5v14"/>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-minus"
+      >
+        <path d="M5 12h14"/>
+      </svg>
+    </span>
   </button>
 </toggle-visibility-button>
 
