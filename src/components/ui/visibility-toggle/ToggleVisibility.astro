@@ -1,11 +1,13 @@
 <script>
+import { customEventNames } from '@/lib/eventNames'
+
 class ToggleVisibility extends HTMLElement {
   constructor() {
     super()
 
     const elem = this.querySelector('div.toggle-visibility')
 
-    window.addEventListener('VisibilityToggled', async (event) => {
+    window.addEventListener(customEventNames.visibilityToggle, async (event: CustomEvent) => {
       const isVisible = event.detail
       elem?.classList.toggle('hidden', !isVisible)
     })

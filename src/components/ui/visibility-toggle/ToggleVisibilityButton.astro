@@ -1,4 +1,6 @@
 <script>
+import { customEventNames } from '@/lib/eventNames'
+
 class ToggleVisibilityButton extends HTMLElement {
   constructor() {
     super()
@@ -26,7 +28,7 @@ class ToggleVisibilityButton extends HTMLElement {
     toggleButton?.addEventListener('click', () => {
       isVisible = !isVisible
       setIcon(isVisible, plusIcon, minusIcon)
-      const event = new CustomEvent('VisibilityToggled', { detail: isVisible })
+      const event = new CustomEvent(customEventNames.visibilityToggle, { detail: isVisible })
       window.dispatchEvent(event)
     })
   }

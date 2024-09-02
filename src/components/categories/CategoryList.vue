@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { fetchResponse } from '@/lib/connectivity'
+import { customEventNames } from '@/lib/eventNames'
 import { columns } from '@/components/categories/columns'
 import { Input } from '@/components/ui/input'
 import { DataTable } from '@/components/ui/data-table'
@@ -55,28 +56,19 @@ async function handleBulkDelete (rows: any[]) {
 onMounted(async () => {
   categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
 
-  // @TODO harden this
-  // @TODO: there has to be a better way than this...
-  // @ts-expect-error don't want to type events for now
-  window.addEventListener('CategoryCreated', async (e: CustomEvent) => {
-    console.log('CategoryCreated', e.detail)
+  window.addEventListener(customEventNames.categoryCreate, async () => {
     categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
   })
 
   // @TODO harden this
   // @TODO: there has to be a better way than this...
   // @ts-expect-error don't want to type events for now
-  window.addEventListener('DeleteCategory', async (e: CustomEvent) => {
-    console.log('DeleteCategory', e.detail)
+  window.addEventListener(customEventNames.categoryDelete, async (e: CustomEvent) => {
     await deleteCategory(e.detail)
     categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
   })
 
-    // @TODO harden this
-    // @TODO: there has to be a better way than this...
-  // @ts-expect-error don't want to type events for now
-  window.addEventListener('CategoryEdited', async (e: CustomEvent) => {
-    console.log('CategoryEdited', e.detail)
+  window.addEventListener(customEventNames.categoryUpdate, async () => {
     categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
   })
 })

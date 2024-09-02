@@ -40,3 +40,16 @@ interface Category {
 }
 
 type AvatarColor = 'pink' | 'peach' |'yellow' | 'teal' | 'sapphire' | 'sky' | 'lavender'
+
+type CustomEventName =
+  'bookmark:create' |
+  'bookmark:update' |
+  'bookmark:delete' |
+  'category:create' |
+  'category:update' |
+  'category:delete' |
+  'visibility:toggle'
+
+interface CustomEventNames {
+  [key: string]: CustomEventName
+}

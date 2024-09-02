@@ -1,6 +1,7 @@
 import { h } from 'vue'
 import { ArrowUpDown } from 'lucide-vue-next'
 import type { ColumnDef } from '@tanstack/vue-table'
+import { customEventNames } from '@/lib/eventNames'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { DataTableDropDown } from '@/components/ui/data-table'
@@ -54,7 +55,7 @@ export const columns: ColumnDef<Bookmark>[] = [
       const bookmark = row.original
 
       return h('div', { class: 'relative' }, h(DataTableDropDown, {
-        item: { id: bookmark.id, eventName: 'DeleteBookmark' },
+        item: { id: bookmark.id, eventName: customEventNames.bookmarkDelete },
         onExpand: row.toggleExpanded,
       }))
     },

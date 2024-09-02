@@ -4,6 +4,7 @@ import { useForm } from 'vee-validate'
 import { categorySchema } from '@/lib/forms/validators/category'
 import { buildFormData } from '@/lib/forms/helper'
 import { fetchResponse } from '@/lib/connectivity'
+import { customEventNames } from '@/lib/eventNames'
 import {
   Card,
   CardContent,
@@ -51,7 +52,7 @@ const onSubmit = handleSubmit(async (values) => {
   } else {
     serverErrorMessage.value = ''
     const data = await response.json()
-    const event = new CustomEvent('CategoryEdited', { detail: data })
+    const event = new CustomEvent(customEventNames.categoryUpdate, { detail: data })
     window.dispatchEvent(event)
     emit('cancel')
   }

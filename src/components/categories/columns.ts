@@ -1,6 +1,7 @@
 import { h } from 'vue'
 import { ArrowUpDown } from 'lucide-vue-next'
 import type { ColumnDef } from '@tanstack/vue-table'
+import { customEventNames } from '@/lib/eventNames'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { DataTableDropDown } from '@/components/ui/data-table'
@@ -48,7 +49,7 @@ export const columns: ColumnDef<Category>[] = [
       const category = row.original
 
       return h('div', { class: 'relative' }, h(DataTableDropDown, {
-        item: { id: category.id, eventName: 'DeleteCategory' },
+        item: { id: category.id, eventName: customEventNames.categoryDelete },
         onExpand: row.toggleExpanded,
       }))
     },

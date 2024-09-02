@@ -4,6 +4,7 @@ import { useForm } from 'vee-validate'
 import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
 import { buildFormData } from '@/lib/forms/helper'
 import { fetchResponse } from '@/lib/connectivity'
+import { customEventNames } from '@/lib/eventNames'
 import {
   Card,
   CardContent,
@@ -58,7 +59,7 @@ const onSubmit = handleSubmit(async (values) => {
   } else {
     await cleanUp()
     const data = await response.json()
-    const event = new CustomEvent('BookmarkCreated', { detail: data })
+    const event = new CustomEvent(customEventNames.bookmarkCreate, { detail: data })
     window.dispatchEvent(event)
   }
 })
