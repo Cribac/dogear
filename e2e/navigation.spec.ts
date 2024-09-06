@@ -36,6 +36,7 @@ test('navigation has a signout button', async ({ page }) => {
 
 test('navigation has mode toggle button', async ({ page }) => {
   await page.goto('/')
+  await page.waitForTimeout(500)
   await page.getByLabel('Toggle Dark Mode').click()
   await expect(page.getByLabel('Toggle Light Mode')).toBeVisible()
 })
