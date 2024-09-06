@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 
 test('it toggles dark and light modes', async ({ page }) => {
   await page.goto('/')
+  await page.waitForTimeout(500)
   await page.getByLabel('Toggle Dark Mode').click()
   await expect(page.getByLabel('Toggle Light Mode')).toBeVisible()
   
