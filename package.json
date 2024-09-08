@@ -44,7 +44,7 @@
   },
   "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
   "devDependencies": {
-    "@eslint/js": "9.9.1",
+    "@eslint/js": "9.10.0",
     "@playwright/test": "1.45.2",
     "@types/node": "22.5.4",
     "@types/pg": "8.11.8",
