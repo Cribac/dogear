@@ -29,14 +29,23 @@ async function fetchBookmarks (userId: string, token: string) {
   return result
 }
 
+/**
+ * Resets and refetches the bokmark list, to ensure the table is up-to-date
+ */
+ async function resetAndRefetch(): Promise<void> {
+  bookmarkList.value = []
+  bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
+}
+
+/**
+ * Deletes a bookmark
+ */
 async function deleteBookmark (id: string) {
   const url = `${PUBLIC_BASE_URL}/api/bookmark/delete/${id}.json`
   const response = await fetchResponse(url, 'DELETE', PUBLIC_APP_API_TOKEN)
 
   const result = await response.json()
 
-  bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
-  
   return result
 }
 
@@ -57,7 +66,7 @@ onMounted(async () => {
   bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
 
   window.addEventListener(customEventNames.bookmarkCreate, async () => {
-    bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
+    await resetAndRefetch()
   })
 
   // @TODO harden this
@@ -65,11 +74,11 @@ onMounted(async () => {
   // @ts-expect-error don't want to type events for now
   window.addEventListener(customEventNames.bookmarkDelete, async (e: CustomEvent) => {
     await deleteBookmark(e.detail)
-    bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
+    await resetAndRefetch()
   })
 
   window.addEventListener(customEventNames.bookmarkUpdate, async () => {
-    bookmarkList.value = await fetchBookmarks(props.userId, PUBLIC_APP_API_TOKEN)
+    await resetAndRefetch()
   })
 })
 </script>
