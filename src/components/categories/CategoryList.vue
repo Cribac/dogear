@@ -29,14 +29,23 @@ async function fetchCategories (userId: string, token: string) {
   return result
 }
 
+/**
+ * Resets and refetches the category list, to ensure the table is up-to-date
+ */
+async function resetAndRefetch(): Promise<void> {
+  categoryList.value = []
+  categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
+}
+
+/**
+ * Deletes a category
+ */
 async function deleteCategory (id: string) {
   const url = `${PUBLIC_BASE_URL}/api/category/delete/${id}.json`
   const response = await fetchResponse(url, 'DELETE', PUBLIC_APP_API_TOKEN)
 
   const result = await response.json()
 
-  categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
-  
   return result
 }
 
@@ -51,13 +60,13 @@ async function handleBulkDelete (rows: any[]) {
   const result = await response.json()
   categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
   return result
-}
+} 
 
 onMounted(async () => {
   categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
 
   window.addEventListener(customEventNames.categoryCreate, async () => {
-    categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
+    await resetAndRefetch()
   })
 
   // @TODO harden this
@@ -65,20 +74,20 @@ onMounted(async () => {
   // @ts-expect-error don't want to type events for now
   window.addEventListener(customEventNames.categoryDelete, async (e: CustomEvent) => {
     await deleteCategory(e.detail)
-    categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
+    await resetAndRefetch()
   })
 
   window.addEventListener(customEventNames.categoryUpdate, async () => {
-    categoryList.value = await fetchCategories(props.userId, PUBLIC_APP_API_TOKEN)
+    await resetAndRefetch()
   })
 })
 </script>
 
 <template>
   <div id="bookmarks">
-    <DataTable 
-      :columns="columns" 
-      :data="categoryList" 
+    <DataTable
+      :columns="columns"
+      :data="categoryList"
     >
       <template #filters="filtersProps">
         <div class="flex items-center py-4">
