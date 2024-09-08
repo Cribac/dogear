@@ -12,20 +12,16 @@ const props = defineProps({
   userId: {
     type: String,
     required: true
-  },
-  site: {
-    type: String,
-    required: true
   }
 })
 
-const { PUBLIC_APP_API_TOKEN } = import.meta.env
+const { PUBLIC_APP_API_TOKEN, PUBLIC_BASE_URL } = import.meta.env
 
 // eslint-disable-next-line no-undef
 const bookmarkList = ref<Bookmark[]>([])
 
 async function fetchBookmarks (userId: string, token: string) {
-  const url = `${props.site}/api/bookmark/all/${userId}.json`
+  const url = `${PUBLIC_BASE_URL}/api/bookmark/all/${userId}.json`
   const response = await fetchResponse(url, 'GET', token)
 
   const result = await response.json()
@@ -34,7 +30,7 @@ async function fetchBookmarks (userId: string, token: string) {
 }
 
 async function deleteBookmark (id: string) {
-  const url = `${props.site}/api/bookmark/delete/${id}.json`
+  const url = `${PUBLIC_BASE_URL}/api/bookmark/delete/${id}.json`
   const response = await fetchResponse(url, 'DELETE', PUBLIC_APP_API_TOKEN)
 
   const result = await response.json()
@@ -48,7 +44,7 @@ async function deleteBookmark (id: string) {
 async function handleBulkDelete (rows: any[]) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ids = rows.map((row: { original: { id: any } }) => row.original.id)
-  const url = `${props.site}/api/bookmark/delete/deleteAll.json`
+  const url = `${PUBLIC_BASE_URL}/api/bookmark/delete/deleteAll.json`
 
   const response = await fetchResponse(url, 'DELETE', PUBLIC_APP_API_TOKEN, JSON.stringify(ids))
 
@@ -80,9 +76,9 @@ onMounted(async () => {
 
 <template>
   <div id="bookmarks">
-    <DataTable 
-      :columns="columns" 
-      :data="bookmarkList" 
+    <DataTable
+      :columns="columns"
+      :data="bookmarkList"
     >
       <template #filters="filtersProps">
         <div class="flex flex-1 items-center justify-between py-4">

@@ -1,6 +1,5 @@
 ---
 import '@/styles/globals.css'
-import astroConfig from 'astro.config.mjs'
 import { supabase } from '@/lib/supabase'
 import { Profile } from '@/lib/db/schemas'
 import db from '@/lib/db/db'
@@ -48,8 +47,6 @@ if (data.user) {
 
 const profile = profiles[0]
 
-const { site } = astroConfig
-
 const pageTitle = 'Bookmarks'
 ---
 <Layout title={pageTitle}>
@@ -82,7 +79,6 @@ const pageTitle = 'Bookmarks'
     </ToggleVisibility>
     <BookmarkList
       userId={profile.id}
-      site={site as string}
       client:only="vue"
     />
   </main>
