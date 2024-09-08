@@ -84,7 +84,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div id="bookmarks">
+  <div id="categories">
     <DataTable
       :columns="columns"
       :data="categoryList"
