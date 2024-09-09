@@ -5,8 +5,13 @@ import { Category } from '@/lib/db/schemas'
 import { getJsonResponse } from '@/lib/connectivity'
 
 export const PUT: APIRoute = async (context) => {
+  const { id } = context.params
+
+  if (!id || id === 'undefined') {
+    return getJsonResponse(400)
+  }
+
   try {
-    const { id } = context.params
     const formData = await context.request.formData()
     const name = formData.get('name')?.toString()
   
@@ -14,7 +19,7 @@ export const PUT: APIRoute = async (context) => {
       .set({
         name,
       })
-      .where(eq(Category.id, (id ? id : 'none')))
+      .where(eq(Category.id, id))
       .returning({ editedId: Category.id})
   
     return new Response(

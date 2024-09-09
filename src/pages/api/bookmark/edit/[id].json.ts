@@ -5,8 +5,13 @@ import { Bookmark } from '@/lib/db/schemas'
 import { getJsonResponse } from '@/lib/connectivity'
 
 export const PUT: APIRoute = async (context) => {
+  const { id } = context.params
+
+  if (!id || id === 'undefined') {
+    return getJsonResponse(400)
+  }
+
   try {
-    const { id } = context.params
     const formData = await context.request.formData()
     const url = formData.get('url')?.toString()
     const name = formData.get('name')?.toString()
@@ -18,7 +23,7 @@ export const PUT: APIRoute = async (context) => {
         name,
         categoryId
       })
-      .where(eq(Bookmark.id, (id ? id : 'none')))
+      .where(eq(Bookmark.id, id))
       .returning({ editedId: Bookmark.id})
   
     return new Response(
