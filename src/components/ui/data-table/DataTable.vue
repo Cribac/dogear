@@ -98,6 +98,7 @@ const expanded = ref<ExpandedState>({})
             <TableRow
               v-if="!row.getIsExpanded()"
               :data-state="row.getIsSelected() ? 'selected' : undefined"
+              class="data-[state=selected]:bg-muted/50"
             >
               <TableCell
                 v-for="cell in row.getVisibleCells()" 
