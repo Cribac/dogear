@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import type { Bookmark } from '@/env'
 import { fetchResponse } from '@/lib/connectivity'
 import { customEventNames } from '@/lib/eventNames'
 import { columns } from '@/components/bookmarks/columns'
@@ -17,7 +18,6 @@ const props = defineProps({
 
 const { PUBLIC_APP_API_TOKEN, PUBLIC_BASE_URL } = import.meta.env
 
-// eslint-disable-next-line no-undef
 const bookmarkList = ref<Bookmark[]>([])
 
 async function fetchBookmarks (userId: string, token: string) {
@@ -69,8 +69,6 @@ onMounted(async () => {
     await resetAndRefetch()
   })
 
-  // @TODO harden this
-  // @TODO: there has to be a better way than this...
   // @ts-expect-error don't want to type events for now
   window.addEventListener(customEventNames.bookmarkDelete, async (e: CustomEvent) => {
     await deleteBookmark(e.detail)

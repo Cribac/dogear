@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Bookmark } from '@/env'
 import { useForm } from 'vee-validate'
 import { bookmarkSchema } from '@/lib/forms/validators/bookmark'
 import { buildFormData } from '@/lib/forms/helper'
@@ -18,7 +19,6 @@ import { Save, CircleX } from 'lucide-vue-next'
 import CategorySelection from '@/components/categories/CategorySelection.vue'
 
 const props = defineProps<{
-  // eslint-disable-next-line no-undef
   bookmark: Bookmark
 }>()
 
@@ -58,7 +58,6 @@ async function fetchCategories (userId: string, token: string) {
 const categories = await fetchCategories(bookmark.profileId, PUBLIC_APP_API_TOKEN)
 
 const onSubmit = handleSubmit(async (values) => {
-  // @TODO: there has to be a better way than this...
   const url = `${PUBLIC_BASE_URL}/api/bookmark/edit/${bookmark.id}.json`
   const formData = buildFormData(values)
   const response = await fetchResponse(url, 'PUT', PUBLIC_APP_API_TOKEN, formData)

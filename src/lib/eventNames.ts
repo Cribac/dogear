@@ -1,3 +1,5 @@
+import type { CustomEventNames } from "@/env"
+
 const customEventNames: CustomEventNames = {
   bookmarkCreate: 'bookmark:create',
   bookmarkUpdate: 'bookmark:update',
