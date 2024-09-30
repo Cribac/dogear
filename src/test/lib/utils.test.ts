@@ -7,7 +7,7 @@ import {
 } from '@/lib/utils'
 
 test('ALPHABET is correct', async () => {
-  expect(ALPHABET.length).eq(26)
+  expect(ALPHABET.length).eq(36)
 })
 
 test('splitEmailAddress() returns the correct result', async () => {
@@ -23,16 +23,17 @@ test('chunk() returns the correct result', async () => {
 })
 
 test('split alphabet into correct chunks', async () => {
-  const result = chunk(ALPHABET.split(''), 4)
+  const result = chunk(ALPHABET.split(''), 5)
 
   expect(result).deep.eq([
-    ['a', 'b', 'c', 'd'],
-    ['e', 'f', 'g', 'h'],
-    ['i', 'j', 'k', 'l'],
-    ['m', 'n', 'o', 'p'],
-    ['q', 'r', 's', 't'],
-    ['u', 'v', 'w', 'x'],
-    ['y', 'z'],
+    [ 'a', 'b', 'c', 'd', 'e' ],
+    [ 'f', 'g', 'h', 'i', 'j' ],
+    [ 'k', 'l', 'm', 'n', 'o' ],
+    [ 'p', 'q', 'r', 's', 't' ],
+    [ 'u', 'v', 'w', 'x', 'y' ],
+    [ 'z', '1', '2', '3', '4' ],
+    [ '5', '6', '7', '8', '9' ],
+    [ '0' ]  
   ])
 })
 
@@ -44,12 +45,16 @@ test('getColorByEmail() returns the correct colors', async () => {
   const chunk4email = getColorByEmail('sara@testino.tld')
   const chunk5email = getColorByEmail('ulysses@testino.tld')
   const chunk6email = getColorByEmail('zeus@testino.tld')
+  const chunk7email = getColorByEmail('1zeus@testino.tld')
+  const chunk8email = getColorByEmail('0foo@testino.tld')
   
   expect(chunk0email).eq('pink')
   expect(chunk1email).eq('peach')
   expect(chunk2email).eq('yellow')
-  expect(chunk3email).eq('teal')
-  expect(chunk4email).eq('sapphire')
-  expect(chunk5email).eq('sky')
-  expect(chunk6email).eq('lavender')
+  expect(chunk3email).eq('yellow')
+  expect(chunk4email).eq('teal')
+  expect(chunk5email).eq('sapphire')
+  expect(chunk6email).eq('sky')
+  expect(chunk7email).eq('sky')
+  expect(chunk8email).eq('mauve')
 })

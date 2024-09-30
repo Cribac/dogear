@@ -35,7 +35,7 @@
     --foreground: var(--color-ctp-text);
  
     --muted: var(--color-ctp-overlay2);
-    --muted-foreground: var(--color-ctp-surface2);
+    --muted-foreground: var(--color-ctp-overlay2);
  
     --popover: var(--color-ctp-mantle);
     --popover-foreground: var(--color-ctp-subtext0);
@@ -95,7 +95,7 @@
     --foreground: var(--color-ctp-text);
  
     --muted: var(--color-ctp-overlay2);
-    --muted-foreground: var(--color-ctp-surface2);
+    --muted-foreground: var(--color-ctp-overlay2);
  
     --popover: var(--color-ctp-mantle);
     --popover-foreground: var(--color-ctp-subtext0);

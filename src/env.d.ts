@@ -15,7 +15,7 @@ interface ImportMeta {
   readonly env: ImportMetaEnv
 }
 
-interface Bookmark {
+export interface Bookmark {
   url: string | undefined
   id: string
   name: string | undefined
@@ -30,7 +30,7 @@ interface Bookmarks {
   bookmarks: Bookmark[]
 }
 
-interface Category {
+export interface Category {
   id: string
   profileId: string
   name: string
@@ -39,7 +39,7 @@ interface Category {
   updated_at: Date | null
 }
 
-type AvatarColor = 'pink' | 'peach' |'yellow' | 'teal' | 'sapphire' | 'sky' | 'lavender'
+export type   AvatarColor = 'pink' | 'peach' |'yellow' | 'teal' | 'sapphire' | 'sky' | 'lavender' | 'mauve'
 
 type CustomEventName =
   'bookmark:create' |

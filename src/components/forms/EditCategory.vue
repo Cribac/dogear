@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Category } from '@/env'
 import { useForm } from 'vee-validate'
 import { categorySchema } from '@/lib/forms/validators/category'
 import { buildFormData } from '@/lib/forms/helper'
@@ -17,7 +18,6 @@ import { Save, CircleX } from 'lucide-vue-next'
 import { ErrorMessage } from '@/components/forms'
 
 const props = defineProps<{
-  // eslint-disable-next-line no-undef
   category: Category
 }>()
 
@@ -41,7 +41,6 @@ const { errors, handleSubmit, defineField } = useForm({
 const [name, nameAttrs] = defineField('name')
 
 const onSubmit = handleSubmit(async (values) => {
-  // @TODO: there has to be a better way than this...
   const url = `${PUBLIC_BASE_URL}/api/category/edit/${category.id}.json`
   const formData = buildFormData(values)
   const response = await fetchResponse(url, 'PUT', PUBLIC_APP_API_TOKEN, formData)

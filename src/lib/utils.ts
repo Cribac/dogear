@@ -2,8 +2,9 @@ import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import type { Updater } from '@tanstack/vue-table'
 import type { Ref } from 'vue'
+import type { AvatarColor } from '@/env.d.ts'
 
-export const ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+export const ALPHABET = 'abcdefghijklmnopqrstuvwxyz1234567890'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -57,16 +58,15 @@ export function chunk <T>(array: T[], size: number): T[][] {
 
 /**
  * Returns a color based on the first letter of the email
- * @Todo: Check for numbers in email address
- * 
+ *
  * @param {string} email
  * @returns {AvatarColor}
  */
 export function getColorByEmail(email: string): AvatarColor {
-  const avatarColors = ['pink', 'peach', 'yellow', 'teal', 'sapphire', 'sky', 'lavender']
+  const avatarColors = ['pink', 'peach', 'yellow', 'teal', 'sapphire', 'sky', 'lavender', 'mauve']
   const splittedEmail = email.split('@')
   const firstChar = splittedEmail[0][0]
-  const splittedAlphabet = chunk(ALPHABET.split(''), 4)
+  const splittedAlphabet = chunk(ALPHABET.split(''), 5)
   const idx = splittedAlphabet.findIndex((arr) => arr.includes(firstChar))
   return avatarColors[idx] as AvatarColor
 }

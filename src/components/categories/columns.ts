@@ -1,6 +1,7 @@
 import { h } from 'vue'
 import { ArrowUpDown } from 'lucide-vue-next'
 import type { ColumnDef } from '@tanstack/vue-table'
+import type { Category } from '@/env'
 import { customEventNames } from '@/lib/eventNames'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
