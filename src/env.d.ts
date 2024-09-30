@@ -39,7 +39,7 @@ export interface Category {
   updated_at: Date | null
 }
 
-export type AvatarColor = 'pink' | 'peach' |'yellow' | 'teal' | 'sapphire' | 'sky' | 'lavender'
+export type   AvatarColor = 'pink' | 'peach' |'yellow' | 'teal' | 'sapphire' | 'sky' | 'lavender' | 'mauve'
 
 type CustomEventName =
   'bookmark:create' |
