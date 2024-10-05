@@ -115,8 +115,8 @@ importers:
         specifier: 15.9.0
         version: 15.9.0
       happy-dom:
-        specifier: 15.7.3
-        version: 15.7.3
+        specifier: 15.7.4
+        version: 15.7.4
       supabase:
         specifier: 1.200.3
         version: 1.200.3
@@ -128,7 +128,7 @@ importers:
         version: 4.13.2(vue@3.5.3(typescript@5.6.2))
       vitest:
         specifier: 2.1.2
-        version: 2.1.2(@types/node@22.5.4)(happy-dom@15.7.3)
+        version: 2.1.2(@types/node@22.5.4)(happy-dom@15.7.4)
       yup:
         specifier: 1.4.0
         version: 1.4.0
@@ -2356,8 +2356,8 @@ packages:
     resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
     engines: {node: '>=6.0'}
 
-  happy-dom@15.7.3:
-    resolution: {integrity: sha512-w3RUaYNXFJX5LiNVhOJLK4GqCB1bFj1FvELtpon3HrN8gUpS09V0Vvm4/BBRRj7mLUE1+ch8PKv1JxEp/0IHjA==}
+  happy-dom@15.7.4:
+    resolution: {integrity: sha512-r1vadDYGMtsHAAsqhDuk4IpPvr6N8MGKy5ntBo7tSdim+pWDxus2PNqOcOt8LuDZ4t3KJHE+gCuzupcx/GKnyQ==}
     engines: {node: '>=18.0.0'}
 
   has-flag@3.0.0:
@@ -6419,7 +6419,7 @@ snapshots:
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
 
-  happy-dom@15.7.3:
+  happy-dom@15.7.4:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -8101,7 +8101,7 @@ snapshots:
     optionalDependencies:
       vite: 5.4.3(@types/node@22.5.4)
 
-  vitest@2.1.2(@types/node@22.5.4)(happy-dom@15.7.3):
+  vitest@2.1.2(@types/node@22.5.4)(happy-dom@15.7.4):
     dependencies:
       '@vitest/expect': 2.1.2
       '@vitest/mocker': 2.1.2(@vitest/spy@2.1.2)(vite@5.4.3(@types/node@22.5.4))
@@ -8124,7 +8124,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.5.4
-      happy-dom: 15.7.3
+      happy-dom: 15.7.4
     transitivePeerDependencies:
       - less
       - lightningcss
