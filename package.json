@@ -27,7 +27,7 @@
     "@supabase/supabase-js": "2.45.4",
     "@tanstack/vue-table": "8.20.5",
     "@vueuse/core": "11.1.0",
-    "astro": "4.15.11",
+    "astro": "4.16.0",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
     "dotenv": "16.4.5",
