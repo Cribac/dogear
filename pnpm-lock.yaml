@@ -45,8 +45,8 @@ importers:
         specifier: 0.34.1
         version: 0.34.1(@types/pg@8.11.10)(pg@8.13.0)(postgres@3.4.4)
       lucide-vue-next:
-        specifier: 0.452.0
-        version: 0.452.0(vue@3.5.12(typescript@5.6.3))
+        specifier: 0.453.0
+        version: 0.453.0(vue@3.5.12(typescript@5.6.3))
       pg:
         specifier: 8.13.0
         version: 8.13.0
@@ -2648,8 +2648,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-vue-next@0.452.0:
-    resolution: {integrity: sha512-a7i6LayYT/kPDkwRvcWWZlPTRPiaM11xhUhFctRXmjibZod9TdVhk4U/7q2RYYkkkDJHp/4OSiXbxC82+mda3Q==}
+  lucide-vue-next@0.453.0:
+    resolution: {integrity: sha512-5zmv83vxAs9SVoe22veDBi8Dw0Fh2F+oTngWgKnKOkrZVbZjceXLQ3tescV2boB0zlaf9R2Sd9RuUP2766xvsQ==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -6720,7 +6720,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-vue-next@0.452.0(vue@3.5.12(typescript@5.6.3)):
+  lucide-vue-next@0.453.0(vue@3.5.12(typescript@5.6.3)):
     dependencies:
       vue: 3.5.12(typescript@5.6.3)
 
