@@ -37,7 +37,7 @@
     "postgres": "3.4.4",
     "radix-vue": "1.9.7",
     "tailwind-merge": "2.5.4",
-    "tailwindcss": "3.4.13",
+    "tailwindcss": "3.4.14",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.6.3",
     "vue": "3.5.12"  
