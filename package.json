@@ -52,7 +52,7 @@
     "@vee-validate/yup": "4.13.2",
     "@vitejs/plugin-vue": "5.1.4",
     "@vue/test-utils": "2.4.6",
-    "drizzle-kit": "0.25.0",
+    "drizzle-kit": "0.27.1",
     "eslint": "9.13.0",
     "eslint-plugin-astro": "1.2.4",
     "eslint-plugin-vue": "9.29.0",
