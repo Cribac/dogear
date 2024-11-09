@@ -9,7 +9,7 @@ test('categories page has title', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Categories' })).toBeVisible()
 })
 
-test ('categories page has avatar', async ({ page }) => {
+test('categories page has avatar', async ({ page }) => {
   await expect(page.getByText('AE')).toBeVisible()
 })
 
