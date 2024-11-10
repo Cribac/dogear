@@ -17,7 +17,7 @@
 
       const themeToggle = this.querySelector('button#themeToggle')
 
-      const ARIA_TEXTS = {
+      const ariaTexts = {
         light: 'Toggle Dark Mode',
         dark: 'Toggle Light Mode',
       }
@@ -25,7 +25,7 @@
       const setAriaLabel = (theme) => {
         const toggle = themeToggle || this.querySelector('button#themeToggle')
         if (toggle) {
-          toggle.ariaLabel = ARIA_TEXTS[theme]
+          toggle.ariaLabel = ariaTexts[theme]
         }
       }
 
@@ -53,7 +53,6 @@
     }
   }
   
-  // Tell the browser to use our ToggleVisibility class for <toggle-visibility> elements.
   customElements.define('theme-icon', ThemeIcon)
 </script>
 
