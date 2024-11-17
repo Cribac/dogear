@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import { supabase } from '@/lib/supabase'
 import Layout from '@/layouts/Layout.astro'
 import NavBar from '@/components/ui/NavBar.vue'
+import Main from '@/components/Main.astro'
 import CreateCategory from '@/components/forms/CreateCategory.vue'
 import CategoryList from '@/components/categories/CategoryList.vue'
 import ThemeIcon from '@/components/ui/ThemeIcon.astro'
@@ -51,7 +52,7 @@ if (error) {
       <ThemeIcon slot="theme-toggle" />
     </NavBar>
   </header>
-  <main>
+  <Main>
     <div class="flex justify-between items-center">
       <PageHeading>
         {pageTitle}
@@ -72,5 +73,5 @@ if (error) {
         client:only="vue"
       />
     }
-  </main>
+  </Main>
 </Layout>

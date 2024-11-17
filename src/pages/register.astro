@@ -1,6 +1,7 @@
 ---
 import '@/styles/globals.css'
 import Layout from '@/layouts/Layout.astro'
+import Main from '@/components/Main.astro'
 import { hasRegistration } from '@/app.config'
 import { RegisterForm } from '@/components/forms'
 
@@ -10,10 +11,10 @@ if (!hasRegistration) {
 ---
 
 <Layout title="Register">
-  <main>
+  <Main>
     <RegisterForm
       class="max-w-sm mx-auto my-12"
       client:load
     />
-  </main>
+  </Main>
 </Layout>

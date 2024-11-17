@@ -1,6 +1,7 @@
 ---
 import '@/styles/globals.css'
 import Layout from '@/layouts/Layout.astro'
+import Main from '@/components/Main.astro'
 import { SigninForm } from '@/components/forms'
 
 const { cookies, redirect } = Astro
@@ -14,10 +15,10 @@ if (accessToken && refreshToken) {
 ---
 
 <Layout title="Sign in">
-  <main>
+  <Main>
     <SigninForm
       class="max-w-sm mx-auto my-12"
       client:load 
     />
-  </main>
+  </Main>
 </Layout>

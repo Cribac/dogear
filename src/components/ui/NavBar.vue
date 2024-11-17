@@ -16,7 +16,7 @@ const toggleNav = () => {
 
 <template>
   <div class="bg-ctp-crust">
-    <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
+    <nav class="container py-8 mx-auto md:flex md:justify-between md:items-center">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-end">
           <div class="text-xl font-bold text-ctp-text md:text-2xl hover:text-ctp-sky">
