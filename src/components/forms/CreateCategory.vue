@@ -75,7 +75,10 @@ async function cleanUp (): Promise<void> {
         </ErrorMessage>
       </CardContent>
       <CardFooter>
-        <PrimaryButton type="submit">
+        <PrimaryButton
+          type="submit"
+          class="hover:scale-105"
+        >
           <Save class="mr-2 h-4 w-4" />
           Create category
         </PrimaryButton>
