@@ -124,8 +124,8 @@ importers:
         specifier: 8.8.1
         version: 8.8.1(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
       vee-validate:
-        specifier: 4.14.6
-        version: 4.14.6(vue@3.5.13(typescript@5.6.3))
+        specifier: 4.14.7
+        version: 4.14.7(vue@3.5.13(typescript@5.6.3))
       vitest:
         specifier: 2.1.3
         version: 2.1.3(@types/node@22.7.5)(happy-dom@15.11.6)
@@ -1515,14 +1515,8 @@ packages:
     peerDependencies:
       vue: ^3.0.0
 
-  '@vue/devtools-kit@7.5.4':
-    resolution: {integrity: sha512-0i7WFgc1B2TL52tstn82zlb9opSA0aIiHfkUYFXtZb8CIpmlFMTkHtgwVl6PMWNBj3LNhYou1YJCLpCYvJYYoA==}
-
   '@vue/devtools-kit@7.6.7':
     resolution: {integrity: sha512-V8/jrXY/swHgnblABG9U4QCbE60c6RuPasmv2d9FvVqc5d94t1vDiESuvRmdNJBdWz4/D3q6ffgyAfRVjwHYEw==}
-
-  '@vue/devtools-shared@7.5.4':
-    resolution: {integrity: sha512-dwuq4YmwTyLc7eBOqX63s3JB8il7qnKsNgENglSMkUPwiItHkVAYYfPESN1rxSdYkl1RCux1l5TBidYqfUDNAA==}
 
   '@vue/devtools-shared@7.6.7':
     resolution: {integrity: sha512-QggO6SviAsolrePAXZ/sA1dSicSPt4TueZibCvydfhNDieL1lAuyMTgQDGst7TEvMGb4vgYv2I+1sDkO4jWNnw==}
@@ -3795,8 +3789,8 @@ packages:
     peerDependencies:
       vue: ^3.4.26
 
-  vee-validate@4.14.6:
-    resolution: {integrity: sha512-5w6e+YqJFLfzRR6gmRZgE6ZIVZ5nW1UAQdAlu78Oy3CFVrhTraqMMsfDC/Kmz7CNtCpIYaXxC8oKfr2hAiTnew==}
+  vee-validate@4.14.7:
+    resolution: {integrity: sha512-XVb1gBFJR57equ11HEI8uxNqFJkwvCP/b+p+saDPQYaW7k45cdF5jsYPEJud1o29GD6h2y7Awm7Qfm89yKi74A==}
     peerDependencies:
       vue: ^3.4.26
 
@@ -5628,7 +5622,7 @@ snapshots:
 
   '@vue/devtools-api@7.5.4':
     dependencies:
-      '@vue/devtools-kit': 7.5.4
+      '@vue/devtools-kit': 7.6.7
 
   '@vue/devtools-core@7.6.7(vite@5.4.11(@types/node@22.7.5))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
@@ -5642,16 +5636,6 @@ snapshots:
     transitivePeerDependencies:
       - vite
 
-  '@vue/devtools-kit@7.5.4':
-    dependencies:
-      '@vue/devtools-shared': 7.5.4
-      birpc: 0.2.19
-      hookable: 5.5.3
-      mitt: 3.0.1
-      perfect-debounce: 1.0.0
-      speakingurl: 14.0.1
-      superjson: 2.2.1
-
   '@vue/devtools-kit@7.6.7':
     dependencies:
       '@vue/devtools-shared': 7.6.7
@@ -5661,10 +5645,6 @@ snapshots:
       perfect-debounce: 1.0.0
       speakingurl: 14.0.1
       superjson: 2.2.1
-
-  '@vue/devtools-shared@7.5.4':
-    dependencies:
-      rfdc: 1.4.1
 
   '@vue/devtools-shared@7.6.7':
     dependencies:
@@ -8234,10 +8214,10 @@ snapshots:
   vee-validate@4.13.2(vue@3.5.13(typescript@5.6.3)):
     dependencies:
       '@vue/devtools-api': 6.6.3
-      type-fest: 4.20.1
+      type-fest: 4.26.1
       vue: 3.5.13(typescript@5.6.3)
 
-  vee-validate@4.14.6(vue@3.5.13(typescript@5.6.3)):
+  vee-validate@4.14.7(vue@3.5.13(typescript@5.6.3)):
     dependencies:
       '@vue/devtools-api': 7.5.4
       type-fest: 4.26.1
