@@ -7,7 +7,7 @@ import { LogOut } from 'lucide-vue-next'
   <form action="/api/auth/signout">
     <Button
       size="xs"
-      class="bg-ctp-overlay1 hover:bg-ctp-surface2"
+      class="bg-ctp-overlay1 hover:bg-ctp-surface2 hover:scale-105"
       type="submit"
     >
       <LogOut class="mr-2 h-4 w-4" />

@@ -78,7 +78,7 @@ const onSubmit = handleSubmit(async (values) => {
       </CardContent>
       <CardFooter class="justify-between">
         <PrimaryButton
-          class="mt-4"
+          class="mt-4 hover:scale-105"
           type="submit"
           size="xs"
         >
@@ -87,7 +87,7 @@ const onSubmit = handleSubmit(async (values) => {
         </PrimaryButton>
         <Button
           size="xs"
-          class="bg-ctp-overlay1 hover:bg-ctp-surface2"
+          class="bg-ctp-overlay1 hover:bg-ctp-surface2 hover:scale-105"
           @click="$emit('cancel')"
         >
           <CircleX class="mr-2 h-4 w-4" />

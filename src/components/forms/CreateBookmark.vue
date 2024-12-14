@@ -115,7 +115,7 @@ async function cleanUp (): Promise<void> {
       >
         <PrimaryButton
           type="submit"
-          class="mr-4"
+          class="mr-4 hover:scale-105"
         >
           <Save class="mr-2 h-4 w-4" />
           Create bookmark
