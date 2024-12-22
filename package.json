@@ -33,7 +33,7 @@
     "dotenv": "16.4.7",
     "drizzle-orm": "0.38.2",
     "lucide-vue-next": "0.454.0",
-    "pg": "8.13.0",
+    "pg": "8.13.1",
     "postgres": "3.4.5",
     "radix-vue": "1.9.10",
     "tailwind-merge": "2.5.5",
