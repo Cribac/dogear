@@ -92,7 +92,7 @@ importers:
         version: 8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
       '@vee-validate/yup':
         specifier: 4.15.0
-        version: 4.15.0(vue@3.5.13(typescript@5.7.2))(yup@1.4.0)
+        version: 4.15.0(vue@3.5.13(typescript@5.7.2))(yup@1.6.1)
       '@vitejs/plugin-vue':
         specifier: 5.2.1
         version: 5.2.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
@@ -130,8 +130,8 @@ importers:
         specifier: 2.1.8
         version: 2.1.8(@types/node@22.10.2)(happy-dom@15.11.7)
       yup:
-        specifier: 1.4.0
-        version: 1.4.0
+        specifier: 1.6.1
+        version: 1.6.1
 
 packages:
 
@@ -4389,8 +4389,8 @@ packages:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
 
-  yup@1.4.0:
-    resolution: {integrity: sha512-wPbgkJRCqIf+OHyiTBQoJiP5PFuAXaWiJK6AmYkzQAh5/c2K9hzSApBZG5wV9KoKSePF7sAxmNSvh/13YHkFDg==}
+  yup@1.6.1:
+    resolution: {integrity: sha512-JED8pB50qbA4FOkDol0bYF/p60qSEDQqBD0/qeIrUCG1KbPBIQ776fCUNb9ldbPcSTxA69g/47XTo4TqWiuXOA==}
 
   zod-to-json-schema@3.24.1:
     resolution: {integrity: sha512-3h08nf3Vw3Wl3PK+q3ow/lIil81IT2Oa7YpQyUUDsEWbXveMesdfK1xBd2RhCkynwZndAxixji/7SYJJowr62w==}
@@ -5619,11 +5619,11 @@ snapshots:
 
   '@ungap/structured-clone@1.2.1': {}
 
-  '@vee-validate/yup@4.15.0(vue@3.5.13(typescript@5.7.2))(yup@1.4.0)':
+  '@vee-validate/yup@4.15.0(vue@3.5.13(typescript@5.7.2))(yup@1.6.1)':
     dependencies:
       type-fest: 4.30.2
       vee-validate: 4.15.0(vue@3.5.13(typescript@5.7.2))
-      yup: 1.4.0
+      yup: 1.6.1
     transitivePeerDependencies:
       - vue
 
@@ -8891,7 +8891,7 @@ snapshots:
 
   yoctocolors@2.1.1: {}
 
-  yup@1.4.0:
+  yup@1.6.1:
     dependencies:
       property-expr: 2.0.6
       tiny-case: 1.0.3

@@ -62,7 +62,7 @@
     "typescript-eslint": "8.18.1",
     "vee-validate": "4.15.0",
     "vitest": "2.1.8",
-    "yup": "1.4.0"
+    "yup": "1.6.1"
   },
   "packageManager": "pnpm@9.14.4+sha1.64b6e81e79630419b675c555ef3b65607cfd6315"
 }
