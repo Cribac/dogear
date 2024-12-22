@@ -32,7 +32,7 @@
     "clsx": "2.1.1",
     "dotenv": "16.4.7",
     "drizzle-orm": "0.38.2",
-    "lucide-vue-next": "0.454.0",
+    "lucide-vue-next": "0.469.0",
     "pg": "8.13.1",
     "postgres": "3.4.5",
     "radix-vue": "1.9.11",
