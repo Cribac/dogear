@@ -64,5 +64,5 @@
     "vitest": "2.1.8",
     "yup": "1.6.1"
   },
-  "packageManager": "pnpm@9.14.4+sha1.64b6e81e79630419b675c555ef3b65607cfd6315"
+  "packageManager": "pnpm@9.15.1+sha1.abc117858086cb10ecb54828d180b035cb6c8fdd"
 }
