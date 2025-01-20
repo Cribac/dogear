@@ -26,7 +26,7 @@
     "@astrojs/vue": "5.0.4",
     "@supabase/supabase-js": "2.47.16",
     "@tanstack/vue-table": "8.20.5",
-    "@vueuse/core": "12.2.0",
+    "@vueuse/core": "12.4.0",
     "astro": "5.1.6",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
