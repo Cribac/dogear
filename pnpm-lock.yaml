@@ -42,8 +42,8 @@ importers:
         specifier: 16.4.7
         version: 16.4.7
       drizzle-orm:
-        specifier: 0.38.3
-        version: 0.38.3(@libsql/client-wasm@0.14.0)(@types/pg@8.11.10)(pg@8.13.1)(postgres@3.4.5)
+        specifier: 0.39.0
+        version: 0.39.0(@libsql/client-wasm@0.14.0)(@types/pg@8.11.10)(pg@8.13.1)(postgres@3.4.5)
       lucide-vue-next:
         specifier: 0.469.0
         version: 0.469.0(vue@3.5.13(typescript@5.7.2))
@@ -2087,8 +2087,8 @@ packages:
     resolution: {integrity: sha512-HmA/NeewvHywhJ2ENXD3KvOuM/+K2dGLJfxVfIHsGwaqKICJnS+Ke2L6UcSrSrtMJLJaT0Im1Qv4TFXfaZShyw==}
     hasBin: true
 
-  drizzle-orm@0.38.3:
-    resolution: {integrity: sha512-w41Y+PquMpSff/QDRGdItG0/aWca+/J3Sda9PPGkTxBtjWQvgU1jxlFBXdjog5tYvTu58uvi3PwR1NuCx0KeZg==}
+  drizzle-orm@0.39.0:
+    resolution: {integrity: sha512-kkZwo3Jvht0fdJD/EWGx0vYcEK0xnGrlNVaY07QYluRZA9N21B9VFbY+54bnb/1xvyzcg97tE65xprSAP/fFGQ==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -6362,7 +6362,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.3(@libsql/client-wasm@0.14.0)(@types/pg@8.11.10)(pg@8.13.1)(postgres@3.4.5):
+  drizzle-orm@0.39.0(@libsql/client-wasm@0.14.0)(@types/pg@8.11.10)(pg@8.13.1)(postgres@3.4.5):
     optionalDependencies:
       '@libsql/client-wasm': 0.14.0
       '@types/pg': 8.11.10
