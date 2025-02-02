@@ -13,5 +13,10 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
     exclude: [...configDefaults.exclude, 'e2e'],
+    reporters: [
+      'default', {
+        summary: false
+      }
+    ]
   },
 })
