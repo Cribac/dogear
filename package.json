@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest --dom --reporter=basic --disable-console-intercept",
+    "test": "vitest --dom --disable-console-intercept",
     "lint": "eslint",
     "db:push": "drizzle-kit push",
     "db:pull": "drizzle-kit introspect",
