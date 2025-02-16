@@ -59,7 +59,7 @@
     "globals": "15.14.0",
     "happy-dom": "17.0.2",
     "supabase": "2.9.6",
-    "typescript-eslint": "8.19.0",
+    "typescript-eslint": "8.24.0",
     "vee-validate": "4.15.0",
     "vitest": "3.0.5",
     "yup": "1.6.1"
