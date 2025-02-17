@@ -73,8 +73,8 @@ importers:
         version: 3.5.13(typescript@5.7.3)
     devDependencies:
       '@eslint/js':
-        specifier: 9.17.0
-        version: 9.17.0
+        specifier: 9.20.0
+        version: 9.20.0
       '@playwright/test':
         specifier: 1.50.1
         version: 1.50.1
@@ -95,7 +95,7 @@ importers:
         version: 4.15.0(vue@3.5.13(typescript@5.7.3))(yup@1.6.1)
       '@vitejs/plugin-vue':
         specifier: 5.2.1
-        version: 5.2.1(vite@6.0.11(@types/node@22.10.7)(jiti@2.4.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3))
+        version: 5.2.1(vite@6.1.0(@types/node@22.10.7)(jiti@2.4.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3))
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
@@ -822,10 +822,6 @@ packages:
 
   '@eslint/eslintrc@3.2.0':
     resolution: {integrity: sha512-grOjVNN8P3hjJn/eIETF1wwd12DdnwFDoyceUJLYYdkpbwq3nLi+4fqrTAONx7XDALqlL220wC/RHSC/QTI/0w==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/js@9.17.0':
-    resolution: {integrity: sha512-Sxc4hqcs1kTu0iID3kcZDW3JHq2a77HO9P8CP6YEA/FpH3Ll8UXE2r/86Rz9YJLKme39S9vU5OWNjC6Xl0Cr3w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.20.0':
@@ -4912,8 +4908,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/js@9.17.0': {}
-
   '@eslint/js@9.20.0': {}
 
   '@eslint/object-schema@2.1.6': {}
@@ -5551,6 +5545,11 @@ snapshots:
   '@vitejs/plugin-vue@5.2.1(vite@6.0.11(@types/node@22.10.7)(jiti@2.4.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       vite: 6.0.11(@types/node@22.10.7)(jiti@2.4.2)(yaml@2.6.1)
+      vue: 3.5.13(typescript@5.7.3)
+
+  '@vitejs/plugin-vue@5.2.1(vite@6.1.0(@types/node@22.10.7)(jiti@2.4.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3))':
+    dependencies:
+      vite: 6.1.0(@types/node@22.10.7)(jiti@2.4.2)(yaml@2.6.1)
       vue: 3.5.13(typescript@5.7.3)
 
   '@vitest/expect@3.0.5':
