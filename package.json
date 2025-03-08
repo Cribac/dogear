@@ -31,9 +31,9 @@
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "dotenv": "16.4.7",
-    "drizzle-orm": "0.39.3",
-    "lucide-vue-next": "0.469.0",
-    "pg": "8.13.1",
+    "drizzle-orm": "0.40.0",
+    "lucide-vue-next": "0.479.0",
+    "pg": "8.13.3",
     "postgres": "3.4.5",
     "radix-vue": "1.9.16",
     "tailwind-merge": "3.0.1",
@@ -46,9 +46,9 @@
     "@eslint/js": "9.21.0",
     "@playwright/test": "1.50.1",
     "@types/node": "22.10.7",
-    "@types/pg": "8.11.10",
-    "@typescript-eslint/eslint-plugin": "8.24.1",
-    "@typescript-eslint/parser": "8.19.0",
+    "@types/pg": "8.11.11",
+    "@typescript-eslint/eslint-plugin": "8.26.0",
+    "@typescript-eslint/parser": "8.26.0",
     "@vee-validate/yup": "4.15.0",
     "@vitejs/plugin-vue": "5.2.1",
     "@vue/test-utils": "2.4.6",
@@ -64,5 +64,5 @@
     "vitest": "3.0.5",
     "yup": "1.6.1"
   },
-  "packageManager": "pnpm@9.15.1+sha1.abc117858086cb10ecb54828d180b035cb6c8fdd"
+  "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3"
 }
