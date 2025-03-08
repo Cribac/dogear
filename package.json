@@ -48,7 +48,7 @@
     "@types/node": "22.10.7",
     "@types/pg": "8.11.10",
     "@typescript-eslint/eslint-plugin": "8.25.0",
-    "@typescript-eslint/parser": "8.19.0",
+    "@typescript-eslint/parser": "8.26.0",
     "@vee-validate/yup": "4.15.0",
     "@vitejs/plugin-vue": "5.2.1",
     "@vue/test-utils": "2.4.6",
