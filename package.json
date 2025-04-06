@@ -22,7 +22,7 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/node": "9.1.0",
-    "@astrojs/tailwind": "6.0.0",
+    "@astrojs/tailwind": "6.0.2",
     "@astrojs/vue": "5.0.9",
     "@supabase/supabase-js": "2.48.1",
     "@tanstack/vue-table": "8.21.2",
