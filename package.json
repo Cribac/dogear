@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.24.0",
-    "@playwright/test": "1.51.1",
+    "@playwright/test": "1.52.0",
     "@types/node": "22.14.1",
     "@types/pg": "8.11.11",
     "@typescript-eslint/eslint-plugin": "8.26.0",
