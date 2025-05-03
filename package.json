@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest --dom --disable-console-intercept",
-    "lint": "eslint",
+    "lint": "eslint --ignore-pattern '.astro/*'",
     "db:push": "drizzle-kit push",
     "db:pull": "drizzle-kit introspect",
     "db:generate": "drizzle-kit generate",
