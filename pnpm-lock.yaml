@@ -118,8 +118,8 @@ importers:
         specifier: 17.4.7
         version: 17.4.7
       supabase:
-        specifier: 2.22.6
-        version: 2.22.6
+        specifier: 2.22.12
+        version: 2.22.12
       typescript-eslint:
         specifier: 8.31.1
         version: 8.31.1(eslint@9.26.0(jiti@2.4.2))(typescript@5.7.3)
@@ -3919,8 +3919,8 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
 
-  supabase@2.22.6:
-    resolution: {integrity: sha512-W/A5JlKqrp0pxSaFRYwlWpk+aCql9xUp1ZeLVarRVtqsT6QPLqLsLPIwES0005lQKS3QBbdWDgYThEStPM1kxQ==}
+  supabase@2.22.12:
+    resolution: {integrity: sha512-PWQT+uzwAXcamM/FK60CaWRjVwsX2SGW5vF7edbiTQC6vsNvTBnSIvd1yiXsIpq32uzQFu+iOrayxaTQytNiTw==}
     engines: {npm: '>=8'}
     hasBin: true
 
@@ -8887,7 +8887,7 @@ snapshots:
       pirates: 4.0.6
       ts-interface-checker: 0.1.13
 
-  supabase@2.22.6:
+  supabase@2.22.12:
     dependencies:
       bin-links: 5.0.0
       https-proxy-agent: 7.0.6
