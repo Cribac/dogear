@@ -12,8 +12,8 @@ importers:
         specifier: 0.9.4
         version: 0.9.4(typescript@5.7.3)
       '@astrojs/node':
-        specifier: 9.1.3
-        version: 9.1.3(astro@5.5.6(@types/node@22.15.3)(jiti@2.4.2)(rollup@4.40.0)(typescript@5.7.3)(yaml@2.7.1))
+        specifier: 9.2.1
+        version: 9.2.1(astro@5.5.6(@types/node@22.15.3)(jiti@2.4.2)(rollup@4.40.0)(typescript@5.7.3)(yaml@2.7.1))
       '@astrojs/tailwind':
         specifier: 6.0.2
         version: 6.0.2(astro@5.5.6(@types/node@22.15.3)(jiti@2.4.2)(rollup@4.40.0)(typescript@5.7.3)(yaml@2.7.1))(tailwindcss@3.4.17)
@@ -173,8 +173,8 @@ packages:
   '@astrojs/markdown-remark@6.3.1':
     resolution: {integrity: sha512-c5F5gGrkczUaTVgmMW9g1YMJGzOtRvjjhw6IfGuxarM6ct09MpwysP10US729dy07gg8y+ofVifezvP3BNsWZg==}
 
-  '@astrojs/node@9.1.3':
-    resolution: {integrity: sha512-YcVxEmeZU8khNdrPYNPN3j//4tYPM+Pw6CthAJ6VE/bw65qEX7ErMRApalY2tibc3YhCeHMmsO9rXGhyW0NNyA==}
+  '@astrojs/node@9.2.1':
+    resolution: {integrity: sha512-kEHLB37ooW91p7FLGalqa3jVQRIafntfKiZgCnjN1lEYw+j8NP6VJHQbLHmzzbtKUI0J+srGiTnGZmaHErHE5w==}
     peerDependencies:
       astro: ^5.3.0
 
@@ -4562,7 +4562,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@9.1.3(astro@5.5.6(@types/node@22.15.3)(jiti@2.4.2)(rollup@4.40.0)(typescript@5.7.3)(yaml@2.7.1))':
+  '@astrojs/node@9.2.1(astro@5.5.6(@types/node@22.15.3)(jiti@2.4.2)(rollup@4.40.0)(typescript@5.7.3)(yaml@2.7.1))':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
       astro: 5.5.6(@types/node@22.15.3)(jiti@2.4.2)(rollup@4.40.0)(typescript@5.7.3)(yaml@2.7.1)
