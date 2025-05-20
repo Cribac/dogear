@@ -69,7 +69,8 @@
     "onlyBuiltDependencies": [
       "esbuild",
       "sharp",
-      "supabase"
+      "supabase",
+      "vue-demi"
     ]
   }
 }
