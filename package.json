@@ -24,7 +24,7 @@
     "@astrojs/node": "9.2.1",
     "@astrojs/tailwind": "6.0.2",
     "@astrojs/vue": "5.0.10",
-    "@supabase/supabase-js": "2.49.6",
+    "@supabase/supabase-js": "2.49.8",
     "@tanstack/vue-table": "8.21.3",
     "@vueuse/core": "13.2.0",
     "astro": "5.7.13",
