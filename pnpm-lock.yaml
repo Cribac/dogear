@@ -43,7 +43,7 @@ importers:
         version: 16.4.7
       drizzle-orm:
         specifier: 0.41.0
-        version: 0.41.0(@libsql/client-wasm@0.14.0)(@types/pg@8.15.2)(gel@2.0.2)(pg@8.16.0)(postgres@3.4.5)
+        version: 0.41.0(@libsql/client-wasm@0.14.0)(@types/pg@8.15.2)(gel@2.0.2)(pg@8.16.0)(postgres@3.4.7)
       lucide-vue-next:
         specifier: 0.488.0
         version: 0.488.0(vue@3.5.13(typescript@5.8.3))
@@ -51,8 +51,8 @@ importers:
         specifier: 8.16.0
         version: 8.16.0
       postgres:
-        specifier: 3.4.5
-        version: 3.4.5
+        specifier: 3.4.7
+        version: 3.4.7
       radix-vue:
         specifier: 1.9.17
         version: 1.9.17(vue@3.5.13(typescript@5.8.3))
@@ -3455,8 +3455,8 @@ packages:
   postgres-range@1.1.4:
     resolution: {integrity: sha512-i/hbxIE9803Alj/6ytL7UHQxRvZkI9O4Sy+J3HGc4F4oo/2eQAjTSNJ0bfxyse3bH0nuVesCk+3IRLaMtG3H6w==}
 
-  postgres@3.4.5:
-    resolution: {integrity: sha512-cDWgoah1Gez9rN3H4165peY9qfpEo+SA61oQv65O3cRUE1pOEoJWwddwcqKE8XZYjbblOJlYDlLV4h67HrEVDg==}
+  postgres@3.4.7:
+    resolution: {integrity: sha512-Jtc2612XINuBjIl/QTWsV5UvE8UHuNblcO3vVADSrKsrc6RqGX6lOW1cEo3CM2v0XG4Nat8nI+YM7/f26VxXLw==}
     engines: {node: '>=12'}
 
   prelude-ls@1.2.1:
@@ -6661,13 +6661,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.41.0(@libsql/client-wasm@0.14.0)(@types/pg@8.15.2)(gel@2.0.2)(pg@8.16.0)(postgres@3.4.5):
+  drizzle-orm@0.41.0(@libsql/client-wasm@0.14.0)(@types/pg@8.15.2)(gel@2.0.2)(pg@8.16.0)(postgres@3.4.7):
     optionalDependencies:
       '@libsql/client-wasm': 0.14.0
       '@types/pg': 8.15.2
       gel: 2.0.2
       pg: 8.16.0
-      postgres: 3.4.5
+      postgres: 3.4.7
 
   dset@3.1.4: {}
 
@@ -8093,7 +8093,7 @@ snapshots:
 
   postgres-range@1.1.4: {}
 
-  postgres@3.4.5: {}
+  postgres@3.4.7: {}
 
   prelude-ls@1.2.1: {}
 
