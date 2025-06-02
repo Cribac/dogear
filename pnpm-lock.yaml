@@ -73,8 +73,8 @@ importers:
         version: 3.5.13(typescript@5.8.3)
     devDependencies:
       '@eslint/js':
-        specifier: 9.27.0
-        version: 9.27.0
+        specifier: 9.28.0
+        version: 9.28.0
       '@playwright/test':
         specifier: 1.52.0
         version: 1.52.0
@@ -95,7 +95,7 @@ importers:
         version: 4.15.0(vue@3.5.13(typescript@5.8.3))(yup@1.6.1)
       '@vitejs/plugin-vue':
         specifier: 5.2.4
-        version: 5.2.4(vite@6.2.2(@types/node@22.15.3)(jiti@2.4.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
+        version: 5.2.4(vite@6.3.5(@types/node@22.15.3)(jiti@2.4.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
@@ -946,6 +946,10 @@ packages:
 
   '@eslint/js@9.27.0':
     resolution: {integrity: sha512-G5JD9Tu5HJEu4z2Uo4aHY2sLV64B7CDMXxFzqzjl3NKd6RVzSXNoE80jk7Y0lJkTTkjiIhBAqmlYwjuBY3tvpA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/js@9.28.0':
+    resolution: {integrity: sha512-fnqSjGWd/CoIp4EXIxWVK/sHA6DOHN4+8Ix2cX5ycOY7LG0UY8nHCU5pIp2eaE1Mc7Qd8kHspYNzYXT2ojPLzg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.6':
@@ -3702,8 +3706,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shell-quote@1.8.2:
-    resolution: {integrity: sha512-AzqKpGKjrj7EM6rKVQEPpB288oCfnrEIuyoT9cyF4nmGa7V8Zk6f7RRqYisX8X9m+Q7bd632aZW4ky7EhbQztA==}
+  shell-quote@1.8.3:
+    resolution: {integrity: sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==}
     engines: {node: '>= 0.4'}
 
   shiki@3.4.2:
@@ -5338,6 +5342,8 @@ snapshots:
 
   '@eslint/js@9.27.0': {}
 
+  '@eslint/js@9.28.0': {}
+
   '@eslint/object-schema@2.1.6': {}
 
   '@eslint/plugin-kit@0.3.1':
@@ -6033,9 +6039,9 @@ snapshots:
       vite: 6.3.5(@types/node@22.15.3)(jiti@2.4.2)(yaml@2.7.1)
       vue: 3.5.13(typescript@5.8.3)
 
-  '@vitejs/plugin-vue@5.2.4(vite@6.2.2(@types/node@22.15.3)(jiti@2.4.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))':
+  '@vitejs/plugin-vue@5.2.4(vite@6.3.5(@types/node@22.15.3)(jiti@2.4.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))':
     dependencies:
-      vite: 6.2.2(@types/node@22.15.3)(jiti@2.4.2)(yaml@2.7.1)
+      vite: 6.3.5(@types/node@22.15.3)(jiti@2.4.2)(yaml@2.7.1)
       vue: 3.5.13(typescript@5.8.3)
 
   '@vitest/expect@3.0.9':
@@ -7226,7 +7232,7 @@ snapshots:
       debug: 4.4.1
       env-paths: 3.0.0
       semver: 7.7.2
-      shell-quote: 1.8.2
+      shell-quote: 1.8.3
       which: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -8571,7 +8577,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shell-quote@1.8.2:
+  shell-quote@1.8.3:
     optional: true
 
   shiki@3.4.2:
