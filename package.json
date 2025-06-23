@@ -49,7 +49,7 @@
     "@types/pg": "8.15.2",
     "@typescript-eslint/eslint-plugin": "8.32.1",
     "@typescript-eslint/parser": "8.30.1",
-    "@vee-validate/yup": "4.15.0",
+    "@vee-validate/yup": "4.15.1",
     "@vitejs/plugin-vue": "5.2.4",
     "@vue/test-utils": "2.4.6",
     "drizzle-kit": "0.31.1",
