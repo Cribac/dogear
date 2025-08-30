@@ -60,7 +60,7 @@
     "happy-dom": "18.0.1",
     "supabase": "2.22.12",
     "typescript-eslint": "8.38.0",
-    "vee-validate": "4.15.0",
+    "vee-validate": "4.15.1",
     "vitest": "3.2.4",
     "yup": "1.7.0"
   },
