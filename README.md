@@ -2,7 +2,7 @@
 
 Webapp to manage bookmarks.
 
-[_WIP!!!_](https://www.dictionary.com/browse/wip)
+(POC done, archived now)
 
 ---
 <details>
